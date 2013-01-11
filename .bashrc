@@ -1,0 +1,1 @@
+/home/jalcine/.bash/config.sh
