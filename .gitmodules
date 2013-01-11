@@ -1,3 +1,6 @@
 [submodule ".vim"]
 	path = .vim
 	url = me:.vimrc
+[submodule ".rbenv"]
+	path = .rbenv
+	url = me:rbenv
