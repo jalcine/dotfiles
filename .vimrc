@@ -1,0 +1,1 @@
+/home/jalcine/.vim/vimrc
