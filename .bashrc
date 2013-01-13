@@ -1,1 +1,1 @@
-/home/jalcine/.bash/config.sh
+.bash/config.sh
