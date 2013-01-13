@@ -7,3 +7,6 @@
 [submodule ".bash/bash-it"]
 	path = .bash/bash-it
 	url = me:bash-it
+[submodule ".nvm"]
+	path = .nvm
+	url = ghub:creationix/nvm
