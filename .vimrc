@@ -1,1 +1,1 @@
-/home/jalcine/.vim/vimrc
+.vim/config
