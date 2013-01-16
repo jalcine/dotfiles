@@ -39,6 +39,7 @@ HISTCONTROL=ignoredups:ignorespace
 . /etc/bash_completion
 . ~/.bash/shopt.sh
 . ~/.bash/variables.sh
+. ~/.bash/undistract-me.sh
 . ~/.bash/path.sh
 . ~/.bash/bash-it.sh
 
