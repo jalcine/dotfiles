@@ -1,11 +1,5 @@
-[submodule ".vim"]
-	path = .vim
-	url = me:.vimrc
-[submodule ".rbenv"]
-	path = .rbenv
-	url = me:rbenv
-[submodule ".bash/bash-it"]
-	path = .bash/bash-it
+[submodule "home/.bash/bash-it"]
+	path = home/.bash/bash-it
 	url = me:bash-it
 [submodule ".nvm"]
 	path = .nvm
