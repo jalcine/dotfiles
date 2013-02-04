@@ -1,6 +1,6 @@
 [submodule "home/.bash/bash-it"]
 	path = home/.bash/bash-it
 	url = me:bash-it
-[submodule ".nvm"]
-	path = .nvm
+[submodule "home/.nvm"]
+	path = home/.nvm
 	url = ghub:creationix/nvm
