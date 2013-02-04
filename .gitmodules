@@ -4,3 +4,6 @@
 [submodule "home/.nvm"]
 	path = home/.nvm
 	url = ghub:creationix/nvm
+[submodule "home/.tmux/powerline"]
+	path = home/.tmux/powerline
+	url = ghub:erikw/tmux-powerline
