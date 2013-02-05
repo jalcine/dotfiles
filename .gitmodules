@@ -7,3 +7,6 @@
 [submodule "home/.tmux/powerline"]
 	path = home/.tmux/powerline
 	url = ghub:erikw/tmux-powerline
+[submodule "home/.rbenv"]
+	path = home/.rbenv
+	url = me:rbenv
