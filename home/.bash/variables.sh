@@ -18,9 +18,12 @@ export CMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH:$HOME/.local"
 
 # Default the installation to my local installation.
 export CMAKE_INSTALL_PREFIX="$HOME/.local"
+export DESTDIR="${CMAKE_INSTALL_PREFIX}"
 
 # Default the build type to be debugged.
 export CMAKE_BUILD_TYPE="Debug"
+
+export LIBRARY_PATH="$LIBRARY_PATH:$HOME/.local/lib"
 
 # When searching for awesome KDE stuff, include my built versions.
 export KDEDIRS="$KDEDIRS:$HOME/.local"

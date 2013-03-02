@@ -7,7 +7,7 @@
 	# Show which segment fails and its exit code.
 	export TMUX_POWERLINE_DEBUG_MODE_ENABLED="false"
 	# Use patched font symbols.
-	export TMUX_POWERLINE_PATCHED_FONT_IN_USE="false"
+	export TMUX_POWERLINE_PATCHED_FONT_IN_USE="true"
 	# The theme to use.
 	export TMUX_POWERLINE_THEME="jalcine"
 	# Overlay dirctory to look for themes. There you can put your own themes outside the repo. Fallback will still be the "themes" directory in the repo.
@@ -20,7 +20,7 @@
 	# How to display battery remaining. Can be {percentage, cute}.
 	export TMUX_POWERLINE_SEG_BATTERY_TYPE="percentage"
 	# How may hearts to show if cute indicators are used.
-	export TMUX_POWERLINE_SEG_BATTERY_NUM_HEARTS="5"
+	export TMUX_POWERLINE_SEG_BATTERY_NUM_HEARTS="8"
 # }
 
 # date.sh {
@@ -35,7 +35,7 @@
 
 # time.sh {
 	# date(1) format for the time. Americans might want to have "%I:%M %p".
-	export TMUX_POWERLINE_SEG_TIME_FORMAT="%I:%M %p"
+	export TMUX_POWERLINE_SEG_TIME_FORMAT="%H:%M:%S %p"
 # }
 
 # weather.sh {
