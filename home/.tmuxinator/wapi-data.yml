@@ -1,0 +1,9 @@
+project_name: wapi-data
+project_root: ~/Development/Projects/sii/wintermute/api/data
+tabs:
+  - Editor:
+    - vim .
+  - BuildSystem:
+    - cd build
+  - Console:
+    - #

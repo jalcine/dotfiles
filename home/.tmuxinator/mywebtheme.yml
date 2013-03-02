@@ -1,0 +1,12 @@
+# ~/.tmuxinator/mywebtheme.yml
+# you can make as many tabs as you wish...
+
+project_name: webtheme 
+project_root: ~/Development/Projects/jalcine.me/Themes/Initial
+tabs:
+  - Shell:
+      layout: even-vertical
+      panes:
+        - be guard
+        - #empty, will just run plain bash
+  - Editor: vim

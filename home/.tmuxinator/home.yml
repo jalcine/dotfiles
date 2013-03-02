@@ -1,0 +1,7 @@
+project_name: homepage
+project_root: ~/Development/Projects/jalcine.me/Home 
+tabs:
+  - Editor:
+    - vim
+  - Shell:
+    - # yo 

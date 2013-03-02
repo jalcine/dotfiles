@@ -1,0 +1,10 @@
+project_name: myblog
+project_root: ~/Development/Projects/jalcine.me/Blog
+tabs:
+  - Editor:
+    - vim
+  - Shell:
+     layout: even-horizontal
+     panes:
+       - foreman start 
+       - git changes 

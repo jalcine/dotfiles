@@ -1,0 +1,15 @@
+project_name: Bugzilla
+project_root: ~/Development/Projects/bugzilla/application
+pre: sudo /etc/rc.d/mysqld start
+tabs:
+  - Editor:
+      layout: even-horizontal
+      panes:
+        - vim
+        - #empty, will just run plain bash
+  - Shell:
+      layout: even-vertical
+      panes:
+        - #
+        - #
+  - Server: ls .
