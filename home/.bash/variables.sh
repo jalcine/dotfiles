@@ -16,7 +16,7 @@ export SSH_ASKPASS=ksshaskpass
 # Include my local path into the CMake module discovery.
 export CMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH:$HOME/.local"
 
-# Default the installation to my local installation for CMake and automake.
+# Default the installation to my local installation.
 export CMAKE_INSTALL_PREFIX="$HOME/.local"
 export DESTDIR="${CMAKE_INSTALL_PREFIX}"
 

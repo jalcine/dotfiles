@@ -1,0 +1,7 @@
+project_name: WntrSdk
+project_root: /home/jacky/Development/Projects/sii/wintermute/sdk
+tabs:
+  - Editor:
+    - vim
+  - Shell:
+    - #

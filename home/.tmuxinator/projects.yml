@@ -1,0 +1,7 @@
+project_name: projects 
+project_root: ~/Development/Projects/jalcine.me/Projects 
+tabs:
+  - Editor:
+    - vim
+  - Shell:
+    - #

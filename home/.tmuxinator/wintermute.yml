@@ -1,0 +1,9 @@
+project_name: wntrcore
+project_root: ~/Development/Projects/sii/wintermute/core
+tabs:
+  - Editor:
+    - vim README.md
+  - BuildSystem:
+    - cd build
+  - Console:
+    - #
