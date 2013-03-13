@@ -14,19 +14,18 @@ export PAGER=most
 export SSH_ASKPASS=ksshaskpass
 
 # Include my local path into the CMake module discovery.
-export CMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH:$HOME/.local"
+export CMAKE_PREFIX_PATH="$HOME/.local:$CMAKE_PREFIX_PATH"
 
 # Default the installation to my local installation.
 export CMAKE_INSTALL_PREFIX="$HOME/.local"
-export DESTDIR="${CMAKE_INSTALL_PREFIX}"
 
 # Default the build type to be debugged.
 export CMAKE_BUILD_TYPE="Debug"
 
-export LIBRARY_PATH="$LIBRARY_PATH:$HOME/.local/lib"
+export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
 
 # When searching for awesome KDE stuff, include my built versions.
-export KDEDIRS="$KDEDIRS:$HOME/.local"
+export KDEDIRS="$HOME/.local:$KDEDIRS"
 
 # When using `pkgconfig`, include my built versions.
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$HOME/.local/lib/pkgconfig"
