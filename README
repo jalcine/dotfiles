@@ -1,0 +1,28 @@
+# dotfiles, yo!
+
+Being a developer that works across multiple systems like Linux machines or Macbooks,
+having a place to run back to and call home is always useful. This is why I use 
+[Josh Nichols's awesome tool](https://github.com/technicalpickles/homesick) for copying and sharing 
+your local configuration scripts and what not. It makes it easy to share the changes I have
+for my laptop, my servers (and other machines I plan to grab). It also makes work so much
+easier when working on out-sourced machines as well.
+
+## Contents
+
+This repositories uses sub-modules and depends on the following repositories:
+
+ * [jalcine/bash-it](https://github.com/jalcine/bash-it) - My fork and changes to the kickass
+   [bash-it project](https://github.com/revans/bash-it).
+
+ * [creationix/nvm](https://github.com/creationix/nvm) - A Node version management tool.
+
+ * [erikw/tmux-powerline](https://github.com/erikw/tmux-powerline) - Powerline. For TMUX. BADASS.
+
+ * [jalcine/rbenv](https://github.com/jalcine/rbenv) - Patches to sstephenson's awesome ruby version management tool,
+   [rbenv](https://github.com/sstephenson/rbenv).
+
+## Ambitions
+
+What I do want to evolve from this set-up is something along this sort:
+
+ + __Hostname loading__: I'd like for certain scripts to be run on certain machines. Anything pertaining to GUIs (like my laptop's KDE tweaks or perhaps some edits for a Macbook) should only be run on those machines. This is something I'm working on with `scutil` and `/etc/hostname`.
