@@ -36,7 +36,6 @@ HISTCONTROL=ignoredups:ignorespace
 ## Modules
 ###########################################################
 # Load the system's completions.
-. /etc/bash_completion
 . ~/.bash/shopt.sh
 . ~/.bash/variables.sh
 . ~/.bash/undistract-me.sh
