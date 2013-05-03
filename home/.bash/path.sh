@@ -6,6 +6,3 @@ PATH="~/.local/bin:$PATH"
 
 
 # Add Android's tools to the path.
-ANDROID_SDK_PATH="/home/jalcine/Development/References/Resources/SDKs/Android"
-PATH="$ANDROID_SDK_PATH/platform-tools:$PATH"
-PATH="$ANDROID_SDK_PATH/tools:$PATH"
