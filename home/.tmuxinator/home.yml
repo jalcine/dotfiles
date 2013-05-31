@@ -1,5 +1,5 @@
 project_name: homepage
-project_root: ~/Development/Projects/jalcine.me/Home 
+project_root: ~/Development/Projects/Web/Home 
 tabs:
   - Editor:
     - vim

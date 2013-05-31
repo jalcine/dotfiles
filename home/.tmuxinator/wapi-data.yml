@@ -1,9 +1,13 @@
-project_name: wapi-data
-project_root: ~/Development/Projects/sii/wintermute/api/data
+project_name: wapidata
+project_root: ~/Development/Projects/Sii/Wintermute/Libraries/DataApi
 tabs:
   - Editor:
-    - vim .
+    - vim README.md
   - BuildSystem:
     - cd build
   - Console:
-    - #
+      layout: main-vertical
+      panes:
+        - #
+        - watch -c -n 1 git whatchanged
+        - watch -c -n 1 git status -u --short

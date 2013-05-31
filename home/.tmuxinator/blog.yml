@@ -1,10 +1,11 @@
-project_name: myblog
-project_root: ~/Development/Projects/jalcine.me/Blog
+project_name: blog
+project_root: ~/Development/Projects/Web/Blog
 tabs:
   - Editor:
     - vim
   - Shell:
-     layout: even-horizontal
+     layout: main-horizontal
      panes:
-       - foreman start 
-       - git changes 
+       - watch -c -n 1 git whatchanged
+       - bin/rake preview
+       - bin/rake watch

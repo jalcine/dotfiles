@@ -19,6 +19,9 @@ export CMAKE_PREFIX_PATH="$HOME/.local:$CMAKE_PREFIX_PATH"
 # Default the installation to my local installation.
 export CMAKE_INSTALL_PREFIX="$HOME/.local"
 
+# Make sure you get my good side (of CMake modules).
+export CMAKE_MODULE_PATH="$HOME/.local/share/apps/cmake/Modules:$HOME/.local/share/cmake-2.8/Modules:$CMAKE_MODULE_PATH"
+
 # Default the build type to be debugged.
 export CMAKE_BUILD_TYPE="Debug"
 
