@@ -35,3 +35,5 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$HOME/.local/lib/pkgconfig"
 
 # Include my library's built out.
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/.local/lib"
+
+$HOME/.kde/Autostart/AddSshKeys.sh
