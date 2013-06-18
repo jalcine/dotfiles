@@ -20,7 +20,6 @@
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 # Make sure we're running wisely.
 export LANG=en_US.UTF-8
-export TERM=xterm-256color
 
 fortune -e
 ###########################################################
