@@ -1,9 +1,0 @@
-# ~/.tmuxinator/web.yml
-# you can make as many tabs as you wish...
-
-project_name: web
-project_root: ~/
-tabs:
-  - IRC: irc
-  - Server: mosh jalcine.me
-  - SysMon: htop -u jacky

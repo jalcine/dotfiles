@@ -1,7 +1,0 @@
-project_name: homepage
-project_root: ~/Development/Projects/Web/Home 
-tabs:
-  - Editor:
-    - vim
-  - Shell:
-    - # yo 

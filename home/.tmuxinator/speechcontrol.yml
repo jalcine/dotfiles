@@ -1,7 +1,0 @@
-project_name: spchcntl
-project_root: ~/Development/Projects/Sii/SpeechControl
-tabs:
-  - Editor:
-    - vim README.md
-  - Console:
-    - #
