@@ -37,7 +37,7 @@ HISTCONTROL=ignoredups:ignorespace
 . $HOME/.bash/shopt.sh
 . $HOME/.bash/variables.sh
 . $HOME/.bash/path.sh
-. $HOME/.bash/bash-it.sh
+. /.bash/bash-it.sh
 
 # On KDE, attempt to add the SSH keys by default.
 [ -d "$HOME/.kde" ] && . $HOME/.kde/Autostart/AddSshKeys.sh;
