@@ -16,3 +16,9 @@ shopt -s histappend
 
 # Resize the window after commands.
 shopt -s checkwinsize
+
+# Edit the past.
+shopt -s histreedit
+
+# Let everyone know we're leaving.
+shopt -s huponexit
