@@ -5,10 +5,7 @@
 ## @author Jacky Alcine <me@jalcine.me>
 ## @date 07-06-2013 22:49 UTC-05:00
 ##
-## Jacky Alcine's personal ~/.bashrc script.
-##
-## This is tailored for my desktop system and thus, relies on a few
-## external scripts to add some more pizazz
+## Jacky Alcine's root personal Bash configuration.
 ###########################################################
 
 ###########################################################
@@ -37,10 +34,11 @@ HISTCONTROL=ignoredups:ignorespace
 ## Modules
 ###########################################################
 # Load the system's completions.
-. ~/.bash/shopt.sh
-. ~/.bash/variables.sh
-. ~/.bash/path.sh
-. ~/.bash/bash-it.sh
+. $HOME/.bash/shopt.sh
+. $HOME/.bash/variables.sh
+. $HOME/.bash/path.sh
+. $HOME/.bash/bash-it.sh
 
-## Finally, show our prompt.
+# On KDE, attempt to add the SSH keys by default.
+[ -d "$HOME/.kde" ] && . $HOME/.kde/Autostart/AddSshKeys.sh;
 export PS1
