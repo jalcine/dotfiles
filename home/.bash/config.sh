@@ -3,7 +3,7 @@
 ## ~/.bashrc: executed by bash(1) for non-login shells.
 ##
 ## @author Jacky Alcine <me@jalcine.me>
-## 01-08-2013 21:23 UTC-05:00
+## @date 07-06-2013 22:49 UTC-05:00
 ##
 ## Jacky Alcine's personal ~/.bashrc script.
 ##
