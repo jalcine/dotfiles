@@ -1,1 +1,3 @@
-source ~/.bash/logout.sh
+#!/bin/bash
+
+[[ -L "$HOME/.bash/logout.sh" ]] && source ~/.bash/logout.sh;
