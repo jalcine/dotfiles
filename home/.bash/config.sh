@@ -21,7 +21,8 @@
 # Make sure we're running wisely.
 export LANG=en_US.UTF-8
 
-fortune -e
+# Give me a fortune if I'm not in tmux.
+[ -z $TMUX ] && fortune -e
 ###########################################################
 ## History 
 ###########################################################
