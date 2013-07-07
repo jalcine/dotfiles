@@ -7,9 +7,10 @@ export BASH_IT_THEME='pete'
 unset MAILCHECK
 
 # Change this to your console based IRC client of choice.
-export IRC_CLIENT='weechat-curses'
+[ -f `which weechat-curses` ] && export IRC_CLIENT='weechat-curses';
 
-export VCPROMPT_EXECUTABLE=~/.local/bin/vcprompt
+# Define the VC prompt.
+export VCPROMPT_EXECUTABLE=$HOME/.local/bin/vcprompt
 
 # Load Bash It
-source $BASH_IT/bash_it.sh
+. $BASH_IT/bash_it.sh
