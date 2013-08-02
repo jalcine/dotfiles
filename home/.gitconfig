@@ -1,0 +1,110 @@
+[core]
+  whitespace=space-before-tab,trailing-space,tabwidth=2
+  editor=vim
+  pager=most
+
+[user]
+  name       = "Jacky Alciné"
+  email      = "me@jalcine.me"
+  signingkey = "E5995FD9"
+#
+[url "git@github.com:"]
+  insteadOf=ghub:
+  insteadOf=https://github.com/
+  insteadOf=http://github.com/
+  pushInsteadOf=ghub:
+  pushInsteadOf=https://github.com/
+
+[url "git@github.com:jalcine/"]
+  insteadOf=me:
+  insteadOf=https://github.com/jalcine/
+  insteadOf=http://github.com/jalcine/
+  pushInsteadOf=me:
+  pushInsteadOf=https://github.com/jalcine/
+
+[url "git.thesii.org:thesii/"]
+  insteadOf=sii:
+  pushInsteadOf=sii:
+  pushInsteadOf=https://github.com/thesii/
+
+[url "jalcine.me:~/Development/Repositories/"]
+  insteadOf=mygit:
+  pushInsteadOf=mygit:
+  pushInsteadOf=git://git.jalcine.me/
+
+[url "git://anongit.kde.org/"]
+  insteadOf=kde:
+
+[url "git@git.kde.org:"]
+  insteadOf=mykde:
+  pushInsteadOf=mykde:
+  pushInsteadOf=git://anongit.kde.org/
+
+[url "git@heroku.com:"]
+  insteadOf=heroku:
+  pushInsteadOf=heroku:
+  pushInsteadOf=git://heroku.com/
+
+[url "~/Development/Projects/"]
+  insteadOf=local:
+  pushInsteadOf=local:
+
+[color]
+  ui = always
+  branch = true
+  diff = true
+  pager = true
+  status = true
+
+[merge]
+  tool = kdiff3 
+  defaultToUpstream=true
+  log=900
+  stat=true
+  verbosity=3
+
+[grep]
+  linenumber=true
+
+[format]
+  signoff = true
+
+[diff]
+  tool = kdiff3
+  dirstat = files,10,cumulative
+
+[push]
+  default = upstream
+
+[status]
+  relativePaths=true
+
+[alias]
+  changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+  short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
+  changelog = log --pretty=format:\" * %s\"
+  shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+  d = diff                          # diff unstaged changes
+  dc = diff --cached                # diff staged changes
+  last = diff HEAD^                 # diff last committed change
+  unstage = reset HEAD              # remove files from index (tracking)
+  uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
+  filelog = log -u                  # show changes to a file
+  mt = mergetool                    # fire up the merge tool
+  ss = stash                        # stash changes
+  sl = stash list                   # list stashes
+  sa = stash apply                  # apply stash (restore changes)
+  sd = stash drop                   # drop stashes (destory changes)
+  l   = log -18 --color=always --all --topo-order --pretty='format:%Cgreen%h%Creset %s%Cred%d%Creset %C(black bold)(by %an)%Creset'
+  ll  = log     --color=always --all --topo-order --pretty='format:%Cgreen%h%Creset %s%Cred%d%Creset %C(black bold)(by %an)%Creset'
+  gl  = log -12 --color=always --all --graph --topo-order --pretty='format:%Cgreen%h%Creset %s %C(black bold)(by %an)%Creset%C(yellow bold)%d%Creset%n'
+  gll = log     --color=always --all --graph --topo-order --pretty='format:%Cgreen%h%Creset %s %C(black bold)(%cr by %an)%Creset%C(yellow bold)%d%Creset%n'
+  pull = pull --ff-only
+  up = merge --ff-only
+  join = merge --no-ff
+  ci = commit
+  cm = commit -m
+  currentbranch = rev-parse --abbrev-ref HEAD
+
+[init]
+  templatedir = ~/.git_template
