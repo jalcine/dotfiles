@@ -6,7 +6,7 @@
 [user]
   name       = "Jacky Alciné"
   email      = "me@jalcine.me"
-  signingkey = "E5995FD9"
+  signingkey = "201999FC"
 #
 [url "git@github.com:"]
   insteadOf=ghub:
