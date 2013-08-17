@@ -15,20 +15,19 @@
 [ -z "$PS1" ] && return
 # Print out files a bit cleaner when using 'less'.
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-# Make sure we're running wisely.
-export LANG=en_US.UTF-8
-
 # Give me a fortune if I'm not in tmux.
 [ -z $TMUX ] && fortune -e
 ###########################################################
 ## History 
 ###########################################################
 # Keep a relative short immediate history.
-HISTSIZE=8
+export HISTSIZE=8
 # Keep the core history file quite large.
-HISTFILESIZE=42949673
+export HISTFILESIZE=42949673
 # Ignore duplicates and whitespaces.
-HISTCONTROL=ignoredups:ignorespace
+export HISTCONTROL=ignoredups:ignorespace
+# Use UTF-8 encoding.
+export LANG=en_US.UTF-8
 
 ###########################################################
 ## Modules
