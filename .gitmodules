@@ -1,9 +1,9 @@
 [submodule "home/.bash/bash-it"]
 	path = home/.bash/bash-it
-	url = me:bash-it
-[submodule "home/.nvm"]
-	path = home/.nvm
-	url = ghub:creationix/nvm
+	url = git://github.com/jalcine/bash-it
 [submodule "home/.rbenv"]
 	path = home/.rbenv
-	url = me:rbenv
+	url = git://github.com/jalcine/rbenv
+[submodule "home/.nvm"]
+	path = home/.nvm
+	url = git@github.com:creationix/nvm
