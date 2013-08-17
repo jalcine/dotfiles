@@ -74,7 +74,7 @@
   dirstat = files,10,cumulative
 
 [push]
-  default = upstream
+	default = tracking
 
 [status]
   relativePaths=true
@@ -105,6 +105,13 @@
   ci = commit
   cm = commit -m
   currentbranch = rev-parse --abbrev-ref HEAD
+	wdiff = diff
 
 [init]
   templatedir = ~/.git_template
+[github]
+	user = jalcine
+[hooks]
+	global = /home/jacky/.githooks
+[i18n]
+	commitencoding = utf-8
