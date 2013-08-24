@@ -57,7 +57,7 @@
   status = true
 
 [merge]
-  tool = kdiff3 
+  tool = vimdiff
   defaultToUpstream=true
   log=900
   stat=true
@@ -70,7 +70,7 @@
   signoff = true
 
 [diff]
-  tool = kdiff3
+	tool = vimdiff
   dirstat = files,10,cumulative
 
 [push]

@@ -21,13 +21,15 @@
 ## History 
 ###########################################################
 # Keep a relative short immediate history.
-export HISTSIZE=8
+HISTSIZE=8
 # Keep the core history file quite large.
-export HISTFILESIZE=42949673
+HISTFILESIZE=42949673
 # Ignore duplicates and whitespaces.
-export HISTCONTROL=ignoredups:ignorespace
+HISTCONTROL=ignoredups:ignorespace
 # Use UTF-8 encoding.
-export LANG=en_US.UTF-8
+LANG=en_US.UTF-8
+# Export data
+export HISTSIZE HISTFILESIZE HISTCONTROL LANG
 
 ###########################################################
 ## Modules

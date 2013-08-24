@@ -1,0 +1,7 @@
+# Personal Astyle Options
+
+--style=k&r
+--brackets=attach
+indent-switches
+--indent=spaces=2
+--indent=tab=2
