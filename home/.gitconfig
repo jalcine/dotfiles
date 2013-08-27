@@ -39,6 +39,7 @@
   insteadOf=mykde:
   pushInsteadOf=mykde:
   pushInsteadOf=git://anongit.kde.org/
+	pushInsteadOf = kde:
 
 [url "git@heroku.com:"]
   insteadOf=heroku:
