@@ -39,7 +39,7 @@
   insteadOf=mykde:
   pushInsteadOf=mykde:
   pushInsteadOf=git://anongit.kde.org/
-	pushInsteadOf = kde:
+  pushInsteadOf = kde:
 
 [url "git@heroku.com:"]
   insteadOf=heroku:
@@ -71,11 +71,11 @@
   signoff = true
 
 [diff]
-	tool = vimdiff
+  tool = vimdiff
   dirstat = files,10,cumulative
 
 [push]
-	default = tracking
+  default = tracking
 
 [status]
   relativePaths=true
@@ -107,13 +107,13 @@
   ci = commit
   cm = commit -m
   currentbranch = rev-parse --abbrev-ref HEAD
-	wdiff = diff
+  wdiff = diff
 
 [init]
   templatedir = ~/.git_template
 [github]
-	user = jalcine
+  user = jalcine
 [hooks]
-	global = /home/jacky/.githooks
+  global = /home/jacky/.githooks
 [i18n]
-	commitencoding = utf-8
+  commitencoding = utf-8
