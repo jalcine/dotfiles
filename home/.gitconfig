@@ -71,8 +71,11 @@
   signoff = true
 
 [diff]
-  tool = vimdiff
+  tool = myvimdiff
   dirstat = files,10,cumulative
+
+[difftool "myvimdiff"]
+  cmd = vimdiff \"$REMOTE\" \"$LOCAL\"
 
 [push]
   default = tracking
