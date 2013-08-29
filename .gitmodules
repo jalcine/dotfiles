@@ -1,1 +1,7 @@
 
+[submodule "home/.bash/bash-it"]
+	path = home/.bash/bash-it
+	url = git@github.com:jalcine/bash-it
+[submodule "home/.rbenv"]
+	path = home/.rbenv
+	url = git@github.com:jalcine/rbenv
