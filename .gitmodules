@@ -1,4 +1,3 @@
-
 [submodule "home/.bash/bash-it"]
 	path = home/.bash/bash-it
 	url = git@github.com:jalcine/bash-it
