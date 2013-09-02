@@ -1,6 +1,16 @@
+# Learn about this file via `man readline`. The more you know!
+
 # Use up and down to navigate through history, whilst in words.
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 
 set show-all-if-ambiguous on
 set completion-ignore-case on
+set completion-map-case on
+set editing-mode vi
+set mark-directories on
+set mark-modified-lines on
+set mark-symlinked-directories on
+set visible-stats on
+set bell-style none
+set bell-style visible
