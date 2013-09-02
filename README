@@ -1,20 +1,17 @@
 # dotfiles, yo!
 
-Being a developer that works across multiple systems like Linux machines or Macbooks,
-having a place to run back to and call home is always useful. This is why I use 
-[Josh Nichols's awesome tool](https://github.com/technicalpickles/homesick) for copying and sharing 
-your local configuration scripts and what not. It makes it easy to share the changes I have
-for my laptop, my servers (and other machines I plan to grab). It also makes work so much
-easier when working on out-sourced machines as well.
+Being a developer that works across multiple systems like Linux machines or
+Macbooks, having a place to run back to and call ~ is always useful. In order
+to maximize efficiency, my local configuration files have been split up (I have
+one for [Vim](https://github.com/jalcine/vimrc), too) and made easy to install
+with [homeshick](https://github.com/andsens/homeshick).
 
 ## Contents
-
 This repositories uses sub-modules and depends on the following repositories:
 
- * [jalcine/bash-it](https://github.com/jalcine/bash-it) - My fork and changes to the kickass
-   [bash-it project](https://github.com/revans/bash-it).
+ * [jalcine/bash-it](https://github.com/jalcine/bash-it) - My fork and changes
+  to the kickass [bash-it](https://github.com/revans/bash-it) project.
 
- * [creationix/nvm](https://github.com/creationix/nvm) - A Node version management tool.
-
- * [jalcine/rbenv](https://github.com/jalcine/rbenv) - Patches to sstephenson's awesome ruby version management tool,
-   [rbenv](https://github.com/sstephenson/rbenv).
+ * [jalcine/rbenv](https://github.com/jalcine/rbenv) - Patches to
+  [sstephenson](https://github.com/sstephenson]'s awesome ruby version
+  management tool [rbenv](https://github.com/sstephenson/rbenv).
