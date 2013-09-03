@@ -27,11 +27,11 @@ HISTFILESIZE=42949673
 # Ignore duplicates and whitespaces.
 HISTCONTROL=ignoredups:ignorespace
 # Use UTF-8 encoding.
-LANG=en_US.UTF-8
+LC_ALL=en_US.UTF-8
 # Update time zone.
 TZ="America/New_York"
 # Export data.
-export HISTSIZE HISTFILESIZE HISTCONTROL LANG TZ
+export HISTSIZE HISTFILESIZE HISTCONTROL LC_ALL TZ
 
 ###########################################################
 ## Modules

@@ -26,20 +26,15 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-function test_file {
-  file="${1}"
-  astyle --options=./.astylerc ${1}
-}
-
 case "${1}" in
-    --about )
-        cat << EOF
+  --about )
+      cat << EOF
 Formats files with the `astyle` formatting tool.
 EOF
-        ;;
-    * )
-        for file in `git diff-index --cached --name-only HEAD` ; do
-            format "${file}"
-        done
-        ;;
+  ;;
+  * )
+    for file in `git diff-index --cached --name-only HEAD` ; do
+      astyle --options=./.astylerc ${file}
+    done
+  ;;
 esac

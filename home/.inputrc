@@ -7,10 +7,8 @@
 set show-all-if-ambiguous on
 set completion-ignore-case on
 set completion-map-case on
-set editing-mode vi
 set mark-directories on
 set mark-modified-lines on
 set mark-symlinked-directories on
 set visible-stats on
-set bell-style none
 set bell-style visible
