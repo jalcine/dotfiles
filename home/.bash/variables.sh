@@ -1,17 +1,11 @@
 #!/usr/bin/env bash
 # Some environment variables I'd use a lot.
 
-# Enable the use of ccache.
-export USE_CCACHE=1
-
 # Make vim our default console editor.
 export EDITOR=vim
 
 # We want to see as much as possible, not less.
 export PAGER=most
-
-# Since I <3 KDE, we'd use KDE to manage my keychain.
-[ -d "$HOME/.kde" ] && export SSH_ASKPASS=ksshaskpass
 
 # Include my local path into the CMake module discovery.
 export CMAKE_PREFIX_PATH="$HOME/.local:$CMAKE_PREFIX_PATH"
@@ -25,10 +19,14 @@ export CMAKE_MODULE_PATH="$HOME/.local/share/apps/cmake/Modules:$HOME/.local/sha
 # Default the build type to be debugged.
 export CMAKE_BUILD_TYPE="Debug"
 
+# Include the use of local libraries.
 export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
 
-# When searching for awesome KDE stuff, include my built versions.
-[ -d "$HOME/.kde" ] && export KDEDIRS="$HOME/.local:$KDEDIRS";
+# Since I <3 KDE, we'd use KDE to manage my keychain.
+if [ -d "$HOME/.kde" ]; 
+  export SSH_ASKPASS=ksshaskpass
+  export KDEDIRS="$HOME/.local:$KDEDIRS"
+fi
 
 # When using `pkgconfig`, include my built versions.
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$HOME/.local/lib/pkgconfig"
