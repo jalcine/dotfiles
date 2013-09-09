@@ -4,11 +4,23 @@
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 
-set show-all-if-ambiguous on
+# If I don't know, I don't know.
+set show-all-if-ambiguous off
+
+# Quit fussing about the big guys.
 set completion-ignore-case on
-set completion-map-case on
+
+# Lemme know who's a folder.
 set mark-directories on
+
+# Show me who's been changing up on me.
 set mark-modified-lines on
+
+# Show me the posers.
 set mark-symlinked-directories on
+
+# Provide some quick info.
 set visible-stats on
+
+# Lemme know what's going on when it happens.
 set bell-style visible
