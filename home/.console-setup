@@ -1,5 +1,5 @@
 VERBOSE_OUTPUT="yes"
-ACTIVE_CONSOLES="/dev/tty[1-6]"
+ACTIVE_CONSOLES="/dev/tty[1-4]"
 CHARMAP="UTF-8"
 CODESET="Uni2"
 FONTFACE="Terminus"
