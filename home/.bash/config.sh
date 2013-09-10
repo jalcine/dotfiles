@@ -9,7 +9,7 @@
 ###########################################################
 
 ###########################################################
-## Miscelleaneous
+## Miscellaneous
 ###########################################################
 # If not running interactively, don't do anything.
 [ -z "$PS1" ] && return
@@ -24,7 +24,7 @@
 HISTSIZE=8
 # Keep the core history file quite large.
 HISTFILESIZE=42949673
-# Ignore duplicates and whitespaces.
+# Ignore duplicates and whitespace.
 HISTCONTROL=ignoredups:ignorespace
 # Use UTF-8 encoding.
 LC_ALL=en_US.UTF-8
