@@ -1,7 +1,7 @@
 # dotfiles, yo!
 
 Being a developer that works across multiple systems like Linux machines or
-Macbooks, having a place to run back to and call ~ is always useful. In order
+Mac books, having a place to run back to and call ~ is always useful. In order
 to maximize efficiency, my local configuration files have been split up (I have
 one for [Vim](https://github.com/jalcine/vimrc), too) and made easy to install
 with [homeshick](https://github.com/andsens/homeshick).
