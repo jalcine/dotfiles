@@ -28,10 +28,12 @@ HISTFILESIZE=42949673
 HISTCONTROL=ignoredups:ignorespace
 # Use UTF-8 encoding.
 LC_ALL=en_US.UTF-8
+# Speak English (I have French installed as well).
+LANGUAGE=en_US.UTF-8
 # Update time zone.
 TZ="America/New_York"
 # Export data.
-export HISTSIZE HISTFILESIZE HISTCONTROL LC_ALL TZ
+export HISTSIZE HISTFILESIZE HISTCONTROL LC_ALL TZ LANGUAGE
 
 ###########################################################
 ## Modules
