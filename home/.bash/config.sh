@@ -13,8 +13,6 @@
 ###########################################################
 # If not running interactively, don't do anything.
 [ -z "$PS1" ] && return
-# Print out files a bit cleaner when using 'less'.
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 # Give me a fortune if I'm not in tmux.
 [ -z $TMUX ] && fortune -e
 ###########################################################
