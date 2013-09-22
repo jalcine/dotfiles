@@ -1,17 +1,24 @@
-# dotfiles, yo!
+# Miscelleanous User Configuration Files
 
-Being a developer that works across multiple systems like Linux machines or
-Mac books, having a place to run back to and call ~ is always useful. In order
-to maximize efficiency, my local configuration files have been split up (I have
-one for [Vim](https://github.com/jalcine/vimrc), too) and made easy to install
-with [homeshick](https://github.com/andsens/homeshick).
+This repository is a [homeshick][2]-powered module that holds my miscelleanous
+configuration files for an operating system. It holds options for:
 
-## Contents
-This repositories uses sub-modules and depends on the following repositories:
++ **Ruby tools** like `irb`, `awesome_print`, `gem`.
++ [**`rbenv`**][2] with packaged plug-ins.
++ **`gdb`** plug-ins for Qt pretty-printing.
++ **`tmux`** status line options and configuration tweaks.
++ specific font options (anti-aliasing and hinting)
++ options for `libreadline`, `ctags`, `console-setup` and `astyle`.
 
- * [jalcine/bash-it](https://github.com/jalcine/bash-it) - My fork and changes
-  to the kickass [bash-it](https://github.com/revans/bash-it) project.
+[**`bash-it`**][3] adds in some more magic like:
 
- * [jalcine/rbenv](https://github.com/jalcine/rbenv) - Patches to
-  [sstephenson](https://github.com/sstephenson]'s awesome ruby version
-  management tool [rbenv](https://github.com/sstephenson/rbenv).
++ quick configuration optionsfor 
+ + Android development
+ + CPAN usage
+ + aliasing quick HTTP server (a lá `SimpleHTTPServer`)
+ + quick file-type extraction (zip, gz, tar) via `extract`
+ + nifty use of `fasd` for quick directory jumping
+
+[1]: https://github.com/andsens/homeshick
+[2]: https://github.com/jalcine/rbenv
+[3]: https://github.com/jalcine/bash-it
