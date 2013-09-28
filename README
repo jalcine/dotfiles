@@ -19,6 +19,9 @@ configuration files for an operating system. It holds options for:
  + quick file-type extraction (zip, gz, tar) via `extract`
  + nifty use of `fasd` for quick directory jumping
 
+I use quite of a bit of Private Use characters as well as dingbats (though I'm
+trying to be 100% dingbats for more font support).
+
 [1]: https://github.com/andsens/homeshick
 [2]: https://github.com/jalcine/rbenv
 [3]: https://github.com/jalcine/bash-it
