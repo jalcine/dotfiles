@@ -6,7 +6,10 @@ flags = [
 '-Wextra',
 '-Werror',
 '-DUSE_CLANG_COMPLETER',
-'-std=c++11'
+'-std=c++11',
+'-I/usr/include',
+'-I/home/jacy/.local/include',
+'-I/usr/local/include'
 ]
 
 compilation_database_folder = ''
