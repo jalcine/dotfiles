@@ -111,6 +111,7 @@
   cm = commit -m
   currentbranch = rev-parse --abbrev-ref HEAD
   wdiff = diff
+	undo-commit = reset --soft HEAD^
 
 [init]
   templatedir = ~/.git_template

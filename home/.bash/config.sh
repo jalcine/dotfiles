@@ -39,7 +39,7 @@ export HISTSIZE HISTFILESIZE HISTCONTROL LC_ALL TZ LANGUAGE
 # Load the system's completions.
 . $HOME/.bash/shopt.sh
 . $HOME/.bash/variables.sh
-. $HOME/.bash/path.sh
+. $HOME/.bash/$HOSTNAME-sh
 . $HOME/.bash/bash-it.sh
 
 # On KDE, attempt to add the SSH keys by default.
