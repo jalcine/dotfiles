@@ -113,8 +113,9 @@
   wdiff = diff
 	undo-commit = reset --soft HEAD^
 
-[init]
-  templatedir = ~/.git_template
+#[init]
+# templatedir = ~/.git_template
+
 [github]
   user = jalcine
 [hooks]
