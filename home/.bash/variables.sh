@@ -24,7 +24,7 @@ export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
 
 # Since I <3 KDE, we'd use KDE to manage my keychain.
 if [ -d "$HOME/.kde" ]; then
-  export SSH_ASKPASS=ksshaskpass
+  export SSH_ASKPASS=kwalletaskpass
   export KDEDIRS="$HOME/.kde:$HOME/.local:$KDEDIRS"
 fi
 

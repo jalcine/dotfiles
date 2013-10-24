@@ -9,11 +9,19 @@
   signingkey = "201999FC"
 #
 [url "git@github.com:"]
+  insteadOf=gh:
   insteadOf=ghub:
+  insteadOf=github:
   insteadOf=https://github.com/
   insteadOf=http://github.com/
+  pushInsteadOf=gh:
   pushInsteadOf=ghub:
+  pushInsteadOf=github:
   pushInsteadOf=https://github.com/
+
+[url "git@bitbucket.org:"]
+  insteadOf=bbt:
+  pushInsteadOf=bbt:
 
 [url "git@github.com:jalcine/"]
   insteadOf=me:
@@ -22,24 +30,22 @@
   pushInsteadOf=me:
   pushInsteadOf=https://github.com/jalcine/
 
-[url "git.thesii.org:thesii/"]
-  insteadOf=sii:
-  pushInsteadOf=sii:
-  pushInsteadOf=https://github.com/thesii/
+[url "git@gitorious.org:"]
+  insteadOf=gitorious:
+  pushInsteadOf=gitorious:
 
 [url "jalcine.me:~/Development/Repositories/"]
-  insteadOf=mygit:
-  pushInsteadOf=mygit:
+  insteadOf=zordon:
+  pushInsteadOf=zordon:
   pushInsteadOf=git://git.jalcine.me/
 
 [url "git://anongit.kde.org/"]
   insteadOf=kde:
 
 [url "git@git.kde.org:"]
-  insteadOf=mykde:
-  pushInsteadOf=mykde:
+  insteadOf=kde:
+  pushInsteadOf=kde:
   pushInsteadOf=git://anongit.kde.org/
-  pushInsteadOf = kde:
 
 [url "git@heroku.com:"]
   insteadOf=heroku:

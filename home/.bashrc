@@ -1,2 +1,2 @@
-#!/usr/bin/env /bin/bash
+#!/usr/bin/env bash
 source ~/.bash_profile

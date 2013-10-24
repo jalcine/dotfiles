@@ -14,7 +14,7 @@
 # If not running interactively, don't do anything.
 [ -z "$PS1" ] && return
 # Give me a fortune if I'm not in tmux.
-[ -z $TMUX ] && fortune -e
+[ -z $TMUX ] && [ -e /usr/bin/fortune ] && fortune -e
 ###########################################################
 ## History 
 ###########################################################
@@ -39,11 +39,7 @@ export HISTSIZE HISTFILESIZE HISTCONTROL LC_ALL TZ LANGUAGE
 # Load the system's completions.
 . $HOME/.bash/shopt.sh
 . $HOME/.bash/variables.sh
-. $HOME/.bash/$HOSTNAME-sh
 . $HOME/.bash/bash-it.sh
-
-# On KDE, attempt to add the SSH keys by default.
-[[ -d "$HOME/.kde" ]] && $HOME/.kde/Autostart/AddSshKeys.sh
 
 # Print out our bad guy.
 export PS1
