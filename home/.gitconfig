@@ -84,7 +84,7 @@
   cmd = vimdiff \"$REMOTE\" \"$LOCAL\"
 
 [push]
-  default = tracking
+	default = simple
 
 [status]
   relativePaths=true
@@ -128,3 +128,7 @@
   global = /home/jacky/.githooks
 [i18n]
   commitencoding = utf-8
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 700x550+331+112
+	main-window-view = FileView

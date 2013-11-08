@@ -13,7 +13,7 @@ export IRC_CLIENT='weechat-curses'
 export VCPROMPT_EXECUTABLE=$HOME/.local/bin/vcprompt
 
 export KEYCHAIN_SSH_KEYS="$HOME/.ssh/keys/primary.rsa"
-export KEYCHAIN_GPG_KEYS="6E767393"
+export KEYCHAIN_GPG_KEYS="A1A5A0EBB69F23AE67B6F9142A234ABC6E767393"
 
 # Load Bash It
 . $BASH_IT/bash_it.sh
