@@ -2,6 +2,7 @@
   whitespace=space-before-tab,trailing-space,tabwidth=2
   editor=vim
   pager=most
+	excludesfile = ~/.gitignore_global
 
 [user]
   name       = "Jacky Alciné"
