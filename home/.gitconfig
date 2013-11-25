@@ -130,6 +130,8 @@
 [i18n]
   commitencoding = utf-8
 [giggle]
-	main-window-maximized = false
+	main-window-maximized = true
 	main-window-geometry = 700x550+331+112
 	main-window-view = FileView
+	file-view-vpane-position = 478
+	history-view-vpane-position = 497
