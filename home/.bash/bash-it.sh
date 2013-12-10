@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export BASH_IT="$HOME/.bash/bash-it"
-export BASH_IT_THEME='sexy'
+export BASH_IT_THEME='minimal'
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
@@ -9,9 +9,10 @@ unset MAILCHECK
 # Change this to your console based IRC client of choice.
 export IRC_CLIENT='weechat-curses'
 
-# Define the VC prompt.
+# Tell bash-it where I've stored `vcprompt`.
 export VCPROMPT_EXECUTABLE=$HOME/.local/bin/vcprompt
 
+# Keys to use in the shell.
 export KEYCHAIN_SSH_KEYS="$HOME/.ssh/keys/primary.rsa"
 export KEYCHAIN_GPG_KEYS="6E767393"
 

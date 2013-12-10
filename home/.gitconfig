@@ -85,7 +85,7 @@
   cmd = vimdiff \"$REMOTE\" \"$LOCAL\"
 
 [push]
-	default = simple
+	default = tracking
 
 [status]
   relativePaths=true
