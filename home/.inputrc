@@ -16,7 +16,7 @@ set completion-ignore-case on
 set mark-directories on
 
 # Show me who's been changing up on me.
-set mark-modified-lines on
+set mark-modified-lines off
 
 # Show me the posers.
 set mark-symlinked-directories on
