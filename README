@@ -1,6 +1,6 @@
 # Miscelleanous User Configuration Files
 
-This repository is a [homeshick][2]-powered module that holds my miscelleanous
+This repository is a [homeshick][1]-powered module that holds my miscelleanous
 configuration files for an operating system. It holds options for:
 
 + **Ruby tools** like `irb`, `awesome_print`, `gem`.
@@ -12,16 +12,32 @@ configuration files for an operating system. It holds options for:
 
 [**`bash-it`**][3] adds in some more magic like:
 
-+ quick configuration optionsfor 
++ quick configuration options for 
  + Android development
  + CPAN usage
  + aliasing quick HTTP server (a lá `SimpleHTTPServer`)
  + quick file-type extraction (zip, gz, tar) via `extract`
  + nifty use of `fasd` for quick directory jumping
+ + using `ctags` and `css`: https://gist.github.com/philix/2657477
+ + [`vcprompt`][5] shipped.
 
 I use quite of a bit of Private Use characters as well as dingbats (though I'm
 trying to be 100% dingbats for more font support).
 
+## Quick Install
+In order to properly install these files, you'd need [homeshick][1] sitting on
+your computer. You can do that by invoking the [de-facto installation steps][4].
+You'd then add my dotfiles as a castle by doing the following:
+
+```
+$ homeshick clone git://github.com/jalcine/dotfiles
+$ homeshick link dotfiles
+```
+
+And **wham**! You got my system up and running.
+
 [1]: https://github.com/andsens/homeshick
 [2]: https://github.com/jalcine/rbenv
 [3]: https://github.com/jalcine/bash-it
+[4]: https://github.com/andsens/homeshick/wiki/Installation
+[5]: http://hg.gerg.ca/vcprompt/
