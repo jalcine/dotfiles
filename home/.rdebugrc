@@ -1,0 +1,3 @@
+# vim: set ft=ruby
+require 'debugger/completion'
+Debugger::Completion.start
