@@ -1,18 +1,11 @@
 # Source: https://github.com/ryanb/dotfiles/blob/a4b3153345759e55b324986b485b0b1e8ae3cf30/irbrc
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 require 'irb/completion'
 require 'irb/ext/save-history'
 
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 IRB.conf[:PROMPT_MODE] = :SIMPLE
-
-%w[rubygems looksee/shortcuts wirble].each do |gem|
-  begin
-    require gem
-  rescue LoadError
-  end
-end
 
 class Object
   # list methods which aren't in superclass
@@ -34,4 +27,18 @@ class Object
     end
     system 'ri', method.to_s
   end
+end
+
+begin
+  require 'pry'
+rescue LoadError
+  puts "WARN: couldn't load pry. `gem install pry`"
+else
+  begin
+    require 'pry-debugger'
+  rescue LoadError
+    puts "WARN: couldn't load pry-debugger. `gem install pry-debugger`"
+  end
+  Pry.start
+  exit
 end
