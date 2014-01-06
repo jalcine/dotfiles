@@ -1,1 +1,1 @@
-# vim: set ft=ruby
+# vim: set ft = ruby
