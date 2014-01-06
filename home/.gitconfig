@@ -1,8 +1,9 @@
 [core]
-  whitespace=space-before-tab,trailing-space,tabwidth=2
+	whitespace = -trailing-space,-indent-with-non-tab,-tab-in-indent
   editor=vim
   pager=most
 	excludesfile = ~/.gitignore_global
+	attributesfile = /home/jacky/.gitattributes
 
 [user]
   name       = "Jacky Alciné"

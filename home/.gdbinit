@@ -65,3 +65,5 @@ document frame
 Syntax: frame
 | Print stack frame.
 end
+
+source /home/jacky/.vim/bundle/minimal_gdb/dbg_data/min_settings.gdb
