@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+# vim: set ft=ruby
+vim_param = ARGV[0]
+vim_path = vim_param.match("%2F.*&").to_s
+vim_path = vim_path [0...-1]
+vim_path_slashed = vim_path.gsub("%2F","/")
+vim_line = vim_param.match("&line=.*").to_s
+vim_line = vim_line [6..vim_line.length]
+vim_params = Array.new
+vim_params << "--remote-tab-silent"
+vim_params << " --servername VIM"
+vim_params << " +#{vim_line}" if vim_line
+vim_params << " #{vim_path_slashed}"
