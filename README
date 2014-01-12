@@ -20,8 +20,8 @@ configuration files for an operating system. It holds options for:
  + aliasing quick HTTP server (a lá `SimpleHTTPServer`)
  + quick file-type extraction (zip, gz, tar) via `extract`
  + nifty use of `fasd` for quick directory jumping
- + using `ctags` and `css`: https://gist.github.com/philix/2657477
- + [`vcprompt`][5] shipped.
+ + [using `ctags` and CSS](https://gist.github.com/philix/2657477)
+ + [`vcprompt` shipped][5].
 
 I use quite of a bit of Private Use characters as well as dingbats (though I'm
 trying to be 100% dingbats for more font support).
