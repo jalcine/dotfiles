@@ -8,8 +8,9 @@ flags = [
 '-DUSE_CLANG_COMPLETER',
 '-std=c++11',
 '-I/usr/include',
-'-I/home/jacy/.local/include',
+'-I/usr/src',
 '-I/usr/local/include'
+'-I/home/jacky/.local/include',
 ]
 
 compilation_database_folder = ''
