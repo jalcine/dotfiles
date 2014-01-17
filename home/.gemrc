@@ -5,3 +5,4 @@ gem: --document rdoc,ri
 :backtrace: true
 :bulk_threshold: 1000
 :benchmark: false
+gem: --no-document
