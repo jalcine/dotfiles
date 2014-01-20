@@ -7,6 +7,7 @@ configuration files for an operating system. It holds options for:
 
 + **Ruby tools** like `irb`, `awesome_print`, `gem`.
 + [**`rbenv`**][2] with packaged plug-ins.
++ [**`phpenv`**][6] and [**`php-build`**][7]
 + **`gdb`** plug-ins for Qt pretty-printing.
 + **`tmux`** status line options and configuration tweaks.
 + specific font options (anti-aliasing and hinting)
@@ -43,3 +44,5 @@ And **wham**! You got my system up and running.
 [3]: https://github.com/jalcine/bash-it
 [4]: https://github.com/andsens/homeshick/wiki/Installation
 [5]: http://hg.gerg.ca/vcprompt/
+[6]: https://github.com/chh/phpenv
+[7]: https://github.com/chh/phpenv
