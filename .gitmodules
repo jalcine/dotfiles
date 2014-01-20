@@ -4,3 +4,9 @@
 [submodule "home/.rbenv"]
 	path = home/.rbenv
 	url = git@github.com:jalcine/rbenv
+[submodule "home/.phpenv"]
+	path = home/.phpenv
+	url = me:phpenv
+[submodule "home/.php-build"]
+	path = home/.php-build
+	url = me:php-build
