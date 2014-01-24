@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export BASH_IT="$HOME/.bash/bash-it"
-export BASH_IT_THEME='jalcine'
+export BASH_IT_THEME='minimal'
 
 # Don't check mail when opening terminal.
 unset MAILCHECK

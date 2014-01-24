@@ -4,3 +4,6 @@
 [submodule "home/.rbenv"]
 	path = home/.rbenv
 	url = git@github.com:jalcine/rbenv
+[submodule "home/.local/share/php-version"]
+	path = home/.local/share/php-version
+	url = ghub:wilmoore/php-version
