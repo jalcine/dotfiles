@@ -2,23 +2,40 @@
 --exclude=.git
 --exclude=vendor
 --exclude=bundle
---tag-relative=yes
+--c++-kinds=+p
+--fields=+iaS
+--extra=+qf
 --totals=yes
+--tag-relative=yes
+
 --langdef=css
 --langdef=markdown
+--langdef=scss
+--langdef=sass
+--langdef=php
+
 --langmap=markdown:.mkd
+--langmap=markdown:.markdown
 --langmap=markdown:.md
 --langmap=css:.css
+--langmap=scss:.scss
 --langmap=php:.php
 --langmap=php:.phtml
---php-kinds=+cf-v
+--langmap=sass:.scss
+
 --regex-markdown=/^#[ \t]+(.*)/\1/h,Heading_L1/
 --regex-markdown=/^##[ \t]+(.*)/\1/i,Heading_L2/
 --regex-markdown=/^###[ \t]+(.*)/\1/k,Heading_L3/
+
 --regex-css=/^[ \t]*\.([A-Za-z0-9_-]+)/#\1/c,class,classes/
 --regex-css=/^[ \t]*#([A-Za-z0-9_-]+)/.\1/i,id,ids/
 --regex-css=/^[ \t]*(([A-Za-z0-9_-]+[ \t\n,]+)+)\{/\1/t,tag,tags/
 --regex-css=/^[ \t]*@media\s+([A-Za-z0-9_-]+)/\1/m,media,medias/
+--regex-css=/^[ \t]*([^\t {][^{]{1,100})(\t| )*{/\1/d,definition/
+--regex-scss=/^[ \t]*([^\t {][^{]{1,100})(\t| )*{/| \1/d,definition/
+--regex-sass=/@mixin[ ]*([^ ({]+)/\1/m,mixin/
+
+--php-kinds=+cf-v
 --regex-php=/abstract class ([^ ]*)/\1/c/
 --regex-php=/interface ([^ ]*)/\1/c/
 --regex-php=/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i
