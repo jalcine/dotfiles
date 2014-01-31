@@ -1,7 +1,6 @@
 set confirm off
 set verbose off
 set trace-commands on
-set auto-load on
 set auto-load python-scripts on
 set height 0
 set width 0

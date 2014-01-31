@@ -12,7 +12,6 @@
 --langdef=markdown
 --langdef=scss
 --langdef=sass
---langdef=php
 
 --langmap=markdown:.mkd
 --langmap=markdown:.markdown
@@ -31,9 +30,6 @@
 --regex-css=/^[ \t]*#([A-Za-z0-9_-]+)/.\1/i,id,ids/
 --regex-css=/^[ \t]*(([A-Za-z0-9_-]+[ \t\n,]+)+)\{/\1/t,tag,tags/
 --regex-css=/^[ \t]*@media\s+([A-Za-z0-9_-]+)/\1/m,media,medias/
---regex-css=/^[ \t]*([^\t {][^{]{1,100})(\t| )*{/\1/d,definition/
---regex-scss=/^[ \t]*([^\t {][^{]{1,100})(\t| )*{/| \1/d,definition/
---regex-sass=/@mixin[ ]*([^ ({]+)/\1/m,mixin/
 
 --php-kinds=+cf-v
 --regex-php=/abstract class ([^ ]*)/\1/c/
