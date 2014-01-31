@@ -21,7 +21,7 @@ configuration files for an operating system. It holds options for:
  + aliasing quick HTTP server (a lá `SimpleHTTPServer`)
  + quick file-type extraction (zip, gz, tar) via `extract`
  + nifty use of `fasd` for quick directory jumping
- + [using `ctags` and CSS](https://gist.github.com/philix/2657477)
+ + [using `ctags` and CSS][8]
  + [`vcprompt` shipped][5].
 
 I use quite of a bit of Private Use characters as well as dingbats (though I'm
@@ -45,4 +45,5 @@ And **wham**! You got my system up and running.
 [4]: https://github.com/andsens/homeshick/wiki/Installation
 [5]: http://hg.gerg.ca/vcprompt/
 [6]: https://github.com/chh/phpenv
-[7]: https://github.com/chh/phpenv
+[7]: https://github.com/chh/php-build
+[8]: https://gist.github.com/philix/2657477
