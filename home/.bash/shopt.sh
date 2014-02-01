@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 ###########################################################
 ###########################################################
 ## Shell Options
@@ -22,3 +21,6 @@ shopt -s histreedit
 
 # Let everyone know we're leaving.
 shopt -s huponexit
+
+# Show yourself.
+shopt -s expand_aliases

@@ -5,7 +5,7 @@ require 'irb/ext/save-history'
 
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
-IRB.conf[:PROMPT_MODE] = :SIMPLE
+IRB.conf[:PROMPT_MODE]  = :SIMPLE
 
 class Object
   # list methods which aren't in superclass
@@ -29,6 +29,7 @@ class Object
   end
 end
 
+# Never stick with irb; graduate to pry.
 begin
   require 'pry'
 rescue LoadError

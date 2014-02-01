@@ -7,7 +7,7 @@
 "\t": menu-complete
 
 # If I don't know, I don't know.
-set show-all-if-ambiguous off
+set show-all-if-ambiguous on
 
 # Quit fussing about the big guys.
 set completion-ignore-case on

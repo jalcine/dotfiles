@@ -1,8 +1,8 @@
-# vim: set ft=ruby
+# vim: set format=ruby
 AwesomePrint.defaults = {
-	:indent => -2,
-	:color => {
-		:hash  => :pale,
-		:class => :white
-	}
+  :indent => 2,
+  :color => {
+    :hash  => :pale,
+    :class => :white
+  }
 }
