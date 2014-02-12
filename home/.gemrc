@@ -1,9 +1,8 @@
 # vim: set ft=yaml
 --- 
-:verbose: true
 gem: --document rdoc,ri
+:verbose: true
 :update_sources: true
 :backtrace: true
 :bulk_threshold: 1000
 :benchmark: false
-gem: --no-document
