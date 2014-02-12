@@ -1,2 +1,2 @@
-#!/usr/bin/env bash
+#!/bin/sh
 source ~/.bash/config.sh

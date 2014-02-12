@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 ###########################################################
 ## ~/.bashrc: executed by bash(1) for non-login shells.
 ##
@@ -8,14 +8,11 @@
 ## Jacky Alcine's root personal Bash configuration.
 ###########################################################
 
-# First, first that mapping.
+# First that mapping.
 [ -e xmodmap ] && xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 # If not running interactively, don't do anything.
 [ -z "$PS1" ] && return
-
-# Give me a fortune if I'm not in tmux.
-[ -z $TMUX ] && [ -e /usr/bin/fortune ] && fortune -e
 
 # Keep a relative short immediate history.
 HISTSIZE=8
@@ -44,3 +41,6 @@ export HISTSIZE HISTFILESIZE HISTCONTROL LC_ALL TZ LANGUAGE
 
 # Print out our bad guy.
 export PS1
+
+# Give me a fortune if I'm not in tmux.
+[ -z $TMUX ] && [ -e /usr/bin/fortune ] && fortune -e
