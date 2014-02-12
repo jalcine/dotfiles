@@ -8,7 +8,7 @@
 [user]
   name       = "Jacky Alciné"
   email      = "me@jalcine.me"
-  signingkey = "201999FC"
+  signingkey = "6E767393"
 #
 [url "git@github.com:"]
   insteadOf=gh:
