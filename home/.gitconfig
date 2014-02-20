@@ -3,7 +3,7 @@
   editor=vim
   pager=most
   excludesfile = ~/.gitignore_global
-  attributesfile = /home/jacky/.gitattributes
+  attributesfile = ~/.gitattributes
 
 [user]
   name       = "Jacky Alciné"
@@ -36,14 +36,6 @@
   insteadOf=gitorious:
   pushInsteadOf=gitorious:
 
-[url "jalcine.me:~/Development/Repositories/"]
-  insteadOf=zordon:
-  pushInsteadOf=zordon:
-  pushInsteadOf=git://git.jalcine.me/
-
-[url "git://anongit.kde.org/"]
-  insteadOf=kde:
-
 [url "git@git.kde.org:"]
   insteadOf=kde:
   pushInsteadOf=kde:
@@ -56,6 +48,8 @@
 
 [url "~/Development/Projects/"]
   insteadOf=local:
+  insteadOf=lcl:
+  pushInsteadOf=lcl:
   pushInsteadOf=local:
 
 [color]
@@ -66,7 +60,7 @@
   status = true
 
 [merge]
-  tool = myvimdiff
+  tool = vimdiff
   defaultToUpstream=true
   log=900
   stat=true
@@ -126,7 +120,9 @@
 
 [github]
   user = jalcine
+
 [hooks]
-  global = /home/jacky/.githooks
+  global = $HOME/.githooks
+
 [i18n]
   commitencoding = utf-8
