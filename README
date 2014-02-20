@@ -1,49 +1,36 @@
-# Miscelleanous User Configuration Files
+# My `$HOME` Files
 
-![Screenshots or it didn't happen.](https://github.com/jalcine/dotfiles/blob/master/screenshot.gif?raw=true)
+![Snapshot in Yakuake](./snapshot.png)
 
-This repository is a [homeshick][1]-powered module that holds my miscelleanous
-configuration files for an operating system. It holds options for:
+Here lies my local shell files that typically lie under my `$HOME` directory.
+I really only work on Linux machines, specifically Ubuntu and Debian machines
+so your mileage *will* vary. This is designed to be installed using 
+[homeshick][]. This repository incorporates the following:
 
-+ **Ruby tools** like `irb`, `awesome_print`, `gem`.
-+ [**`rbenv`**][2] with packaged plug-ins.
-+ [**`phpenv`**][6] and [**`php-build`**][7]
-+ **`gdb`** plug-ins for Qt pretty-printing.
-+ **`tmux`** status line options and configuration tweaks.
-+ specific font options (anti-aliasing and hinting)
-+ options for `libreadline`, `ctags`, `console-setup` and `astyle`.
+ + **configuration options** for `awesome_print`, `astyle`, `gem`, `git`,
+   `guard`, `gdb`, `libreadline`, `irb`, `pry`, `ruby-debug`, `tmux`,
+   `weechat`, `rainbarf` and a few others. There's a fairly extensive 
+   collection of patched fonts I use as well as some freely available fonts.
 
-[**`bash-it`**][3] adds in some more magic like:
+ + **plug-ins**: a forked [`rbenv`][rbenv] with `rbenv-communal-gems`,
+   `rbenv-ctags`, `rbenv-default-gems`, `rbenv-each`, `rbenv-gem-rehash`,
+   `rbenv-vars`, `rbenv-whatis` and `ruby-build`; `git-hooks`;
+   [`bash-it`][bashit]
 
-+ quick configuration options for 
- + Android development
- + CPAN usage
- + aliasing quick HTTP server (a lá `SimpleHTTPServer`)
- + quick file-type extraction (zip, gz, tar) via `extract`
- + nifty use of `fasd` for quick directory jumping
- + [using `ctags` and CSS][8]
- + [`vcprompt` shipped][5].
+ + **pre-loaded scripts**: `hub`, `composer`, [`vcprompt`][vcprompt]
+   and `phpctags`
 
-I use quite of a bit of Private Use characters as well as dingbats (though I'm
-trying to be 100% dingbats for more font support).
+## To Work On
 
-## Quick Install
-In order to properly install these files, you'd need [homeshick][1] sitting on
-your computer. You can do that by invoking the [de-facto installation steps][4].
-You'd then add my dotfiles as a castle by doing the following:
+ ✱ Add information about font sources and credit to their respective authors.
+ ✱ Add proper licensing information about the files I've written.
 
-```
-$ homeshick clone git://github.com/jalcine/dotfiles
-$ homeshick link dotfiles
-```
+## Author
 
-And **wham**! You got my system up and running.
+I'm [Jacky Alciné][jalcine] and I chat like a firehose (at times).
 
-[1]: https://github.com/andsens/homeshick
-[2]: https://github.com/jalcine/rbenv
-[3]: https://github.com/jalcine/bash-it
-[4]: https://github.com/andsens/homeshick/wiki/Installation
-[5]: http://hg.gerg.ca/vcprompt/
-[6]: https://github.com/chh/phpenv
-[7]: https://github.com/chh/php-build
-[8]: https://gist.github.com/philix/2657477
+[homeshick]: https://github.com/andsens/homeshick
+[rbenv]: https://github.com/jalcine/rbenv
+[bashit]: https://github.com/jalcine/bash-it
+[vcprompt]: http://hg.gerg.ca/vcprompt
+[jalcine]: http://jalcine.me
