@@ -16,14 +16,9 @@
   insteadOf=github:
   insteadOf=https://github.com/
   insteadOf=http://github.com/
-  pushInsteadOf=gh:
-  pushInsteadOf=ghub:
-  pushInsteadOf=github:
-  pushInsteadOf=https://github.com/
 
 [url "git@bitbucket.org:"]
   insteadOf=bbt:
-  pushInsteadOf=bbt:
 
 [url "git@github.com:jalcine/"]
   insteadOf=me:
@@ -36,8 +31,10 @@
   insteadOf=gitorious:
   pushInsteadOf=gitorious:
 
-[url "git@git.kde.org:"]
+[url "git://anongit.kde.org"]
   insteadOf=kde:
+
+[url "git@git.kde.org:"]
   pushInsteadOf=kde:
   pushInsteadOf=git://anongit.kde.org/
 
@@ -49,8 +46,6 @@
 [url "~/Development/Projects/"]
   insteadOf=local:
   insteadOf=lcl:
-  pushInsteadOf=lcl:
-  pushInsteadOf=local:
 
 [color]
   ui = always
