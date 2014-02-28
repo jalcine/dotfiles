@@ -1,117 +1,111 @@
 [core]
-  whitespace = -trailing-space,-indent-with-non-tab,-tab-in-indent
-  editor=vim
-  pager=most
-  excludesfile = ~/.gitignore_global
+  whitespace     = -trailing-space,-indent-with-non-tab,-tab-in-indent
+  editor         = vim
+  pager          = most
+  excludesfile   = ~/.gitignore_global
   attributesfile = ~/.gitattributes
 
 [user]
-  name       = "Jacky Alciné"
-  email      = "me@jalcine.me"
-  signingkey = "6E767393"
-#
-[url "git@github.com:"]
-  insteadOf=gh:
-  insteadOf=ghub:
-  insteadOf=github:
-  insteadOf=https://github.com/
-  insteadOf=http://github.com/
+  name       = Jacky Alciné
+  email      = me@jalcine.me
+  signingkey = 6E767393
 
-[url "git@bitbucket.org:"]
-  insteadOf=bbt:
-
-[url "git@github.com:jalcine/"]
-  insteadOf=me:
-  insteadOf=https://github.com/jalcine/
-  insteadOf=http://github.com/jalcine/
-  pushInsteadOf=me:
-  pushInsteadOf=https://github.com/jalcine/
-
-[url "git@gitorious.org:"]
-  insteadOf=gitorious:
-  pushInsteadOf=gitorious:
-
-[url "git://anongit.kde.org"]
-  insteadOf=kde:
-
-[url "git@git.kde.org:"]
-  pushInsteadOf=kde:
-  pushInsteadOf=git://anongit.kde.org/
-
-[url "git@heroku.com:"]
-  insteadOf=heroku:
-  pushInsteadOf=heroku:
-  pushInsteadOf=git://heroku.com/
+[url "git://anongit.kde.org/"]
+  insteadOf = kde:
 
 [url "~/Development/Projects/"]
-  insteadOf=local:
-  insteadOf=lcl:
+  insteadOf = local:
+  insteadOf = lcl:
+
+[url "git@github.com:"]
+  insteadOf = gh:
+  insteadOf = ghub:
+  insteadOf = github:
+  insteadOf = https://github.com/
+  insteadOf = http://github.com/
+
+[url "git@bitbucket.org:"]
+  insteadOf = bbt:
+  insteadOf = bitbucket:
+
+[url "git@github.com:jalcine/"]
+  insteadOf = me:
+  insteadOf = https://github.com/jalcine/
+  insteadOf = http://github.com/jalcine/
+
+[url "git@gitorious.org:"]
+  insteadOf = gitorious:
+
+[url "git@git.kde.org:"]
+  pushInsteadOf = kde:
+  pushInsteadOf = git://anongit.kde.org/
+
+[url "git@heroku.com:"]
+  insteadOf = heroku:
+  insteadOf = git://heroku.com/
 
 [color]
-  ui = always
+  ui     = always
   branch = true
-  diff = true
-  pager = true
+  diff   = true
+  pager  = true
   status = true
-
-[merge]
-  tool = vimdiff
-  defaultToUpstream=true
-  log=900
-  stat=true
-  verbosity=3
-
-[grep]
-  linenumber=true
-
-[format]
-  signoff=true
-
-[diff]
-  tool = myvimdiff
-  dirstat = files,10,cumulative
 
 [difftool "myvimdiff"]
   cmd = vimdiff \"$REMOTE\" \"$LOCAL\"
+
+[merge]
+  tool              = myvimdiff
+  defaultToUpstream = true
+  log               = 900
+  stat              = true
+  verbosity         = 3
+
+[grep]
+  linenumber = true
+
+[format]
+  signoff = true
+
+[diff]
+  tool    = myvimdiff
+  dirstat = files,10,cumulative
 
 [push]
   default = tracking
 
 [status]
-  relativePaths=true
+  relativePaths = true
 
 [alias]
-  changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
-  short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
-  changelog = log --pretty=format:\" * %s\"
-  shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
-  diverges = !bash -c 'diff -u <(git rev-list --first-parent "${1}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
-  d = diff                          # diff unstaged changes
-  dc = diff --cached                # diff staged changes
-  last = diff HEAD^                 # diff last committed change
-  unstage = reset HEAD              # remove files from index (tracking)
-  uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
-  filelog = log -u                  # show changes to a file
-  mt = mergetool                    # fire up the merge tool
-  ss = stash                        # stash changes
-  sl = stash list                   # list stashes
-  sa = stash apply                  # apply stash (restore changes)
-  sd = stash drop                   # drop stashes (destory changes)
-  l   = log -18 --color=always --all --topo-order --pretty='format:%Cgreen%h%Creset %s%Cred%d%Creset %C(black bold)(by %an)%Creset'
-  ll  = log     --color=always --all --topo-order --pretty='format:%Cgreen%h%Creset %s%Cred%d%Creset %C(black bold)(by %an)%Creset'
-  gl  = log -12 --color=always --all --graph --topo-order --pretty='format:%Cgreen%h%Creset %s %C(black bold)(by %an)%Creset%C(yellow bold)%d%Creset%n'
-  gll = log     --color=always --all --graph --topo-order --pretty='format:%Cgreen%h%Creset %s %C(black bold)(%cr by %an)%Creset%C(yellow bold)%d%Creset%n'
-  pull = pull --ff-only
-  up = merge --ff-only
-  join = merge --no-ff
-  ci = commit
-  cm = commit -m
+  changes       = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+  short         = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
+  changelog     = log --pretty=format:\" * %s\"
+  shortnocolor  = log --pretty= format:\"%h %cr %cn %s\"
+  diverges      = !bash -c 'diff -u <(git rev-list --first-parent "${1}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
+  d             = diff
+  dc            = diff --cached
+  last          = diff HEAD^
+  unstage       = reset HEAD
+  uncommit      = reset --soft HEAD^
+  filelog       = log -u
+  mt            = mergetool
+  ss            = stash
+  sl            = stash list
+  sa            = stash apply
+  sd            = stash drop
+  l             = log -18 --color=always --all --topo-order         --pretty='format:%Cgreen%h%Creset %s%Cred%d%Creset %C(black bold)(by %an)%Creset'
+  ll            = log     --color=always --all --topo-order         --pretty='format:%Cgreen%h%Creset %s%Cred%d%Creset %C(black bold)(by %an)%Creset'
+  gl            = log -12 --color=always --all --graph --topo-order --pretty='format:%Cgreen%h%Creset %s %C(black bold)(by %an)%Creset%C(yellow bold)%d%Creset%n'
+  gll           = log     --color=always --all --graph --topo-order --pretty='format:%Cgreen%h%Creset %s %C(black bold)(%cr by %an)%Creset%C(yellow bold)%d%Creset%n'
+  pull          = pull --ff-only
+  up            = merge --ff-only
+  join          = merge --no-ff
+  ci            = commit
+  cm            = commit -m
   currentbranch = rev-parse --abbrev-ref HEAD
-  wdiff = diff
-  undo-commit = reset --soft HEAD^
-
-#[init]
-# templatedir = ~/.git_template
+  wdiff         = diff
+  undo-commit   = reset --soft HEAD^
 
 [github]
   user = jalcine
