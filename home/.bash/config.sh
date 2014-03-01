@@ -11,6 +11,9 @@
 # First that mapping.
 [ -e xmodmap ] && xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
+# What's going ON!
+[ -z $TMUX ] && [ -e /usr/bin/fortune ] && fortune -e
+
 # If not running interactively, don't do anything.
 [ -z "$PS1" ] && return
 
@@ -41,6 +44,3 @@ export HISTSIZE HISTFILESIZE HISTCONTROL LC_ALL TZ LANGUAGE
 
 # Print out our bad guy.
 export PS1
-
-# Give me a fortune if I'm not in tmux.
-[ -z $TMUX ] && [ -e /usr/bin/fortune ] && fortune -e
