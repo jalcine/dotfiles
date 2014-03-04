@@ -2,10 +2,9 @@
 ###########################################################
 ## ~/.bashrc: executed by bash(1) for non-login shells.
 ##
-## @author Jacky Alcine <me@jalcine.me>
-## @date 07-06-2013 22:49 UTC-05:00
+## @author Jacky Alciné <me@jalcine.me>
 ##
-## Jacky Alcine's root personal Bash configuration.
+## Jacky Alciné's root personal Bash configuration.
 ###########################################################
 
 # First that mapping.
