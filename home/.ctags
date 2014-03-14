@@ -4,7 +4,7 @@
 --exclude=bundle
 --exclude=vendor
 --c++-kinds=+p
---fields=+iaS
+--fields=+iaSl
 --extra=+qf
 --totals=yes
 --tag-relative=yes
