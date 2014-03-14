@@ -1,9 +1,6 @@
 set confirm off
 set verbose off
-set trace-commands on
 set auto-load python-scripts on
-set height 0
-set width 0
 set logging on
 set pagination on
 
@@ -13,8 +10,7 @@ set print pretty 1
 # Permit code projects to load their scripts.
 set auto-load safe-path ~/Development/Projects
 
-# Lemme see some red.
-#set prompt gdb:  
+set prompt (gdb)   
 
 ## Some aliases
 define bpl
@@ -28,9 +24,8 @@ end
 define thread
   info threads
 end
-
 document thread
-  Print threads in target
+  Print threads in current target.
 end
 
 define argv
@@ -38,7 +33,7 @@ define argv
 end
 document argv
   Syntax: argv
-    | Print program arguments.
+    | Print program arguments to be used when invoked.
 end
 
 define stack
@@ -71,6 +66,9 @@ end
 
 define git
   !git
+end
+document git
+  Quick access to Git.
 end
 
 define redirect_stdout
