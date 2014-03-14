@@ -1,17 +1,18 @@
 #!/bin/bash
 ###########################################################
-## ~/.bashrc: executed by bash(1) for non-login shells.
-##
-## @author Jacky Alciné <me@jalcine.me>
-##
-## Jacky Alciné's root personal Bash configuration.
+## ~/.bashrc: executed by bash(1) for non-login shells.  ##
+##                                                       ##
+## @author Jacky Alciné <me@jalcine.me>                  ##
+##                                                       ##
+## Jacky Alciné's root personal Bash configuration.      ##
+##                                                       ##
 ###########################################################
 
 # First that mapping.
 [ -e xmodmap ] && xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 # What's going ON!
-[ -z $TMUX ] && [ -e /usr/bin/fortune ] && fortune -e
+[ -z $TMUX ] && [ -e /usr/bin/fortune ] && fortune -aco
 
 # If not running interactively, don't do anything.
 [ -z "$PS1" ] && return
