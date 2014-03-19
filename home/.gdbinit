@@ -10,7 +10,7 @@ set print pretty 1
 # Permit code projects to load their scripts.
 set auto-load safe-path ~/Development/Projects
 
-set prompt (gdb)   
+set prompt (gdb) 
 
 ## Some aliases
 define bpl
