@@ -46,6 +46,7 @@ define frame
   info frame
   info args
   info locals
+  list
 end
 document frame
   Syntax: frame

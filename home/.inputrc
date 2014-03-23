@@ -6,6 +6,7 @@
 "\ep": history-search-backward
 "\t": menu-complete
 
+set editing-mode emacs
 set show-all-if-ambiguous on
 set completion-ignore-case on
 set mark-directories on

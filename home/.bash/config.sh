@@ -8,7 +8,7 @@
 ##                                                       ##
 ###########################################################
 
-# First that mapping.
+# First that mapping (works on machines with xmodmap).
 [ -e xmodmap ] && xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 # What's going ON!
