@@ -42,3 +42,7 @@ Thumbs.db
 # Python Stuff #
 ################
 .ropeproject
+
+# GDB Jazz #
+############
+gdb.txt
