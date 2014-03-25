@@ -17,8 +17,8 @@ python
 import sys
 sys.path.insert(0, "/home/jacky/.gdb/python")
 
-from printers import register_extra_printers
-register_extra_printers()
+#from printers import register_extra_printers
+#register_extra_printers()
 end
 
 # Loads methods.

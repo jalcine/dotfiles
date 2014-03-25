@@ -4,10 +4,13 @@
 --exclude=bundle
 --exclude=vendor
 --c++-kinds=+p
---fields=+iaSl
+--fields=+iaSlkKmnz
 --extra=+qf
+--if0=yes
 --totals=yes
 --tag-relative=yes
+--excmd=mixed
+--sort=foldcase
 
 --langdef=css
 --langdef=markdown
