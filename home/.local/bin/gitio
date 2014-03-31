@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# Source: https://gist.github.com/defunkt/1209316
 # Usage: gitio URL [CODE]
 #
 # Turns a github.com URL
