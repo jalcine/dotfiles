@@ -23,6 +23,7 @@ so your mileage *will* vary. This is designed to be installed using
 ## To Work On
 
  ✱ Add information about font sources and credit to their respective authors.
+
  ✱ Add proper licensing information about the files I've written.
 
 ## Author
