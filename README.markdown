@@ -17,8 +17,8 @@ so your mileage *will* vary. This is designed to be installed using
    `rbenv-vars`, `rbenv-whatis` and `ruby-build`; `git-hooks`;
    [`bash-it`][bashit]
 
- + **pre-loaded scripts**: `hub`, `composer`, [`vcprompt`][vcprompt]
-   and `phpctags`
+ + **pre-loaded scripts**: `hub`, `composer`, [`vcprompt`][vcprompt],
+    `phpctags`, and [`ls++`][lsplusplus]
 
 ## To Work On
 
@@ -35,3 +35,4 @@ I'm [Jacky Alciné][jalcine] and I chat like a firehose (at times).
 [bashit]: https://github.com/jalcine/bash-it
 [vcprompt]: http://hg.gerg.ca/vcprompt
 [jalcine]: http://jalcine.me
+[lsplusplus]: http://github.com/trapd00r/ls--
