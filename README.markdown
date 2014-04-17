@@ -20,6 +20,9 @@ so your mileage *will* vary. This is designed to be installed using
  + **pre-loaded scripts**: `hub`, `composer`, [`vcprompt`][vcprompt],
     `phpctags`, and [`ls++`][lsplusplus]
 
+There's a few chinks in this armor of a shell configuration that's just
+Jacky-specific. Information about what and more can be read about on my blog.
+
 ## To Work On
 
  ✱ Add information about font sources and credit to their respective authors.
