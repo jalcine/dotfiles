@@ -6,6 +6,7 @@ export EDITOR=vim
 
 # We want to see as much as possible, not less.
 export PAGER=most
+export GIT_PAGER=$PAGER
 
 # Include my local path into the CMake module discovery.
 export CMAKE_PREFIX_PATH="$HOME/.local:$CMAKE_PREFIX_PATH"
@@ -24,7 +25,7 @@ export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
 
 # Since I <3 KDE, we'd use KDE to manage my keychain.
 if [ -d "$HOME/.kde" ]; then
-  export SSH_ASKPASS=kwalletaskpass
+  export SSH_ASKPASS=ksshaskpass
   export KDEDIRS="$HOME/.kde:$HOME/.local:$KDEDIRS"
 fi
 
@@ -33,3 +34,12 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$HOME/.local/lib/pkgconfig"
 
 # Include my library's built out.
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/.local/lib"
+
+# Let the system know of the keys I use in the shell.
+export KEYCHAIN_SSH_KEYS=$(find $HOME/.ssh/keys -type f -name '*.rsa')
+export KEYCHAIN_GPG_KEYS="6E767393"
+
+# Speed up Ruby just a bit (by burning more RAM).
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_GC_HEAP_FREE_SLOTS=500000
+export RUBY_GC_HEAP_INIT=40000

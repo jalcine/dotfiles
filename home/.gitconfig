@@ -115,3 +115,7 @@
 
 [i18n]
   commitencoding = utf-8
+[ghi "highlight"]
+	style = colorful
+[ghi]
+	edtior = vim
