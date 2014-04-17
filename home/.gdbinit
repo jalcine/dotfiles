@@ -12,13 +12,13 @@ set auto-load gdb-scripts on
 set auto-load safe-path ~/Development/Projects
 
 # Import our Python scripts for use.
-python
-import sys
-sys.path.insert(0, "/home/jacky/.gdb/python")
+#python
+#import sys
+#sys.path.insert(0, "/home/jacky/.gdb/python")
 
-from printers import register_extra_printers
-register_extra_printers()
-end
+#from printers import register_extra_printers
+#register_extra_printers()
+#end
 
 # Loads methods.
 source ~/.gdb/modules.gdb
