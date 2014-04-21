@@ -26,6 +26,7 @@ Jacky-specific. Information about what and more can be read about on my blog.
 ## To Work On
 
  ✱ Add information about font sources and credit to their respective authors.
+
  ✱ Add proper licensing information about the files I've written.
 
 ## Author
