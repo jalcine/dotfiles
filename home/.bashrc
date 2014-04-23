@@ -1,2 +1,2 @@
 #!/bin/sh
-source ~/.bash/config.sh
+source ~/.bash/base.bash
