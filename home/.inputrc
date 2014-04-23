@@ -1,17 +1,12 @@
 # Learn about this file via `man readline`. The more you know!
+"\t": menu-complete
 
-# Use up and down to navigate through history, whilst in words.
-#"\e[A": history-search-backward
-#"\e[B": history-search-forward
-#"\ep": history-search-backward
-#"\t": menu-complete
-
-#set editing-mode emacs
-#set show-all-if-ambiguous on
-#set completion-ignore-case on
-#set mark-directories on
-#set mark-symlinked-directories on
-#set mark-modified-lines off
-#set menu-complete-display-prefix on
-#set visible-stats on
-#set bell-style visible
+set editing-mode emacs
+set show-all-if-ambiguous on
+set completion-ignore-case on
+set mark-directories on
+set mark-symlinked-directories on
+set mark-modified-lines off
+set menu-complete-display-prefix on
+set visible-stats on
+set bell-style visible
