@@ -43,5 +43,8 @@ export PS1
 [ -e xmodmap ] && xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 # Reset the shell and print my fortune.
-reset
-[ -z $TMUX ] && fortune -aco
+if [ -z $TMUX ]; then
+  if [ -e /usr/bin/fortune ]; then
+    fortune -aco
+  fi
+fi
