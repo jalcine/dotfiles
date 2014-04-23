@@ -5,11 +5,6 @@
   excludesfile   = ~/.gitignore_global
   attributesfile = ~/.gitattributes
 
-[user]
-  name       = Jacky Alciné
-  email      = me@jalcine.me
-  signingkey = 6E767393
-
 [url "git://anongit.kde.org/"]
   insteadOf = kde:
 
@@ -104,7 +99,7 @@
   ci            = commit
   cm            = commit -m
   currentbranch = rev-parse --abbrev-ref HEAD
-  wdiff         = diff
+  wdiff = diff --color-words
   undo-commit   = reset --soft HEAD^
 
 [github]
@@ -115,7 +110,12 @@
 
 [i18n]
   commitencoding = utf-8
+
 [ghi "highlight"]
-	style = colorful
+  style = colorful
+
 [ghi]
-	edtior = vim
+  edtior = vim
+
+[include]
+  path = $HOME/.gitconfig.local
