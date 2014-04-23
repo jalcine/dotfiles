@@ -118,4 +118,4 @@
   edtior = vim
 
 [include]
-  path = $HOME/.gitconfig.local
+  path = ~/.gitconfig.local
