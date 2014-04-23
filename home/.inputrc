@@ -1,9 +1,4 @@
 # Learn about this file via `man readline`. The more you know!
-
-# Use up and down to navigate through history, whilst in words.
-"\e[A": history-search-backward
-"\e[B": history-search-forward
-"\ep": history-search-backward
 "\t": menu-complete
 
 set editing-mode emacs

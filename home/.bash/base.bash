@@ -1,6 +1,5 @@
 #!/bin/bash
 ###########################################################
-## ~/.bashrc: executed by bash(1) for non-login shells.  ##
 ##                                                       ##
 ## @author Jacky Alciné <me@jalcine.me>                  ##
 ##                                                       ##
@@ -40,11 +39,7 @@ export HISTSIZE HISTFILESIZE HISTCONTROL LC_ALL TZ LANGUAGE
 export PS1
 
 # Now swap that mapping.
-[ -e xmodmap ] && xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+[ -x xmodmap ] && xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
-# Reset the shell and print my fortune.
-if [ -z $TMUX ]; then
-  if [ -e /usr/bin/fortune ]; then
-    fortune -aco
-  fi
-fi
+# And show me that fortune.
+[[ -z $TMUX ]] && fortune -aco
