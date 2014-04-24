@@ -1,9 +1,6 @@
 [submodule "home/.bash/bash-it"]
 	path = home/.bash/bash-it
-	url = git@github.com:jalcine/bash-it
+	url = git://github.com/jalcine/bash-it
 [submodule "home/.rbenv"]
 	path = home/.rbenv
-	url = git@github.com:jalcine/rbenv
-[submodule "home/.local/share/php-version"]
-	path = home/.local/share/php-version
-	url = ghub:wilmoore/php-version
+	url = git://github.com/jalcine/rbenv
