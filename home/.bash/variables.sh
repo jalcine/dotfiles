@@ -37,7 +37,11 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/.local/lib"
 
 # Let the system know of the keys I use in the shell.
 export KEYCHAIN_SSH_KEYS=$(find $HOME/.ssh/keys -type f -name '*.rsa')
-export KEYCHAIN_GPG_KEYS="6E767393"
+
+# Only do this when I'm home.
+if [ "$HOSTNAME" == "neuromancer" ]; then
+  export KEYCHAIN_GPG_KEYS="6E767393"
+fi
 
 # Speed up Ruby just a bit (by burning more RAM).
 export RUBY_GC_MALLOC_LIMIT=1000000000
@@ -45,4 +49,9 @@ export RUBY_GC_HEAP_FREE_SLOTS=500000
 export RUBY_GC_HEAP_INIT=40000
 
 # Add ls++
-export PATH="$HOME/.perl5/bin:$PATH"
+if [ -e $HOME/.perl5/bin/ls++ ]; then
+  export PATH="$HOME/.perl5/bin:$PATH"
+fi
+
+# Extra variables to use? We gotcha.
+[ -e $HOME/.variables.local.sh ] && . $HOME/.variables.local.sh
