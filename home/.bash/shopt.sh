@@ -1,14 +1,4 @@
-###########################################################
-###########################################################
-## Shell Options
-##
-## @author Jacky Alcine <me@jalcine.me>
-## 01-08-2013 21:07 UTC-05:00
-##
-## Provide a centralized location for tweaking all of the
-## options entered by 'shopt'.
-###########################################################
-###########################################################
+#!/bin/sh
 
 # Append all history entries.
 shopt -s histappend
@@ -24,3 +14,6 @@ shopt -s huponexit
 
 # Show yourself.
 shopt -s expand_aliases
+
+# Who do I mess with?
+shopt -s hostcomplete
