@@ -5,7 +5,8 @@
 export EDITOR=vim
 
 # We want to see as much as possible, not less.
-export PAGER=most
+export PAGER=less
+[[ -e most ]] && export PAGER=most
 export GIT_PAGER=$PAGER
 
 # Include my local path into the CMake module discovery.
@@ -21,7 +22,7 @@ export CMAKE_MODULE_PATH="$HOME/.local/share/apps/cmake/Modules:$HOME/.local/sha
 export CMAKE_BUILD_TYPE="Debug"
 
 # Include the use of local libraries.
-export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
+[[ -d "$HOME/.local/lib" ]] && export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
 
 # Since I <3 KDE, we'd use KDE to manage my keychain.
 if [ -d "$HOME/.kde" ]; then
