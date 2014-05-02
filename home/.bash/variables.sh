@@ -5,7 +5,6 @@
 export EDITOR=vim
 
 # We want to see as much as possible, not less.
-export PAGER=less
 [[ -e most ]] && export PAGER=most
 export GIT_PAGER=$PAGER
 
