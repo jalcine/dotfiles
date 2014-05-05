@@ -15,6 +15,4 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# Add our local binary files if they exists.
-[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
-[ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
+source $HOME/.bash/path.sh
