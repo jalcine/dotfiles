@@ -1,4 +1,4 @@
-# vim: set ft=gdb tw=78 fdm=indent
+# vim: set ft=gdb tw=78 fdm=indent:
 
 ## Some aliases
 define lb
@@ -45,7 +45,7 @@ end
 define frame
   info frame
   info args
-  info locals
+  #info locals
   list
 end
 document frame
