@@ -119,10 +119,16 @@
 [ghi]
   edtior = vim
 
+[filter "media"]
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
+
+[user]
+  name = Jacky Alciné
+
+[branch]
+  autosetuprebase = always
+
 [include]
   path = ~/.gitconfig.local
-[filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
-[user]
-	name = Jacky Alciné
+
