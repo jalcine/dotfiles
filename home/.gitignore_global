@@ -46,3 +46,7 @@ Thumbs.db
 # GDB Jazz #
 ############
 gdb.txt
+
+# NODE SHAT #
+#############
+node_modules/
