@@ -1,4 +1,4 @@
-# vim: set ft=yaml
+# vim: set ft=yaml :
 --- 
 gem: --document rdoc,ri --trust-policy
 install: --verbose --conservative --minimal-deps -E

@@ -1,2 +1,2 @@
-# vim set ft=ruby
+# vim: set ft=ruby:
 Guard.options[:clear] = true
