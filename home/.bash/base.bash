@@ -11,7 +11,7 @@
 [ -z "$PS1" ] && return
 
 # Keep a relative short immediate history.
-HISTSIZE=8
+HISTSIZE=32
 
 # Keep the core history file quite large.
 HISTFILESIZE=42949673
