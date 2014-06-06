@@ -1,6 +1,6 @@
-# My `$HOME` Files
+# My Dotfiles
 
-![Snapshot in Yakuake](./snapshot.png)
+![Snapshot in Yakuake](https://github.com/jalcine/dotfiles/raw/master/snapshot.png)
 
 ## Story
 
