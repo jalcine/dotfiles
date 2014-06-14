@@ -48,6 +48,10 @@ Thumbs.db
 ############
 gdb.txt
 
+# VIM Swap & Backup Files #
+###########################
+*.swp
+
 # NODE SHAT #
 #############
 node_modules/
