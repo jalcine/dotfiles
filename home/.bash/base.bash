@@ -16,6 +16,9 @@ HISTSIZE=32
 # Keep the core history file quite large.
 HISTFILESIZE=42949673
 
+# Ignore some things people don't need to know.
+HISTIGNORE="&:pwd:ls:ll:lal:[bf]g:exit:rm*:sudo rm*"
+
 # Ignore duplicates and whitespace.
 HISTCONTROL=ignoredups:ignorespace
 
@@ -29,7 +32,7 @@ LANGUAGE=en_US.UTF-8
 TZ="America/New_York"
 
 # Export data.
-export HISTSIZE HISTFILESIZE HISTCONTROL LC_ALL TZ LANGUAGE
+export HISTSIZE HISTIGNORE HISTFILESIZE HISTCONTROL LC_ALL TZ LANGUAGE
 
 . $HOME/.bash/shopt.sh
 . $HOME/.bash/variables.sh
@@ -42,4 +45,4 @@ export PS1
 [ -x xmodmap ] && xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 # And show me that fortune.
-[[ -z $TMUX ]] && [[ -e fortune ]] && fortune
+[ -z $TMUX ] && [ -e fortune ] && fortune

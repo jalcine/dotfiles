@@ -1,3 +1,2 @@
 #!/bin/sh
-source ~/.bash/base.bash
-export TERM=xterm-256color
+. $HOME/.bash/base.bash
