@@ -43,6 +43,3 @@ export PS1
 
 # Now swap that mapping.
 [ -x xmodmap ] && xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-
-# And show me that fortune.
-[ -z $TMUX ] && [ -e fortune ] && fortune
