@@ -5,8 +5,7 @@
 export EDITOR=vim
 
 # We want to see as much as possible, not less.
-[ -e most ] && export PAGER=most
-export GIT_PAGER=$PAGER
+[ -e most ] && export PAGER=most && export GIT_PAGER=$PAGER
 
 # Include my local path into the CMake module discovery.
 export CMAKE_PREFIX_PATH="$HOME/.local:$CMAKE_PREFIX_PATH"
