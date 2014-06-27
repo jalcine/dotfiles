@@ -53,5 +53,8 @@ if [ -e $HOME/.perl5/bin/ls++ ]; then
   export PATH="$HOME/.perl5/bin:$PATH"
 fi
 
+# Add custom manpath.
+export MANPATH="$MANPATH:$HOME/.local/man"
+
 # Extra variables to use? We gotcha.
 [ -e $HOME/.variables.local.sh ] && . $HOME/.variables.local.sh
