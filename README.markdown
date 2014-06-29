@@ -30,6 +30,8 @@ so your mileage *will* vary. This is designed to be installed using
 
  ✱ Add more dependency checking for binaries, tool chains and the likes.
 
+ ✱ Allow this repository to install the jazz for vim and tmux.
+
 ## Author
 
 I'm [Jacky Alciné][jalcine] and I chat like a firehose (at times).
