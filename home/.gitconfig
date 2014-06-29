@@ -51,10 +51,14 @@
 
 [merge]
   tool              = myvimdiff
+  conflictStyle     = diff3
   defaultToUpstream = true
   log               = 900
   stat              = true
   verbosity         = 3
+
+[mergetool]
+  prompt = false
 
 [grep]
   linenumber = true
