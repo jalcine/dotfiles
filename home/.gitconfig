@@ -1,3 +1,4 @@
+# vim: set et ts=2 sts=2
 [core]
   whitespace     = -trailing-space,-indent-with-non-tab,-tab-in-indent
   editor         = vim
@@ -47,7 +48,7 @@
   status = true
 
 [difftool "myvimdiff"]
-  cmd = vimdiff \"$REMOTE\" \"$LOCAL\"
+  cmd = vimdiff \"$REMOTE\" \"$LOCAL\" -u NONE
 
 [merge]
   tool              = myvimdiff
@@ -84,6 +85,7 @@
   diverges      = !bash -c 'diff -u <(git rev-list --first-parent "${1}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
   d             = diff
   dc            = diff --cached
+  dis           = diff  --word-diff=color --word-diff-regex="[^[:space:],]+" 
   last          = diff HEAD^
   unstage       = reset HEAD
   uncommit      = reset --soft HEAD^
