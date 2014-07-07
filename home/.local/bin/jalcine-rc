@@ -1,0 +1,99 @@
+#!/usr/bin/env bash
+# vim: set ft=sh:
+# Author: Jacky Alcine <me@jalcine.me>
+# Description: Shell script to handle the core installation of my optimal
+# system.
+
+# TODO Define a means of determining
+
+# Function: os_name
+# Obtains the name of the operating system I'm running under.
+os_name()
+{
+  case $(uname -s) in
+    "Linux")
+      return "linux"
+      ;;
+    "FreeBSD")
+      return "bsd"
+      ;;
+    "Darwin")
+      return "osx"
+      ;;
+  esac
+}
+
+linux_pacakge_manager()
+{
+  if [ -x apt-get ]; then
+    return "apt";
+  elif [ -x yum ]; then
+    return "yum";
+  fi
+}
+
+# Function: install_package
+# Installs a package depending on the operating system used under the hood.
+install_package()
+{
+  case os_name in
+    "linux")
+      sudo apt-get install $1
+      ;;
+    "bsd")
+      sudo yum install $1
+      ;;
+    "osx")
+      brew install $1
+      ;;
+  esac
+}
+
+# Function: install_interpreters
+# Installs Ruby, Perl, Python and PHP
+install_interpreters()
+{
+  install_ruby_interpreter
+  install_perl_interpreter
+  install_python_interpreter
+  install_node_interpreter
+}
+
+install_ruby_interpreter()
+{
+  hsh plugin enable rbenv
+  reload
+  rbenv install 2.1.1 -vk && rbenv rehash
+
+  # Install some favorite gems.
+  rbenv shell 2.1.1 && rbenv rehash
+  gem install --verbose awesome_print rake rack sinatra json
+}
+
+install_perl_interpreter()
+{
+  # So, I'm debating having Perl built globally because that way I can just use
+  # local::lib and build on a per-project basis.
+  install_package perl
+}
+
+install_python_interpreter()
+{
+  # Use the package manager, Python's very mature of a language with its
+  # package manager.
+  install_package python
+}
+
+install_node_interpreter()
+{
+  hsh plugin enable nvm
+  reload
+  nvm install v0.10.28
+  nvm install v0.11.13
+
+  # Install some favorite packages.
+  npm install -g jshint jsonlint npm q express connect
+}
+
+homeshick alias enable homesick
+install_interpreters;
