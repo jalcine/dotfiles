@@ -46,7 +46,7 @@ fi
 export RUBY_FREE_MIN=200000
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_GC_HEAP_FREE_SLOTS=500000
-export RUBY_GC_HEAP_INIT=40000
+export RUBY_GC_HEAP_INIT=40000000
 
 # Add ls++
 if [ -e $HOME/.perl5/bin/ls++ ]; then
