@@ -1,11 +1,5 @@
 #!/bin/bash
-###########################################################
-##                                                       ##
-## @author Jacky Alciné <me@jalcine.me>                  ##
-##                                                       ##
-## Jacky Alciné's root personal Bash configuration.      ##
-##                                                       ##
-###########################################################
+# @author Jacky Alciné <me@jalcine.me>
 
 # If not running interactively, don't do anything.
 [ -z "$PS1" ] && return
@@ -17,7 +11,7 @@ HISTSIZE=32
 HISTFILESIZE=42949673
 
 # Ignore some things people don't need to know.
-HISTIGNORE="&:pwd:ls:ll:lal:[bf]g:exit:rm*:sudo rm*"
+HISTIGNORE="&:pwd:ls:ll:lal:[bf]g:exit:rm*:sudo rm*:_*"
 
 # Ignore duplicates and whitespace.
 HISTCONTROL=ignoredups:ignorespace
