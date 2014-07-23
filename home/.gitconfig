@@ -72,10 +72,13 @@
   dirstat = files,10,cumulative
 
 [push]
-  default = tracking
+  default = upstream
 
 [status]
   relativePaths = true
+
+[log]
+  date = relative
 
 [alias]
   submod        = submodule
