@@ -4,8 +4,6 @@
 # Description: Shell script to handle the core installation of my optimal
 # system.
 
-# TODO Define a means of determining
-
 # Function: os_name
 # Obtains the name of the operating system I'm running under.
 os_name()
@@ -59,6 +57,8 @@ install_interpreters()
   install_node_interpreter
 }
 
+# TODO Move out installation of gems.
+# TODO Make a central list of gems to install.
 install_ruby_interpreter()
 {
   hsh plugin enable rbenv
@@ -75,6 +75,7 @@ install_perl_interpreter()
   # So, I'm debating having Perl built globally because that way I can just use
   # local::lib and build on a per-project basis.
   install_package perl
+  curl -L http://cpanmin.us | perl - App::cpanminus
 }
 
 install_python_interpreter()
@@ -95,5 +96,17 @@ install_node_interpreter()
   npm install -g jshint jsonlint npm q express connect
 }
 
-homeshick alias enable homesick
+install_homeshick()
+{
+  git clone git://github.com/andsens/homeshick $HOME/.homesick/repos/homeshick
+  source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+}
+
+install_homeshick
+if [ ! -x $HOME/.homesick/repos/dotfiles ]; then
+  homeshick clone git://github.com/jalcine/dotfiles
+  homeshick link dotfiles
+  source $HOME/.bashrc
+  bash-it alias enable homesick
+fi
 install_interpreters;
