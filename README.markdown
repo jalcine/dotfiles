@@ -32,6 +32,13 @@ so your mileage *will* vary. This is designed to be installed using
 
  ✱ Allow this repository to install the jazz for vim and tmux.
 
+## Quick Install
+
+Just for my convenience (and maybe yours), you can install my full dotfiles
+setup with the following:
+
+wget -O https://raw.githubusercontent.com/jalcine/dotfiles/develop/home/.local/bin/jalcine-rc | bash
+
 ## Author
 
 I'm [Jacky Alciné][jalcine] and I chat like a firehose (at times).
