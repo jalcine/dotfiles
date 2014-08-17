@@ -45,7 +45,7 @@ end
 define frame
   info frame
   info args
-  #info locals
+  info locals
   list
 end
 document frame
