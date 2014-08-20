@@ -1,6 +1,12 @@
-# vim: set ft=giti :
 # Files that KDE and other file managers use.
 .directory
+
+# Artifacts from Git #
+######################
+*.orig
+*.BASE
+*.LOCAL
+*.REMOTE
 
 # Compiled source #
 ###################
