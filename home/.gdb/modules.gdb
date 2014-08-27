@@ -53,3 +53,11 @@ document frame
     | Print stack frame, argument variables to the current stack and local
     | variables for that stack.
 end
+
+define dlerr
+  print (const char *)(dlerror())
+end
+document dlerr
+  Syntax: dlerr
+    | Prints out the last known error reported by dl.
+end
