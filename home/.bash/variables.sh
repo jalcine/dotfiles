@@ -42,8 +42,8 @@ if [ "$(hostname)" = "neuromancer" ]; then
   export KEYCHAIN_GPG_KEYS="6E767393"
 fi
 
-# Speed up Ruby just a bit (by burning more RAM).
-export RUBY_FREE_MIN=200000
+# Because we have a lot of RAM (and swap); we're going to choke our RAM making
+# rubby move faster.
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_GC_HEAP_FREE_SLOTS=500000
 export RUBY_GC_HEAP_INIT=40000000
