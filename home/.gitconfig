@@ -72,7 +72,7 @@
   dirstat = files,10,cumulative
 
 [push]
-  default = upstream
+  default = tracking
 
 [status]
   relativePaths = true
