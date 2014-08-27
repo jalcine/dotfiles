@@ -56,5 +56,7 @@ fi
 # Add custom manpath.
 export MANPATH="$MANPATH:$HOME/.local/man"
 
+source $HOME/.bash/variables.vcprompt.sh
+
 # Extra variables to use? We gotcha.
 [ -e $HOME/.variables.local.sh ] && . $HOME/.variables.local.sh
