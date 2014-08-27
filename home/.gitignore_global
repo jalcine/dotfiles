@@ -55,3 +55,7 @@ gdb.txt
 # NODE SHAT #
 #############
 node_modules/
+
+# Diff Stuff #
+##############
+*.orig
