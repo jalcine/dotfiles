@@ -17,10 +17,13 @@ python
 import sys
 sys.path.insert(0, "/home/jacky/.gdb/python")
 
+# Load pretty printers for Qt4.
 from printers import register_extra_printers
 register_extra_printers()
+
+# Backtrace helpers
+from backtrace import register_backtrace
+register_backtrace()
 end
 
-# Loads methods.
-#source ~/.gdb/super.gdb
-source ~/.gdb/modules.gdb
+source ~/.gdb/aliases.gdb

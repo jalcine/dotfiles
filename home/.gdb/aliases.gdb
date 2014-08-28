@@ -61,3 +61,11 @@ document dlerr
   Syntax: dlerr
     | Prints out the last known error reported by dl.
 end
+
+define mk
+  make $argv
+end
+document mk
+  Synax: mk <args>
+    | Alias for make
+end
