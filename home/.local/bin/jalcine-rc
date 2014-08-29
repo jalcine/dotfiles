@@ -24,9 +24,9 @@ os_name()
 linux_pacakge_manager()
 {
   if [ -x apt-get ]; then
-    return "apt";
+    return "sudo apt";
   elif [ -x yum ]; then
-    return "yum";
+    return "sudo yum";
   fi
 }
 
@@ -78,26 +78,38 @@ install_perl_interpreter()
 {
   # So, I'm debating having Perl built globally because that way I can just use
   # local::lib and build on a per-project basis.
-  install_package perl
-  curl -L http://cpanmin.us | perl - App::cpanminus
+  if [[ "$@" ~= "--ruby" ]]; then
+    install_package perl
+    curl -L http://cpanmin.us | perl - App::cpanminus
+  else
+    echo -e "[jalcine] Nothing perl-specific being installed."
+  fi
 }
 
 install_python_interpreter()
 {
   # Use the package manager, Python's very mature of a language with its
   # package manager.
-  install_package python
+  if [[ "$@" ~= "--python" ]]; then
+    install_package python
+  else
+    echo -e "[jalcine] Nothing python-specific being installed."
+  fi
 }
 
 install_node_interpreter()
 {
-  homeshick plugin enable nvm
-  reload
-  nvm install v0.10.28
-  nvm install v0.11.13
-
-  # Install some favorite packages.
-  npm install -g jshint jsonlint npm q express connect
+  if [[ "$@" ~= "--node" ]]; then
+    homeshick plugin enable nvm
+    reload
+    nvm install v0.10.28
+    nvm install v0.11.13
+  
+    # Install some favorite packages.
+    npm install -g jshint jsonlint npm q express connect
+  else
+    echo -e "[jalcine] Nothing node-specific being installed."
+  fi
 }
 
 install_homeshick()
@@ -122,6 +134,9 @@ if [ ! -x $HOME/.homesick/repos/dotfiles ]; then
       bash-it alias enable general
       bash-it alias enable homesick
       bash-it alias enable git
+      [[ "$@" ~= "--ruby" ]] && bash-it alias enable ruby
+      [[ "$@" ~= "--node" ]] && bash-it alias enable node
+      [[ "$@" ~= "--python" ]] && bash-it alias enable python
       reload
     fi
 fi
