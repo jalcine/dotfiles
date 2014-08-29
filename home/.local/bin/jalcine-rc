@@ -61,7 +61,8 @@ install_interpreters()
 # TODO Make a central list of gems to install.
 install_ruby_interpreter()
 {
-  if ["$@" ~= "--ruby"]; then
+  if [[ "$@" ~= "--ruby" ]]
+  then
     homeshick plugin enable rbenv
     reload
     rbenv install 2.1.1 -vk && rbenv rehash
@@ -78,7 +79,8 @@ install_perl_interpreter()
 {
   # So, I'm debating having Perl built globally because that way I can just use
   # local::lib and build on a per-project basis.
-  if [[ "$@" ~= "--ruby" ]]; then
+  if [[ "$@" =~ "--ruby" ]]
+  then
     install_package perl
     curl -L http://cpanmin.us | perl - App::cpanminus
   else
@@ -90,7 +92,8 @@ install_python_interpreter()
 {
   # Use the package manager, Python's very mature of a language with its
   # package manager.
-  if [[ "$@" ~= "--python" ]]; then
+  if [[ "$@" =~ "--python" ]]
+  then
     install_package python
   else
     echo -e "[jalcine] Nothing python-specific being installed."
@@ -99,7 +102,7 @@ install_python_interpreter()
 
 install_node_interpreter()
 {
-  if [[ "$@" ~= "--node" ]]; then
+  if [[ "$@" =~ "--node" ]]; then
     homeshick plugin enable nvm
     reload
     nvm install v0.10.28
