@@ -112,7 +112,13 @@ if [ ! -x $HOME/.homesick/repos/dotfiles ]; then
     homeshick link $dotfile
     if [$dotfile eq "dotfiles" ]; then
       source $HOME/.bashrc
+      # TODO: Determine which plugins should be installed on first run.
+      # TODO: Determine which aliases to enable.
+      # TODO: Determien which completions to enable.
       bash-it alias enable homesick
+      bash-it plugin enable rbenv
+      bash-it plugin enable nvm
+      reload
     fi
 fi
 
