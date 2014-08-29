@@ -61,7 +61,7 @@ install_interpreters()
 # TODO Make a central list of gems to install.
 install_ruby_interpreter()
 {
-  hsh plugin enable rbenv
+  homeshick plugin enable rbenv
   reload
   rbenv install 2.1.1 -vk && rbenv rehash
 
@@ -87,7 +87,7 @@ install_python_interpreter()
 
 install_node_interpreter()
 {
-  hsh plugin enable nvm
+  homeshick plugin enable nvm
   reload
   nvm install v0.10.28
   nvm install v0.11.13
