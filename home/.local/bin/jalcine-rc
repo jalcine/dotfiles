@@ -139,9 +139,9 @@ if [ ! -x $HOME/.homesick/repos/dotfiles ]; then
       bash-it alias enable general
       bash-it alias enable homesick
       bash-it alias enable git
-      [[ "$@" ~= "--ruby" ]] && bash-it alias enable ruby
-      [[ "$@" ~= "--node" ]] && bash-it alias enable node
-      [[ "$@" ~= "--python" ]] && bash-it alias enable python
+      [[ "$@" =~ "--ruby" ]] && bash-it alias enable ruby
+      [[ "$@" =~ "--node" ]] && bash-it alias enable node
+      [[ "$@" =~ "--python" ]] && bash-it alias enable python
       reload
     fi
 fi
