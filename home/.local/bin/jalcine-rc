@@ -102,11 +102,19 @@ install_homeshick()
   source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 }
 
+# Install homeshick first.
 install_homeshick
+
 if [ ! -x $HOME/.homesick/repos/dotfiles ]; then
-  homeshick clone git://github.com/jalcine/dotfiles
-  homeshick link dotfiles
-  source $HOME/.bashrc
-  bash-it alias enable homesick
+  for $dotfile in dotfiles vimrc tmuxrc
+  do
+    homeshick clone git://github.com/jalcine/$dotfile
+    homeshick link $dotfile
+    if [$dotfile eq "dotfiles" ]; then
+      source $HOME/.bashrc
+      bash-it alias enable homesick
+    fi
 fi
+
+# Install my interpreters.
 install_interpreters;
