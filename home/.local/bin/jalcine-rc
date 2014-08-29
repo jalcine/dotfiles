@@ -61,13 +61,17 @@ install_interpreters()
 # TODO Make a central list of gems to install.
 install_ruby_interpreter()
 {
-  homeshick plugin enable rbenv
-  reload
-  rbenv install 2.1.1 -vk && rbenv rehash
-
-  # Install some favorite gems.
-  rbenv shell 2.1.1 && rbenv rehash
-  gem install --verbose awesome_print rake rack sinatra json
+  if [[ "$@" ~= "--ruby" ]]; then
+    homeshick plugin enable rbenv
+    reload
+    rbenv install 2.1.1 -vk && rbenv rehash
+  
+    # Install some favorite gems.
+    rbenv shell 2.1.1 && rbenv rehash
+    gem install --verbose awesome_print rake rack sinatra json
+  else
+    echo -e "[jalcine] Nothing ruby-specifc being installed."
+  fi
 }
 
 install_perl_interpreter()
@@ -114,10 +118,10 @@ if [ ! -x $HOME/.homesick/repos/dotfiles ]; then
       source $HOME/.bashrc
       # TODO: Determine which plugins should be installed on first run.
       # TODO: Determine which aliases to enable.
-      # TODO: Determien which completions to enable.
+      # TODO: Determine which completions to enable.
+      bash-it alias enable general
       bash-it alias enable homesick
-      bash-it plugin enable rbenv
-      bash-it plugin enable nvm
+      bash-it alias enable git
       reload
     fi
 fi
