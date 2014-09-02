@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Vi mode all the time!
+set -o vi
+
 # Append all history entries.
 shopt -s histappend
 

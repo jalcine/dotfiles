@@ -106,6 +106,7 @@
   pull          = pull --ff-only
   pul           = pull
   puhs          = push
+  pus           = push
   up            = merge --ff-only
   join          = merge --no-ff
   ci            = commit

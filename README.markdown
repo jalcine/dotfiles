@@ -37,7 +37,7 @@ so your mileage *will* vary. This is designed to be installed using
 Just for my convenience (and maybe yours), you can install my full dotfiles
 setup with the following:
 
-wget -O https://raw.githubusercontent.com/jalcine/dotfiles/develop/home/.local/bin/jalcine-rc | bash
+`wget -O https://raw.githubusercontent.com/jalcine/dotfiles/develop/home/.local/bin/jalcine-rc | bash jalcine-rc`
 
 ## Author
 
