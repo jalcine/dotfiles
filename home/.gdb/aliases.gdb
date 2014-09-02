@@ -1,10 +1,10 @@
 # vim: set ft=gdb tw=78 fdm=indent:
 
 ## Some aliases
-define lb
+define breaks
   info breakpoints
 end
-document lb
+document breaks
   Syntax: lb
   | Alias for 'info breakpoints'.
   | List all breakpoints that are currently being used.

@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-# vim setl tw=78 fdm=syntax
+# vim: tw=78 fdm=syntax :
 
 def register_extra_printers():
     from qt4 import register_qt4_printers
