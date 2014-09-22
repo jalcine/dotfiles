@@ -1,9 +1,6 @@
 #!/bin/bash
 # @author Jacky Alciné <me@jalcine.me>
 
-# If not running interactively, don't do anything.
-[ -z "$PS1" ] && return
-
 # Keep a relative short immediate history.
 HISTSIZE=32
 
@@ -30,6 +27,12 @@ export HISTSIZE HISTIGNORE HISTFILESIZE HISTCONTROL LC_ALL TZ LANGUAGE
 
 . $HOME/.bash/shopt.sh
 . $HOME/.bash/variables.sh
+
+
+# If not running interactively, don't do anything. Helps makes batch commands a
+# bit faster.
+[ -z "$PS1" ] && return
+
 . $HOME/.bash/bash-it.sh
 
 # Print out our bad guy.

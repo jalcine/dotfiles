@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Vi mode all the time!
+# Use shell like Vi command line mode.
 set -o vi
 
 # Append all history entries.

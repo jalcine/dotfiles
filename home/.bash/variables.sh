@@ -56,8 +56,8 @@ fi
 # Add custom manpath.
 export MANPATH="$MANPATH:$HOME/.local/man"
 
-# Source variables for vcprompt.
-source $HOME/.bash/variables.vcprompt.sh
+# Variables for vcprompt
+export VCPROMPT_FORMAT="${bold_white}%n${normal}:%b ${red}%r${normal} %m%u%a"
 
 # Extra variables to use? We gotcha.
 [ -e $HOME/.variables.local.sh ] && . $HOME/.variables.local.sh
