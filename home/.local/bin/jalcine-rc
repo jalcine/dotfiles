@@ -10,6 +10,10 @@ os_name()
 {
   case $(uname -s) in
     "Linux")
+      if [ -e /var/apt ]; then
+        return "debian"
+      fi
+
       return "linux"
       ;;
     "FreeBSD")
@@ -35,14 +39,15 @@ linux_pacakge_manager()
 install_package()
 {
   case os_name in
-    "linux")
+    "debain")
       sudo apt-get install $1
       ;;
     "bsd")
       sudo yum install $1
       ;;
-    "osx")
-      brew install $1
+    "darwin")
+      [ -x brew ] && brew install $1
+      [ -x port ] && sudo brew install $1
       ;;
   esac
 }
@@ -71,7 +76,7 @@ install_ruby_interpreter()
     rbenv shell 2.1.1 && rbenv rehash
     gem install --verbose awesome_print rake rack sinatra json
   else
-    echo -e "[jalcine] Nothing ruby-specifc being installed."
+    echo "[jalcine] Nothing ruby-specifc being installed."
   fi
 }
 
@@ -84,7 +89,7 @@ install_perl_interpreter()
     install_package perl
     curl -L http://cpanmin.us | perl - App::cpanminus
   else
-    echo -e "[jalcine] Nothing perl-specific being installed."
+    echo "[jalcine] Nothing perl-specific being installed."
   fi
 }
 
@@ -96,7 +101,7 @@ install_python_interpreter()
   then
     install_package python
   else
-    echo -e "[jalcine] Nothing python-specific being installed."
+    echo "[jalcine] Nothing python-specific being installed."
   fi
 }
 
@@ -113,7 +118,7 @@ install_node_interpreter()
     # Install some favorite packages.
     npm install -g jshint jsonlint npm q express connect
   else
-    echo -e "[jalcine] Nothing node-specific being installed."
+    echo "[jalcine] Nothing node-specific being installed."
   fi
 }
 
@@ -133,12 +138,35 @@ if [ ! -x $HOME/.homesick/repos/dotfiles ]; then
     homeshick link $dotfile
     if [$dotfile eq "dotfiles" ]; then
       source $HOME/.bashrc
-      # TODO: Determine which plugins should be installed on first run.
-      # TODO: Determine which aliases to enable.
-      # TODO: Determine which completions to enable.
+
+      echo "[jalcine] Enabling aliases..."
       bash-it alias enable general
       bash-it alias enable homesick
       bash-it alias enable git
+      bash-it alias enable vim
+      bash-it alias enable tmux
+      bash-it alias enable heroku
+      bash-it alias enable bundler
+
+      echo "[jalcine] Enabling plugins..."
+      bash-it plugin enable base
+      bash-it plugin enable battery
+      bash-it plugin enable dirs
+      bash-it plugin enable git
+      bash-it plugin enable fasd
+      bash-it plugin enable rbenv
+      bash-it plugin enable tmux
+      bash-it plugin enable extract
+      bash-it plugin enable homeshick
+
+      echo "[jalcine] Enabling completions..."
+      bash-it completion enable git
+      bash-it completion enable git_flow
+      bash-it completion enable ssh
+      bash-it completion enable tmux
+      bash-it completion enable bash-it
+      bash-it completion enable homesick
+
       [[ "$@" =~ "--ruby" ]] && bash-it alias enable ruby
       [[ "$@" =~ "--node" ]] && bash-it alias enable node
       [[ "$@" =~ "--python" ]] && bash-it alias enable python
