@@ -172,6 +172,7 @@ if [ ! -x $HOME/.homesick/repos/dotfiles ]; then
       [[ "$@" =~ "--python" ]] && bash-it alias enable python
       reload
     fi
+  done
 fi
 
 # Install my interpreters.
