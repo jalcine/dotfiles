@@ -136,7 +136,7 @@ if [ ! -x $HOME/.homesick/repos/dotfiles ]; then
   do
     homeshick clone git://github.com/jalcine/$dotfile
     homeshick link $dotfile
-    if [$dotfile eq "dotfiles" ]; then
+    if [[ $dotfile eq "dotfiles" ]]; then
       source $HOME/.bashrc
 
       echo "[jalcine] Enabling aliases..."
