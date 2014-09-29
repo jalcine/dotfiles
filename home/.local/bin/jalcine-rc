@@ -132,7 +132,7 @@ install_homeshick()
 install_homeshick
 
 if [ ! -x $HOME/.homesick/repos/dotfiles ]; then
-  for $dotfile in dotfiles vimrc tmuxrc
+  for dotfile in 'dotfiles' 'vimrc' 'tmuxrc'
   do
     homeshick clone git://github.com/jalcine/$dotfile
     homeshick link $dotfile
