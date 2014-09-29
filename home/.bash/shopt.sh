@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Use shell like Vi command line mode.
-set -o vi
+set -o emacs
 
 # Append all history entries.
 shopt -s histappend
