@@ -140,32 +140,32 @@ if [ ! -x $HOME/.homesick/repos/dotfiles ]; then
       source $HOME/.bashrc
 
       echo "[jalcine] Enabling aliases..."
-      bash-it alias enable general
-      bash-it alias enable homesick
-      bash-it alias enable git
-      bash-it alias enable vim
-      bash-it alias enable tmux
-      bash-it alias enable heroku
-      bash-it alias enable bundler
+      bash-it enable alias general
+      bash-it enable alias homesick
+      bash-it enable alias git
+      bash-it enable alias vim
+      bash-it enable alias tmux
+      bash-it enable alias heroku
+      bash-it enable alias bundler
 
       echo "[jalcine] Enabling plugins..."
-      bash-it plugin enable base
-      bash-it plugin enable battery
-      bash-it plugin enable dirs
-      bash-it plugin enable git
-      bash-it plugin enable fasd
-      bash-it plugin enable rbenv
-      bash-it plugin enable tmux
-      bash-it plugin enable extract
-      bash-it plugin enable homeshick
+      bash-it enable plugin base
+      bash-it enable plugin battery
+      bash-it enable plugin dirs
+      bash-it enable plugin git
+      bash-it enable plugin fasd
+      bash-it enable plugin rbenv
+      bash-it enable plugin tmux
+      bash-it enable plugin extract
+      bash-it enable plugin homeshick
 
       echo "[jalcine] Enabling completions..."
-      bash-it completion enable git
-      bash-it completion enable git_flow
-      bash-it completion enable ssh
-      bash-it completion enable tmux
-      bash-it completion enable bash-it
-      bash-it completion enable homesick
+      bash-it enable completion git
+      bash-it enable completion git_flow
+      bash-it enable completion ssh
+      bash-it enable completion tmux
+      bash-it enable completion bash-it
+      bash-it enable completion homesick
 
       [[ "$@" =~ "--ruby" ]] && bash-it alias enable ruby
       [[ "$@" =~ "--node" ]] && bash-it alias enable node
