@@ -8,7 +8,7 @@ HISTSIZE=32
 HISTFILESIZE=42949673
 
 # Ignore some things people don't need to know.
-HISTIGNORE="&:pwd:ls:ll:lal:[bf]g:exit:rm*:sudo rm*:_*"
+HISTIGNORE="&:quit:exit*"
 
 # Ignore duplicates and whitespace.
 HISTCONTROL=ignoredups:ignorespace
