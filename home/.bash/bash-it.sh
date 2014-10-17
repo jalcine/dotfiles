@@ -2,8 +2,8 @@
 
 export BASH_IT="$HOME/.bash/bash-it"
 export BASH_IT_THEME="jalcine"
-export JALCINE_THEME_USER="jacky"
-export JALCINE_THEME_HOME="neuromancer.jalcine"
+export JALCINE_THEME_USER="jalcine"
+export JALCINE_THEME_HOME="stark.jalcine"
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
