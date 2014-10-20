@@ -37,6 +37,9 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/.local/lib"
 # Let the system know of the keys I use in the shell.
 export KEYCHAIN_SSH_KEYS=$(find $HOME/.ssh/keys -type f -name '*.rsa')
 
+# Time things.
+export HISTTIMEFORMAT="%d/%m/%y %T "
+
 # Only do this when I'm home.
 if [ "$(hostname)" = "neuromancer" ]; then
   export KEYCHAIN_GPG_KEYS="6E767393"
