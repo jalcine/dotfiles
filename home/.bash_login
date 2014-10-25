@@ -1,3 +1,0 @@
-#!/bin/bash
-
-[[ -L "$HOME/.bash/login.sh" ]] && . ~/.bash/login.sh;
