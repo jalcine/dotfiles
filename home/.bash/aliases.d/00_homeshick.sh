@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.profile
+# File: ~/.bash/aliases.d/00_homeshick.sh_
 # Author: Jacky Alcine <me@jalcine.me>
-# Description: Entry point for all shells.
+# Description: Aliases for homeshick.
 # =========================================================================== #
 
-source $HOME/.bash_profile
+alias hsh="homeshick"

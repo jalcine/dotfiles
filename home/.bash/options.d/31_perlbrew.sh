@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.profile
+# File: ~/.bash/options.d/perlbrew.sh
 # Author: Jacky Alcine <me@jalcine.me>
-# Description: Entry point for all shells.
+# Description: Variables for perlbrew
 # =========================================================================== #
 
-source $HOME/.bash_profile
+export PERLBREW_ROOT="$HOME/.perl5/perlbrew"
+export PERLBREW_HOME="$HOME/.perlbrew"

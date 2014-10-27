@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.profile
+# File: ~/.bash/plugins.d/homeshick.sh
 # Author: Jacky Alcine <me@jalcine.me>
-# Description: Entry point for all shells.
+# Description: Set up logic for homeshick.
 # =========================================================================== #
 
-source $HOME/.bash_profile
+source $HOME/.homesick/repos/homeshick/homeshick.sh

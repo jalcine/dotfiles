@@ -1,6 +1,6 @@
 # My Dotfiles
 
-![Snapshot in Yakuake](https://github.com/jalcine/dotfiles/raw/master/snapshot.png)
+![Snapshot in Yakuake](./snapshot.png)
 
 ## Story
 
@@ -19,8 +19,7 @@ so your mileage *will* vary. This is designed to be installed using
    `rbenv-vars`, `rbenv-whatis` and `ruby-build`; `git-hooks`;
    [`bash-it`][bashit]
 
- + **pre-loaded scripts**: `hub`, `composer`, [`vcprompt`][vcprompt],
-    `phpctags`, and [`ls++`][lsplusplus]
+ + **pre-loaded scripts**: `hub` and [`vcprompt`][vcprompt],
 
 ## To Work On
 

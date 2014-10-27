@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.profile
+# File: ~/.bashrc
 # Author: Jacky Alcine <me@jalcine.me>
-# Description: Entry point for all shells.
+# Description: Entry point for interactive shells.
 # =========================================================================== #
 
-source $HOME/.bash_profile
+source $HOME/.bash/lib/colors.sh
+source $HOME/.bash/lib/base16-colors.sh

@@ -1,31 +1,20 @@
-! source: https://raw.githubusercontent.com/whatyouhide/gotham-contrib/master/xresources/gotham
-*.foreground:   #98d1ce
-*.background:   #0a0f14
-*.cursorColor:  #98d1ce
+! Base16 Eighties
+! Scheme: Chris Kempson (http://chriskempson.com)
+! From: https://raw.githubusercontent.com/chriskempson/base16-xresources/master/base16-eighties.dark.256.xresources
 
-*.color0:       #0a0f14
-*.color8:       #10151b
-
-*.color1:       #c33027
-*.color9:       #d26939
-
-*.color2:       #26a98b
-*.color10:      #081f2d
-
-*.color3:       #edb54b
-*.color11:      #245361
-
-*.color4:       #195465
-*.color12:      #093748
-
-*.color5:       #4e5165
-*.color13:      #888ba5
-
-*.color6:       #33859d
-*.color14:      #599caa
-
-*.color7:       #98d1ce
-*.color15:      #d3ebe9
-
-! xterm --------------
-xterm*faceName: xft:inconsolata:pixelsize=13:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
+#define base00 #2d2d2d
+#define base01 #393939
+#define base02 #515151
+#define base03 #747369
+#define base04 #a09f93
+#define base05 #d3d0c8
+#define base06 #e8e6df
+#define base07 #f2f0ec
+#define base08 #f2777a
+#define base09 #f99157
+#define base0A #ffcc66
+#define base0B #99cc99
+#define base0C #66cccc
+#define base0D #6699cc
+#define base0E #cc99cc
+#define base0F #d27b53

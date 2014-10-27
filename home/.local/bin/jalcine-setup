@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# vim: set ft=sh:
+# Author: Jacky Alcine <me@jalcine.me>
+# Description: Shell script to handle the core installation of my optimal
+# system.
+
+git clone git://github.com/andsens/homeshick $HOME/.homesick/repos/homeshick
+source $HOME/.homesick/repos/homeshick/homeshick.sh
+
+if [[ ! -x $HOME/.homesick/repos/dotfiles ]]; then
+  for dotfile in 'gitrc' 'dotfiles' 'vimrc' 'tmuxrc'
+  do
+    homeshick clone https://github.com/jalcine/$dotfile
+    homeshick link $dotfile
+    if [[ $dotfile = "dotfiles" ]]; then
+      source $HOME/.bashrc
+    fi
+  done
+fi
+
+# Install my interpreters.
+$HOME/.local/bin/jalcine-shell-init
