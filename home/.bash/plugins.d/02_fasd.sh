@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.profile
+# File: ~/.bash/plugins.d/rbenv.sh
 # Author: Jacky Alcine <me@jalcine.me>
-# Description: Entry point for all shells.
+# Description: Set up for rbenv.
 # =========================================================================== #
 
-source $HOME/.bash_profile
+# Eval our friend into the shell.
+[[ -x fasd ]] || return;
+
+eval "$(fasd --init auto)";

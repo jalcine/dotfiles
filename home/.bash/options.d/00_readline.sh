@@ -1,8 +1,5 @@
-#!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.profile
+# File: ~/.bash/options.d/00_readline.sh
 # Author: Jacky Alcine <me@jalcine.me>
-# Description: Entry point for all shells.
+# Description: Setting up readline options.
 # =========================================================================== #
-
-source $HOME/.bash_profile

@@ -1,8 +1,0 @@
-# vim: set ft=ruby :
-AwesomePrint.defaults = {
-  indent: 2,
-  color: {
-    hash: :pale,
-    class: :white
-  }
-}
