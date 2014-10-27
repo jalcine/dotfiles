@@ -9,6 +9,7 @@
 
 keychain_init() {
   eval $(keychain --quiet --eval $KEYCHAIN_SSH_KEYS $KEYCHAIN_GPG_KEYS);
+  tset
 }
 
 function keychain_source {

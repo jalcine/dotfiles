@@ -5,6 +5,6 @@
 # Description: Set up for rbenv.
 # =========================================================================== #
 
-if [[ -x rbenv ]]; then
+if [[ -d $HOME/.rbenv ]]; then
   eval "$(rbenv init -)";
 fi
