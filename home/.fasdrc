@@ -1,0 +1,2 @@
+# vim: set ft=sh :
+_FASD_BLACKLIST="evil"
