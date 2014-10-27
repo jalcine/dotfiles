@@ -5,4 +5,6 @@
 # Description: Set up for rbenv.
 # =========================================================================== #
 
-[[ -x perlbrew ]] && . $HOME/.perl5/perlbrew/etc/bashrc
+if [[ -d $HOME/.perl5/perlbrew ]]; then
+  . $HOME/.perl5/perlbrew/etc/bashrc
+fi

@@ -49,7 +49,7 @@ install_gvm() {
 }
 
 install_hub() {
-  if [[ ! -x hub ]]; then
+  if [[ ! -e $HOME/.local/bin/hub ]]; then
     echo -e "[jalcine] Installing hub, Github's CLI tool...";
     cd $(mktemp -d);
     git clone git@github.com:github/hub.git hub
@@ -73,12 +73,8 @@ install_nvm() {
 }
 
 install_perl() {
-  install_perlbrew
-  install_cpanminus
-}
-
-install_perlbrew() {
-  if [[ ! -x perlbrew ]]; then
+  if [[ ! -d $HOME/.perlbrew ]]; then
+    echo "[jalcine] Installing Perl (perlbrew, cpanm, etc)..."
     # Build the necessary directories.
     [[ ! -d "$HOME/.perlbrew" ]] && mkdir $HOME/.perlbrew;
     [[ ! -d "$HOME/.perl5/perlbrew" ]] && mkdir -p $HOME/.perl5/perlbrew;
@@ -90,17 +86,14 @@ install_perlbrew() {
       TMPDIR=$(mktemp -d) bash
 
     # Install the versions of Perl I'd like to use.
-    perlbrew install perl-5.18.0
     perlbrew install perl-5.20.1
     perlbrew install perl-blead
-    perlbrew use perl-5.20.1
+
+    # Install CPANM.
+    perlbrew install-cpanm
+    cpanm Term::ExtendedColor Data::Dumper
   fi
 }
-
-install_cpanminus() {
-  curl -L http://cpanmin.us | perl - App::cpanminus
-}
-
 
 install_rbenv
 install_nvm

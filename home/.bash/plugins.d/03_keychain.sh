@@ -7,8 +7,8 @@
 
 [[ -x keychain ]] && return;
 
-function keychain_init {
-  eval $(keychain --eval $KEYCHAIN_SSH_KEY_PATHS $KEYCHAIN_GPG_KEYS);
+keychain_init() {
+  eval $(keychain --quiet --eval $KEYCHAIN_SSH_KEYS $KEYCHAIN_GPG_KEYS);
 }
 
 function keychain_source {
@@ -16,4 +16,5 @@ function keychain_source {
   source $HOME/.keychain/$HOSTNAME-sh-gpg;
 }
 
+keychain_init
 export PROMPT_COMMAND="$PROMPT_COMMAND;keychain_source"

@@ -16,6 +16,14 @@ jalcine_current_dir() {
   fi
 }
 
+jalcine_last_job_status() {
+  if [[ $? != 0 ]]; then
+    echo -e "${bold_red}$?${normal}";
+  fi
+
+  echo -e " "
+}
+
 jalcine_user_and_host() {
   local user="${bold_white}$USER${normal}";
   local host="${bold_orange}$(hostname)${normal}";
@@ -45,7 +53,7 @@ function jalcine_prompt {
 
   local _prompt_symbol="${bold_white}λ${normal}";
 
-  export PS1="$(jalcine_user_and_host)$(jalcine_current_dir)$(jalcine_vcs)\n ${_prompt_symbol} ";
+  export PS1="$(jalcine_user_and_host)$(jalcine_current_dir)$(jalcine_vcs)\n $(jalcine_last_job_status)${_prompt_symbol} ";
 }
 
 export PROMPT_COMMAND="jalcine_prompt;"
