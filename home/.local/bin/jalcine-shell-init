@@ -95,6 +95,7 @@ install_perl() {
   fi
 }
 
+install_fasd
 install_rbenv
 install_nvm
 install_gvm

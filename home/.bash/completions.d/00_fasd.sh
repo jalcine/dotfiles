@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.bash/plugins.d/rbenv.sh
+# File: ~/.bash/completions.d/fasd.h
 # Author: Jacky Alcine <me@jalcine.me>
-# Description: Set up for rbenv.
+# Description: Set up for fasd.
 # =========================================================================== #
 
-# Eval our friend into the shell.
 [[ -x fasd ]] || return;
 
-eval "$(fasd --init bash-hook)";
+eval "$(fasd --init bash-ccomp)";
