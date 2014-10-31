@@ -1,6 +1,5 @@
 # Learn about this file via `man readline`. The more you know!
 "\t": menu-complete
-
 set editing-mode emacs
 set show-all-if-ambiguous on
 set completion-ignore-case on

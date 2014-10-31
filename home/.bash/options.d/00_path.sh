@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.profile
+# File: $HOME/.bash/options.d/03_path.sh
 # Author: Jacky Alcine <me@jalcine.me>
-# Description: Entry point for all shells.
+# Description: Place where I set up my generic path options.
 # =========================================================================== #
 
-source $HOME/.bash_profile
+# My custom built binaries.
+export PATH="$HOME/.local/bin:$PATH"

@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.profile
+# File: ~/.bash/plugins/general.sh
 # Author: Jacky Alcine <me@jalcine.me>
-# Description: Entry point for all shells.
+# Description: Helper methods for the shell.
 # =========================================================================== #
 
-source $HOME/.bash_profile
+function mkcd {
+  if [[ ! -x $1 ]]; then
+    mkdir -p $1;
+  fi
+
+  cd $1;
+}

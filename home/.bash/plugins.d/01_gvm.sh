@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.profile
+# File: ~/.bash/plugins.d/gvm.sh
 # Author: Jacky Alcine <me@jalcine.me>
-# Description: Entry point for all shells.
+# Description: Set up for gvm
 # =========================================================================== #
 
-source $HOME/.bash_profile
+if [[ ! -x gvm ]]; then
+  . $HOME/.gvm/scripts/gvm
+fi

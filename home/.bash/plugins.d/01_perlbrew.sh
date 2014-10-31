@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.profile
+# File: ~/.bash/plugins.d/rbenv.sh
 # Author: Jacky Alcine <me@jalcine.me>
-# Description: Entry point for all shells.
+# Description: Set up for rbenv.
 # =========================================================================== #
 
-source $HOME/.bash_profile
+if [[ -d $HOME/.perl5/perlbrew ]]; then
+  . $HOME/.perl5/perlbrew/etc/bashrc
+fi

@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.profile
+# File: ~/.bash/options.d/rbenv.sh
 # Author: Jacky Alcine <me@jalcine.me>
-# Description: Entry point for all shells.
+# Description: Variables for Rbenv
 # =========================================================================== #
 
-source $HOME/.bash_profile

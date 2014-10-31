@@ -1,0 +1,103 @@
+#!/usr/bin/env bash
+# =========================================================================== #
+# File: ~/.bashrc
+# Author: Jacky Alcine <me@jalcine.me>
+# Description: Entry point for interactive shells.
+# =========================================================================== #
+
+# TODO Install rbenv.
+# TODO Install nvm.
+# TODO Install fasd.
+
+install_fasd() {
+  if [[ ! -e $HOME/.fasd ]]; then
+    echo -e "[jalcine] Installing fasd...";
+    # Go where no man's gone before.
+    cd $(mktemp -d);
+
+    # We're in the tempdir; so clone in the droid we were looking for.
+    git clone --depth 1 git://github.com/clvv/fasd fasd;
+
+    # Go into the folder and build that thang.
+    PREFIX=$HOME/.local make -C fasd install;
+  fi
+}
+
+install_rbenv() {
+  # TODO Ask to nuke any existing install of rbenv.
+  local _rbenv_git_plugin_path="$HOME/.bash/plugins.d/99_rbenv_from_git.sh"
+
+  # Set up rbenv by cloning.
+  if [[ ! -d "$HOME/.rbenv" ]]; then
+    echo -e "[jalcine] Installing rbenv...";
+    git clone --recursive -b master git@github.com:jalcine/rbenv $HOME/.rbenv
+  fi
+
+  # Add in our custom plugin for rbenv.
+  if [[ ! -e "${_rbenv_git_plugin_path}" ]]; then
+    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ${_rbenv_git_plugin_path};
+    source ${_rbenv_git_plugin_path};
+  fi
+}
+
+install_gvm() {
+  # Run the installer for GVM.
+  if [[ -x gvm ]]; then
+    echo -e "[jalcine] Installing Go version manager...";
+    bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+  fi
+}
+
+install_hub() {
+  if [[ ! -e $HOME/.local/bin/hub ]]; then
+    echo -e "[jalcine] Installing hub, Github's CLI tool...";
+    cd $(mktemp -d);
+    git clone git@github.com:github/hub.git hub
+    cd hub
+    ./script/build
+    cp hub $HOME/.local/bin/hub
+  fi
+}
+
+install_nvm() {
+  # TODO Ask to nuke any existing install of nvm.
+
+  # Set up nvm by cloning from Git.
+  if [[ ! -d "$HOME/.nvm" ]]; then
+    echo -e "[jalcine] Installing Node version manager...";
+    git clone --recursive -b master git@github.com:creationix/nvm $HOME/.nvm
+  fi
+
+  # Enable NVM off the back.
+  source $HOME/.nvm/nvm.sh
+}
+
+install_perl() {
+  if [[ ! -d $HOME/.perlbrew ]]; then
+    echo "[jalcine] Installing Perl (perlbrew, cpanm, etc)..."
+    # Build the necessary directories.
+    [[ ! -d "$HOME/.perlbrew" ]] && mkdir $HOME/.perlbrew;
+    [[ ! -d "$HOME/.perl5/perlbrew" ]] && mkdir -p $HOME/.perl5/perlbrew;
+
+    # Set the required variables.
+    curl -L http://install.perlbrew.pl | \
+      PERLBREW_ROOT="$HOME/.perl5/perlbrew" \
+      PERLBREW_HOME="$HOME/.perlbrew" \
+      TMPDIR=$(mktemp -d) bash
+
+    # Install the versions of Perl I'd like to use.
+    perlbrew install perl-5.20.1
+    perlbrew install perl-blead
+
+    # Install CPANM.
+    perlbrew install-cpanm
+    cpanm Term::ExtendedColor Data::Dumper
+  fi
+}
+
+install_fasd
+install_rbenv
+install_nvm
+install_gvm
+install_hub
+install_perl

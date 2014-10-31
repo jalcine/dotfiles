@@ -1,4 +1,4 @@
-home/.tmuxinator
-home/.ycm_extra_conf.pyc
-home/.fonts/apple
-home/.fonts/microsoft
+home/.bash/plugins.d/99_*.sh
+home/.bash/options.d/99_*.sh
+home/.bash/completions.d/99_*.sh
+home/.bash/aliases.d/99_*.sh

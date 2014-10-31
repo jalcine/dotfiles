@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.profile
+# File: ~/.bash/completions.d/fasd.h
 # Author: Jacky Alcine <me@jalcine.me>
-# Description: Entry point for all shells.
+# Description: Set up for fasd.
 # =========================================================================== #
 
-source $HOME/.bash_profile
+[[ -x fasd ]] || return;
+
+eval "$(fasd --init bash-ccomp)";

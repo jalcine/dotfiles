@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.profile
+# File: ~/.bash/plugins.d/nvm.sh
 # Author: Jacky Alcine <me@jalcine.me>
-# Description: Entry point for all shells.
+# Description: Set up for nvm.sh
 # =========================================================================== #
 
-source $HOME/.bash_profile
+# Source in NVM if we find it.
+if [[ ! -x nvm ]]; then
+  source $HOME/.nvm/nvm.sh;
+fi
