@@ -7,4 +7,4 @@
 
 [[ -x fasd ]] || return;
 
-eval "$(fasd --init bash-ccomp)";
+eval "$(fasd --init bash-ccomp bash-ccomp-install)";

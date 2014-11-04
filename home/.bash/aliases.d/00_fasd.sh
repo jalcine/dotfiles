@@ -8,3 +8,8 @@
 [[ ! -x fasd ]] && return;
 
 eval "$(fasd --init posix-alias)";
+
+alias v="f -t -e vim -b viminfo"
+alias o="a -e xdg-open"
+
+_fasd_bash_hook_cmd_complete v o

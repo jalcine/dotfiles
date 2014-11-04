@@ -6,12 +6,12 @@
 
 Here lies my local shell files that typically lie under my `$HOME` directory.
 I really only work on Linux machines, specifically Ubuntu and Debian machines
-so your mileage *will* vary. This is designed to be installed using 
+so your mileage *will* vary. This is designed to be installed using
 [homeshick][]. This repository incorporates the following:
 
  + **configuration options** for `awesome_print`, `astyle`, `gem`, `git`,
    `guard`, `gdb`, `libreadline`, `irb`, `pry`, `ruby-debug`, `tmux`,
-   `weechat`, `rainbarf` and a few others. There's a fairly extensive 
+   `weechat`, `rainbarf` and a few others. There's a fairly extensive
    collection of patched fonts I use as well as some freely available fonts.
 
  + **plug-ins**: a forked [`rbenv`][rbenv] with `rbenv-communal-gems`,
