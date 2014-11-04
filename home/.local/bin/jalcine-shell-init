@@ -5,10 +5,6 @@
 # Description: Entry point for interactive shells.
 # =========================================================================== #
 
-# TODO Install rbenv.
-# TODO Install nvm.
-# TODO Install fasd.
-
 install_fasd() {
   if [[ ! -e $HOME/.fasd ]]; then
     echo -e "[jalcine] Installing fasd...";
@@ -42,7 +38,7 @@ install_rbenv() {
 
 install_gvm() {
   # Run the installer for GVM.
-  if [[ -x gvm ]]; then
+  if [[ ! -x gvm ]]; then
     echo -e "[jalcine] Installing Go version manager...";
     bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
   fi
@@ -51,7 +47,7 @@ install_gvm() {
 install_hub() {
   if [[ ! -e $HOME/.local/bin/hub ]]; then
     echo -e "[jalcine] Installing hub, Github's CLI tool...";
-    cd $(mktemp -d);
+    cd $(mktemp -d -t github_hub);
     git clone git@github.com:github/hub.git hub
     cd hub
     ./script/build
@@ -63,7 +59,8 @@ install_nvm() {
   # TODO Ask to nuke any existing install of nvm.
 
   # Set up nvm by cloning from Git.
-  if [[ ! -d "$HOME/.nvm" ]]; then
+  if [[ ! -e "$HOME/.nvm/nvm.sh" ]]; then
+    rm -rv $HOME/.nvm
     echo -e "[jalcine] Installing Node version manager...";
     git clone --recursive -b master git@github.com:creationix/nvm $HOME/.nvm
   fi
@@ -83,10 +80,10 @@ install_perl() {
     curl -L http://install.perlbrew.pl | \
       PERLBREW_ROOT="$HOME/.perl5/perlbrew" \
       PERLBREW_HOME="$HOME/.perlbrew" \
-      TMPDIR=$(mktemp -d) bash
+      TMPDIR=$(mktemp -d -t perlbrew) bash
 
     # Install the versions of Perl I'd like to use.
-    perlbrew install perl-5.20.1
+    perlbrew install 5.20.1
     perlbrew install perl-blead
 
     # Install CPANM.
