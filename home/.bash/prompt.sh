@@ -17,11 +17,10 @@ jalcine_current_dir() {
 }
 
 jalcine_last_job_status() {
-  if [[ $? != 0 ]]; then
-    echo -e "${bold_red}$?${normal}";
+  local _job_status="$?";
+  if [[ ! -n $_job_status && $_job_status != 0 ]]; then
+    echo -e "${bold_red}${_job_status} ${normal}";
   fi
-
-  echo -e " "
 }
 
 jalcine_user_and_host() {
@@ -51,9 +50,9 @@ function jalcine_prompt {
   # The first line should have the most information like directory information,
   # last job status, git info and the likes.
 
-  local _prompt_symbol="${bold_white}λ${normal}";
-
-  export PS1="$(jalcine_user_and_host)$(jalcine_current_dir)$(jalcine_vcs)\n $(jalcine_last_job_status)${_prompt_symbol} ";
+  local _prompt_symbol="${bold_white}λ${normal} ";
+  export PS1="$(jalcine_user_and_host)$(jalcine_current_dir)$(jalcine_vcs)\n\
+ $(jalcine_last_job_status)${_prompt_symbol}";
 }
 
 export PROMPT_COMMAND="jalcine_prompt;"
