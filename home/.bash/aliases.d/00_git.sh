@@ -17,6 +17,7 @@ alias gco="git checkout"
 alias gc="git commit"
 alias gca="git commit --all"
 alias gp="git push"
+alias gfa="git fetch --all"
 
 alias gdf="git diff --stat"
 alias gsh="git show HEAD"

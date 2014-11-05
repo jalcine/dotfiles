@@ -5,11 +5,11 @@
 # Description: Aliases to move around the computer faster.
 # =========================================================================== #
 
-[[ ! -x fasd ]] && return;
+if [[ -x fasd ]]; then
+  eval "$(fasd --init posix-alias)";
 
-eval "$(fasd --init posix-alias)";
+  alias v="f -t -e vim -b viminfo"
+  alias o="a -e xdg-open"
 
-alias v="f -t -e vim -b viminfo"
-alias o="a -e xdg-open"
-
-_fasd_bash_hook_cmd_complete v o
+  _fasd_bash_hook_cmd_complete v o
+fi
