@@ -6,6 +6,4 @@
 # =========================================================================== #
 
 # Eval our friend into the shell.
-[[ ! -x fasd ]] && return;
-
-eval "$(fasd --init bash-hook posix-hook)";
+eval "$(fasd --init bash-hook)";

@@ -25,4 +25,4 @@ function keychain_wipe {
 }
 
 keychain_init
-export PROMPT_COMMAND="$PROMPT_COMMAND;keychain_source"
+export PROMPT_COMMAND="${PROMPT_COMMAND};keychain_source"

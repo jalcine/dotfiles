@@ -5,10 +5,7 @@
 # Description: Aliases to move around the computer faster.
 # =========================================================================== #
 
-if [[ -x fasd ]]; then
-  eval "$(fasd --init posix-alias)";
+eval "$(fasd --init posix-alias)";
 
-  alias v="f -t -e vim -b viminfo"
-  alias o="a -e xdg-open"
-
-fi
+alias v="f -t -e vim -b viminfo"
+alias o="a -e xdg-open"

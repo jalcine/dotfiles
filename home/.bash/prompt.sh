@@ -55,4 +55,4 @@ function jalcine_prompt {
  $(jalcine_last_job_status)${_prompt_symbol}";
 }
 
-export PROMPT_COMMAND="jalcine_prompt;"
+export PROMPT_COMMAND="jalcine_prompt"

@@ -25,5 +25,5 @@ load_custom_plugins() {
   done
 }
 
-load_custom_plugins;
 load_default_plugins;
+load_custom_plugins;
