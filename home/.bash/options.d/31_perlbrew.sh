@@ -7,4 +7,3 @@
 
 export PERLBREW_ROOT="$HOME/.perl5/perlbrew"
 export PERLBREW_HOME="$HOME/.perlbrew"
-export PERLBREW_PERL="perl-5.20.1"
