@@ -9,7 +9,7 @@
 # {{{ SSH Forwarding
 SOCK="/tmp/ssh-agent-$USER-tmux"
 
-if [[ -S $SSH_AUTH_SOCK ]] && [[ $SSH_AUTH_SOCK != $SOCK ]]
+if [[ ! -S $SSH_AUTH_SOCK ]] && [[ $SSH_AUTH_SOCK != $SOCK ]]
 then
     rm -f /tmp/ssh-agent-$USER-tmux
     ln -sf $SSH_AUTH_SOCK $SOCK
