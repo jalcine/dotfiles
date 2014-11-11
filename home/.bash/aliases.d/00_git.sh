@@ -13,6 +13,7 @@ alias gst="git status --short --branch"
 
 alias ga="git add"
 alias gb="git branch"
+alias gr="git remote"
 alias gco="git checkout"
 alias gc="git commit"
 alias gca="git commit --all"
