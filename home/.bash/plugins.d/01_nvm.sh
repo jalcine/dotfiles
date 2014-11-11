@@ -6,6 +6,6 @@
 # =========================================================================== #
 
 # Source in NVM if we find it.
-if [[ ! -x nvm ]]; then
+if [[ ! -x nvm ]] && [[ -e $HOME/.nvm/nvm.sh ]]; then
   source $HOME/.nvm/nvm.sh;
 fi

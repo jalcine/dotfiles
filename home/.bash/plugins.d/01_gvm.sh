@@ -5,6 +5,6 @@
 # Description: Set up for gvm
 # =========================================================================== #
 
-if [[ ! -x gvm ]]; then
+if [[ ! -x gvm ]] && [[ -e $HOME/.gvm/scripts/gvm ]]; then
   . $HOME/.gvm/scripts/gvm
 fi
