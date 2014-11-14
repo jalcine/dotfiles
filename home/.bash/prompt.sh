@@ -12,13 +12,13 @@ jalcine_current_dir() {
   if [[ $HOME == "$PWD" ]]; then
     printf "${bold_red}~${normal} ";
   else
-    printf "${bold_white}$(basename $PWD)${normal} ";
+    printf "${bold_white}$(basename "$PWD")${normal} ";
   fi
 }
 
 jalcine_last_job_status() {
   local _job_status="$?";
-  if [[ ! -n $_job_status && $_job_status != 0 ]]; then
+  if [[ -z $_job_status ]]; then
     echo -e "${bold_red}${_job_status} ${normal}";
   fi
 }

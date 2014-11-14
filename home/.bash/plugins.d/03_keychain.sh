@@ -9,14 +9,14 @@
 
 keychain_init() {
   if [[ ! -e $HOME/.keychain/$HOSTNAME-sh ]]; then
-    eval $(keychain --eval $KEYCHAIN_SSH_KEYS $KEYCHAIN_GPG_KEYS);
+    eval $(keychain --quiet --eval $KEYCHAIN_SSH_KEYS $KEYCHAIN_GPG_KEYS);
     tset
   fi
 }
 
 function keychain_source {
-  source $HOME/.keychain/$HOSTNAME-sh;
-  source $HOME/.keychain/$HOSTNAME-sh-gpg;
+  [[ -e $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh;
+  [[ -e $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh-gpg;
 }
 
 function keychain_wipe {
@@ -25,4 +25,4 @@ function keychain_wipe {
 }
 
 keychain_init
-export PROMPT_COMMAND="${PROMPT_COMMAND};keychain_source"
+export PROMPT_COMMAND="keychain_source;${PROMPT_COMMAND}"
