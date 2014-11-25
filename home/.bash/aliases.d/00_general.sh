@@ -19,5 +19,7 @@ alias ...="cd ../../"
 alias ~="cd $HOME"
 
 alias irc="weechat"
-
 alias resrc="source ~/.bashrc"
+
+alias ":wq"="echo You\'re not in Vim\!"
+alias ":e"="vim"
