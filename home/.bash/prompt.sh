@@ -43,16 +43,15 @@ jalcine_vcs() {
 }
 
 function jalcine_prompt {
-  # TODO Make this reflexive when under 'n' directories frome $HOME.
-  # TODO Allow definition of a symbol (i.e: '~') when at home.
-  # TODO Give this some damn color!
-
-  # The first line should have the most information like directory information,
-  # last job status, git info and the likes.
-
   local _prompt_symbol="${bold_white}λ${normal} ";
-  export PS1="$(jalcine_user_and_host)$(jalcine_current_dir)$(jalcine_vcs)\n\
- $(jalcine_last_job_status)${_prompt_symbol}";
+  export PS1="$(jalcine_user_and_host)$(jalcine_current_dir)$(jalcine_vcs)\n"
+  export PS1="$PS1$(jalcine_last_job_status)${_prompt_symbol}";
 }
 
-export PROMPT_COMMAND="jalcine_prompt"
+case $PROMPT_COMMAND in
+  *jalcine_prompt*)
+    ;;
+  *)
+    PROMPT_COMMAND="jalcine_prompt;$PROMPT_COMMAND"
+    ;;
+esac

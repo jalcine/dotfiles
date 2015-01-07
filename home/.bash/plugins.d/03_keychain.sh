@@ -24,5 +24,14 @@ function keychain_wipe {
   keychain_init
 }
 
+case "$PROMPT_COMMAND" in
+  *keychain_source*) ;;
+  "")
+    export PROMPT_COMMAND="keychain_source"
+  ;;
+  *)
+    export PROMPT_COMMAND="keychain_source;${PROMPT_COMMAND}"
+  ;;
+esac
+
 keychain_init
-export PROMPT_COMMAND="keychain_source;${PROMPT_COMMAND}"
