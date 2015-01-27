@@ -18,4 +18,4 @@ set auto-load python-scripts on
 #set overload-resolution on
 
 source ~/.gdb/aliases.gdb
-source ~/.gdb/c++.gdb
+#source ~/.gdb/c++.gdb

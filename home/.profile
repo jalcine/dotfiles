@@ -5,4 +5,5 @@
 # Description: Entry point for all shells.
 # =========================================================================== #
 
-source $HOME/.bash_profile
+# NOTE: lightdm doesn't seem to like this.
+#source $HOME/.bash_profile
