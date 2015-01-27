@@ -5,10 +5,10 @@
 # =========================================================================== #
 
 export VCPROMPT_FORMAT="${bold_white}%n${normal}:%b ${red}%r${normal} %m%u%a"
-export GREP_OPTIONS="--color=auto"
-export GREP_COLOR="1;33"
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;33'
 export LSCOLORS='Gxfxcxdxdxegedabagacad'
-export HISTCONTROL="ignoredups"
-export HISTCONTROL=erasedups
-export HISTSIZE=5000
+export HISTCONTROL='ignoredups;erasedups'
+export HISTSIZE=100000
 export EDITOR=vim
+test -z $JALCINE_HOST && export JALCINE_HOST=""
