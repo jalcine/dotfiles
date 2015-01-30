@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.bash/aliases.d/99_tmux.sh
+# File: ~/.bash/aliases.d/10_tmux.sh
 # Author: Jacky Alcine <me@jalcine.me>
 # Description: Aliases for tmux.
 # =========================================================================== #

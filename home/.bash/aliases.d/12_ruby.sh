@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.bash/plugins.d/05_gitignore.sh
+# File: ~/.bash/aliases.d/12_npm.sh
 # Author: Jacky Alcine <me@jalcine.me>
-# Description: Git ignore downloader.
+# Description: Aliases for ruby 
 # =========================================================================== #
 
-gi() {
-  curl -L -s https://www.gitignore.io/api/\$@ ;
-}
+alias bi="bundle install"
+alias bu="bundle update"
