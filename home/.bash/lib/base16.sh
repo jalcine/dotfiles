@@ -1,37 +1,37 @@
 #!/bin/sh
-# Base16 harmonic16 - Shell color setup script
-# Jannik Siebert (https://github.com/janniks)
+# Base16 Summerfruit - Shell color setup script
+# Christopher Corley (http://cscorley.github.io/)
 
 if [ "${TERM%%-*}" = 'linux' ]; then
     # This script doesn't support linux console (use 'vconsole' template instead)
     return 2>/dev/null || exit 0
 fi
 
-color00="0b/1c/2c" # Base 00 - Black
-color01="bf/8b/56" # Base 08 - Red
-color02="56/bf/8b" # Base 0B - Green
-color03="8b/bf/56" # Base 0A - Yellow
-color04="8b/56/bf" # Base 0D - Blue
-color05="bf/56/8b" # Base 0E - Magenta
-color06="56/8b/bf" # Base 0C - Cyan
-color07="cb/d6/e2" # Base 05 - White
-color08="62/7e/99" # Base 03 - Bright Black
+color00="15/15/15" # Base 00 - Black
+color01="FF/00/86" # Base 08 - Red
+color02="00/C9/18" # Base 0B - Green
+color03="AB/A8/00" # Base 0A - Yellow
+color04="37/77/E6" # Base 0D - Blue
+color05="AD/00/A1" # Base 0E - Magenta
+color06="1f/aa/aa" # Base 0C - Cyan
+color07="D0/D0/D0" # Base 05 - White
+color08="50/50/50" # Base 03 - Bright Black
 color09=$color01 # Base 08 - Bright Red
 color10=$color02 # Base 0B - Bright Green
 color11=$color03 # Base 0A - Bright Yellow
 color12=$color04 # Base 0D - Bright Blue
 color13=$color05 # Base 0E - Bright Magenta
 color14=$color06 # Base 0C - Bright Cyan
-color15="f7/f9/fb" # Base 07 - Bright White
-color16="bf/bf/56" # Base 09
-color17="bf/56/56" # Base 0F
-color18="22/3b/54" # Base 01
-color19="40/5c/79" # Base 02
-color20="aa/bc/ce" # Base 04
-color21="e5/eb/f1" # Base 06
-color_foreground="cb/d6/e2" # Base 05
-color_background="0b/1c/2c" # Base 00
-color_cursor="cb/d6/e2" # Base 05
+color15="FF/FF/FF" # Base 07 - Bright White
+color16="FD/89/00" # Base 09
+color17="cc/66/33" # Base 0F
+color18="20/20/20" # Base 01
+color19="30/30/30" # Base 02
+color20="B0/B0/B0" # Base 04
+color21="E0/E0/E0" # Base 06
+color_foreground="D0/D0/D0" # Base 05
+color_background="15/15/15" # Base 00
+color_cursor="D0/D0/D0" # Base 05
 
 if [ -n "$TMUX" ]; then
   # tell tmux to pass the escape sequences through
