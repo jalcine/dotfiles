@@ -21,7 +21,7 @@ alias gci="git commit --interactive"
 alias gp="git push"
 alias gfa="git fetch --all"
 
-alias gdf="git diff --stat"
+alias gds="git diff --name-only"
 alias gsh="git show HEAD"
 
 alias grc="git rebase --continue"

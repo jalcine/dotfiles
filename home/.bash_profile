@@ -4,4 +4,4 @@
 # Description: Entry point for all shells.
 # =========================================================================== #
 
-source $HOME/.bashrc
+#source $HOME/.bashrc
