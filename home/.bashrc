@@ -16,8 +16,8 @@
 # TODO Make this into a loop so that we can just include on the fly.
 . $HOME/.bash/lib.sh
 . $HOME/.bash/options.sh;
-. $HOME/.bash/aliases.sh;
 . $HOME/.bash/plugins.sh;
+. $HOME/.bash/aliases.sh;
 . $HOME/.bash/completions.sh;
 
 if [[ ! -z $PS1 ]]; then
