@@ -4,4 +4,11 @@
 # Description: Entry point for all shells on login (at least on Linux).
 # =========================================================================== #
 
-# Nothing happens on login.
+# Load in our options for the shell.
+. $HOME/.bash/lib.sh;
+. $HOME/.bash/options.sh;
+. $HOME/.bash/aliases.sh;
+. $HOME/.bash/plugins.sh;
+. $HOME/.bash/completions.sh;
+. $HOME/.bash/prompt.sh;
+
