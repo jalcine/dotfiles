@@ -23,3 +23,4 @@
 if [[ ! -z $PS1 ]]; then
   . $HOME/.bash/prompt.sh;
 fi
+[[ -s "/home/jalcine/.gvm/scripts/gvm" ]] && source "/home/jalcine/.gvm/scripts/gvm"

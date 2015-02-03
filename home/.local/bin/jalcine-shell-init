@@ -47,11 +47,12 @@ install_gvm() {
 install_hub() {
   if [[ ! -e $HOME/.local/bin/hub ]]; then
     echo -e "[jalcine] Installing hub, Github's CLI tool...";
-    cd $(mktemp -d -t github_hub);
-    git clone git@github.com:github/hub.git hub
-    cd hub
-    ./script/build
-    cp hub $HOME/.local/bin/hub
+    cd $(mktemp -d);
+    git clone https://github.com/github/hub.git hub
+    hub/script/build
+    echo $PWD
+    find $PWD
+    cp hub/hub $HOME/.local/bin/hub
   fi
 }
 
