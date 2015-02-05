@@ -5,6 +5,4 @@
 # Description: Set up for gvm
 # =========================================================================== #
 
-if [[ ! -x gvm ]] && [[ -e $HOME/.gvm/scripts/gvm ]]; then
-  . $HOME/.gvm/scripts/gvm
-fi
+[[ -s "/home/jalcine/.gvm/scripts/gvm" ]] && source "/home/jalcine/.gvm/scripts/gvm"

@@ -11,3 +11,6 @@
 
 # Load in the system's base bashrc file.
 [[ -e /etc/bash.bashrc ]] && source /etc/bash.bashrc;
+
+# Load our base Bash setup.
+[[ -z $JALCINE_BASH ]] && source $HOME/.bash/base.sh

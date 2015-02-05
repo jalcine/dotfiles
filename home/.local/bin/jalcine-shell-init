@@ -49,9 +49,7 @@ install_hub() {
     echo -e "[jalcine] Installing hub, Github's CLI tool...";
     cd $(mktemp -d);
     git clone https://github.com/github/hub.git hub
-    hub/script/build
-    echo $PWD
-    find $PWD
+    bash hub/script/build
     cp hub/hub $HOME/.local/bin/hub
   fi
 }
