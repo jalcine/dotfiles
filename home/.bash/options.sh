@@ -10,7 +10,7 @@ load_option() {
 }
 
 load_default_options() {
-  local _paths=$(find $HOME/.bash/options.d -type l -name "[0-8]*_*.sh" | sort);
+  local _paths=$(find $HOME/.bash/options.d -type l -name "[0-8]*_*.sh");
 
   for path in ${_paths}; do
     load_option ${path};
@@ -18,7 +18,7 @@ load_default_options() {
 }
 
 load_custom_options() {
-  local _paths=$(find $HOME/.bash/options.d -type f -name "9*_*.sh" | sort);
+  local _paths=$(find $HOME/.bash/options.d -type f -name "9*_*.sh");
 
   for path in ${_paths}; do
     load_option ${path};

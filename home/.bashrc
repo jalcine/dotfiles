@@ -18,6 +18,8 @@
 # Load in the base 'plugin' for the shell.
 source $HOME/.bash/base.sh
 
-# Minimal load.
-_jalcine_preinit;
-export JALCINE_BASHRC_LOADED=1
+if [ -z "$PS1" ]; then
+  _jalcine_preinit;
+else
+  _jalcine_fullinit;
+fi
