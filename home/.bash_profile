@@ -7,6 +7,10 @@
 # Load in the base 'plugin' for the shell.
 source $HOME/.bash/base.sh
 
-_jalcine_preinit;
-_jalcine_init;
+# Load the whole damned thing.
+if [[ -z JALCINE_BASHRC_LOADED ]]; then
+  _jalcine_init;
+else
+  _jalcine_fullinit;
+fi
 

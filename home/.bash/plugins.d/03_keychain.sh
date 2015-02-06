@@ -11,6 +11,8 @@ keychain_init() {
   if [[ ! -e $HOME/.keychain/$HOSTNAME-sh ]]; then
     eval $(keychain --quiet --eval $KEYCHAIN_SSH_KEYS $KEYCHAIN_GPG_KEYS);
     tset
+  else
+    keychain_source
   fi
 }
 
