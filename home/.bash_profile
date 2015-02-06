@@ -8,7 +8,7 @@
 source $HOME/.bash/base.sh
 
 # Load the whole damned thing.
-if [[ -z JALCINE_BASHRC_LOADED ]]; then
+if [ -z $PS1 ]; then
   _jalcine_init;
 else
   _jalcine_fullinit;

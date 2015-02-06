@@ -14,12 +14,12 @@ keychain_init() {
   fi
 }
 
-function keychain_source {
+keychain_source {
   [[ -e $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh;
   [[ -e $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh-gpg;
 }
 
-function keychain_wipe {
+keychain_wipe {
   rm $HOME/.keychain/$HOSTNAME*
   keychain_init
 }
