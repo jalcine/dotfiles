@@ -2,11 +2,13 @@
 --exclude=.git
 --exclude=vendor
 --exclude=bundle
+--exclude=build
+--exclude=out
 --exclude=vendor
 --c++-kinds=+p
 --fields=+iaSlkKmnz
 --extra=+qf
---if0=yes
+--if0=no
 --totals=yes
 --tag-relative=yes
 --excmd=mixed

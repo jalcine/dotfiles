@@ -36,7 +36,7 @@ jalcine_user_and_host() {
 }
 
 jalcine_vcs() {
-  local _vcs="$(vcprompt -u '?' -n -t 100)"
+  local _vcs="$(vcprompt -u '?' -n -t 10)"
 
   if [[ -z $_vcs ]]; then
     _vcs=""
@@ -48,7 +48,7 @@ jalcine_vcs() {
 }
 
 function jalcine_prompt {
-  local _prompt_symbol="${bold_white}λ${normal} ";
+  local _prompt_symbol="${bold_gray}λ${normal} ";
   export PS1="$(jalcine_user_and_host)$(jalcine_current_dir)$(jalcine_vcs)"
   export PS1="$PS1$(jalcine_last_job_status)${_prompt_symbol}";
 }
