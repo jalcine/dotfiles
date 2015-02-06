@@ -49,7 +49,7 @@ jalcine_vcs() {
 
 function jalcine_prompt {
   local _prompt_symbol="${bold_gray}λ${normal} ";
-  export PS1="$(jalcine_vs)$(jalcine_user_and_host)$(jalcine_current_dir)"
+  export PS1="$(jalcine_vcs)$(jalcine_user_and_host)$(jalcine_current_dir)"
   export PS1="$PS1$(jalcine_last_job_status)${_prompt_symbol}";
 }
 
