@@ -10,16 +10,16 @@
 jalcine_current_dir() {
   # TODO Make this bold!
   if [[ $HOME == "$PWD" ]]; then
-    printf "${bold_red}~${normal} ";
+    printf "${bold_red}~${normal}";
   else
-    printf "${bold_white}$(basename "$PWD")${normal} ";
+    printf "${bold_white}$(basename "$PWD")${normal}";
   fi
 }
 
 jalcine_last_job_status() {
   local _job_status="$?";
   if [[ -z $_job_status ]]; then
-    echo -e "${bold_red}${_job_status} ${normal}";
+    printf "${bold_red}${_job_status} ${normal}";
   fi
 }
 
@@ -32,7 +32,7 @@ jalcine_user_and_host() {
     result=""
   fi
 
-  printf "$result ";
+  printf "$result";
 }
 
 jalcine_vcs() {
@@ -49,8 +49,8 @@ jalcine_vcs() {
 
 function jalcine_prompt {
   local _prompt_symbol="${bold_gray}λ${normal} ";
-  export PS1="$(jalcine_vcs)$(jalcine_user_and_host)$(jalcine_current_dir)"
-  export PS1="$PS1$(jalcine_last_job_status)${_prompt_symbol}";
+  export PS1="$(jalcine_vcs) $(jalcine_user_and_host):$(jalcine_current_dir)"
+  export PS1="$PS1$(jalcine_last_job_status) ${_prompt_symbol}";
 }
 
 case $PROMPT_COMMAND in
