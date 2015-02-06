@@ -11,17 +11,15 @@ keychain_init() {
   if [[ ! -e $HOME/.keychain/$HOSTNAME-sh ]]; then
     eval $(keychain --quiet --eval $KEYCHAIN_SSH_KEYS $KEYCHAIN_GPG_KEYS);
     tset
-  else
-    keychain_source
   fi
 }
 
-keychain_source() {
+function keychain_source {
   [[ -e $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh;
   [[ -e $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh-gpg;
 }
 
-keychain_wipe() {
+function keychain_wipe {
   rm $HOME/.keychain/$HOSTNAME*
   keychain_init
 }
