@@ -19,7 +19,7 @@ jalcine_current_dir() {
 jalcine_last_job_status() {
   local _job_status="$?";
   if [[ -z $_job_status ]]; then
-    printf "${bold_red}${_job_status} ${normal}";
+    printf "${bold_red}${_job_status}${normal}";
   fi
 }
 
@@ -30,6 +30,8 @@ jalcine_user_and_host() {
 
   if [ "$USER@$(hostname)" = "$JALCINE_HOST" ]; then
     result=""
+  else
+    result="${result}:"
   fi
 
   printf "$result";
@@ -41,7 +43,7 @@ jalcine_vcs() {
   if [[ -z $_vcs ]]; then
     _vcs=""
   else
-    _vcs="${_vcs} "
+    _vcs="${_vcs}"
   fi
 
   printf "${_vcs}"
@@ -49,7 +51,7 @@ jalcine_vcs() {
 
 function jalcine_prompt {
   local _prompt_symbol="${bold_gray}λ${normal} ";
-  export PS1="$(jalcine_vcs) $(jalcine_user_and_host):$(jalcine_current_dir)"
+  export PS1="$(jalcine_vcs) $(jalcine_user_and_host)$(jalcine_current_dir)"
   export PS1="$PS1$(jalcine_last_job_status) ${_prompt_symbol}";
 }
 
