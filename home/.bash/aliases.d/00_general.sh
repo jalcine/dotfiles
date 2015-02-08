@@ -14,6 +14,11 @@ alias l="ls"
 alias ll="ls -ll"
 alias la="ls -lla"
 
+# Install https://github.com/trapd00r/ls-- and be happy.
+if [[ -e "$(which ls++)" ]]; then
+  alias ls="ls++"
+fi
+
 alias ..="cd .."
 alias ...="cd ../../"
 alias ~="cd $HOME"
