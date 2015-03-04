@@ -1,0 +1,1 @@
+../../../../../../../.weechat/perl/buddylist.pl

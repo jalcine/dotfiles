@@ -1,0 +1,1 @@
+../../../../../../../.weechat/perl/sort_buffers.pl

@@ -1,0 +1,1 @@
+../../../../../../../.weechat/python/spell_correction.py

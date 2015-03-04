@@ -1,0 +1,1 @@
+../../../../../../../.weechat/python/lastfm.py

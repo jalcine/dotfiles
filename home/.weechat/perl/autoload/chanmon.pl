@@ -1,0 +1,1 @@
+../../../../../../../.weechat/perl/chanmon.pl
