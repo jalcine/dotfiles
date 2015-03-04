@@ -22,8 +22,7 @@ function keychain_wipe {
   keychain_init
 }
 
-if [ -x keychain ];
-then
+if [ -x keychain ]; then
   case "$PROMPT_COMMAND" in
     *keychain_source*) ;;
     "")
