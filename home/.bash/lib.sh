@@ -5,4 +5,5 @@
 # Description: Entry point for interactive shells.
 # =========================================================================== #
 
+source $HOME/.bash/lib/base16.sh
 source $HOME/.bash/lib/colors.sh
