@@ -1,0 +1,1 @@
+../../../../../../../.weechat/perl/hl_here.pl

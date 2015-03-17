@@ -1,0 +1,1 @@
+../../../../../../../.weechat/ruby/myuptime.rb

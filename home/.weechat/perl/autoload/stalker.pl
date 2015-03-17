@@ -1,0 +1,1 @@
+../../../../../../../.weechat/perl/stalker.pl

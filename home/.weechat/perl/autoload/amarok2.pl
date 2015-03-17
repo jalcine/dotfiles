@@ -1,0 +1,1 @@
+../../../../../../../.weechat/perl/amarok2.pl
