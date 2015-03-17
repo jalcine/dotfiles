@@ -11,4 +11,6 @@ export LSCOLORS='Gxfxcxdxdxegedabagacad'
 export HISTCONTROL='ignoredups;erasedups'
 export HISTSIZE=16384
 export EDITOR=vim
+export HISTIGNORE='&:ls:cd ~:cd ..:[bf]g:exit:h:history'
+export HISTCONTROL=erasedups:ignoreboth
 test -z $JALCINE_HOST && export JALCINE_HOST=""

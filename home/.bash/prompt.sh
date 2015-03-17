@@ -22,6 +22,14 @@ jalcine_last_job_status() {
   fi
 }
 
+jalcine_detect_ssh() {
+  return [[ -z $SSH_TTY ]];
+}
+
+jalcine_detect_tmux() {
+  return [[ -z $TMUX ]];
+}
+
 jalcine_user_and_host() {
   local user="${bold_white}$USER${normal}";
   local host="${bold_yellow}$(hostname)${normal}";
@@ -37,7 +45,7 @@ jalcine_user_and_host() {
 }
 
 jalcine_vcs() {
-  local _vcs="$(vcprompt -u '?' -n -t 10)"
+  local _vcs="$(vcprompt -M '✳️' -A '➕' -u '?' -n -t 5)"
 
   if [[ -z $_vcs ]]; then
     _vcs=""
