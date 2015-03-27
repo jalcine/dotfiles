@@ -8,26 +8,29 @@
 # roll my own version.
 
 jalcine_current_dir() {
-  if [[ $HOME == "$PWD" ]]; then
-    printf "${bold_red}~${normal}";
+  local _pwd="$PWD";
+  local _basename="$(basename "$_pwd")"
+
+  if [ "$HOME" = "$_pwd" ]; then
+    echo "${bold_red}~${normal}";
   else
-    printf "${bold_white}$(basename "$PWD")${normal}";
+    echo "${bold_white}$_basename${normal}";
   fi
 }
 
 jalcine_last_job_status() {
-  local _job_status="$?";
-  if [[ -z $_job_status ]]; then
-    printf "${bold_red}${_job_status}${normal}";
+  #local _job_status="$?";
+  if [ -z "$_job_status" ]; then
+    echo "${bold_red}${_job_status}${normal}";
   fi
 }
 
 jalcine_detect_ssh() {
-  return [[ -z $SSH_TTY ]];
+  return [ -z "$SSH_TTY" ];
 }
 
 jalcine_detect_tmux() {
-  return [[ -z $TMUX ]];
+  return [ -z "$TMUX"];
 }
 
 jalcine_user_and_host() {
@@ -41,22 +44,22 @@ jalcine_user_and_host() {
     result="${result}:"
   fi
 
-  printf "$result";
+  echo "$result";
 }
 
 jalcine_vcs() {
   local _vcs="$(vcprompt -M '✳️' -A '➕' -u '?' -n -t 5)"
 
-  if [[ -z $_vcs ]]; then
+  if [ -z "$_vcs" ]; then
     _vcs=""
   else
     _vcs="${_vcs}"
   fi
 
-  printf "${_vcs}"
+  echo "${_vcs}"
 }
 
-function jalcine_prompt {
+jalcine_prompt() {
   local _prompt_symbol="${bold_gray}λ${normal} ";
   local _first_line="$(jalcine_vcs) $(jalcine_user_and_host)"
   local _second_line="$(jalcine_current_dir) $(jalcine_last_job_status)${_prompt_symbol}";
