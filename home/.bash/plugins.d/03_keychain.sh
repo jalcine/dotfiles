@@ -6,22 +6,20 @@
 # =========================================================================== #
 
 keychain_init() {
-  if [ -x $HOME/.keychain/$HOSTNAME-sh ]; then
-    keychain_source;
-  else
-    eval $(keychain --quiet --eval $KEYCHAIN_SSH_KEYS $KEYCHAIN_GPG_KEYS);
+  if [ ! -e "$HOME/.keychain/$HOSTNAME-sh" ]; then
+    eval "$(keychain --quiet --eval "$KEYCHAIN_SSH_KEYS" "$KEYCHAIN_GPG_KEYS")";
     tset
   fi
 }
 
 keychain_source() {
-  source $HOME/.keychain/*-sh;
-  source $HOME/.keychain/*-sh-gpg;
+  [ -e $HOME/.keychain/$HOSTNAME-sh ] && source $HOME/.keychain/$HOSTNAME-sh;
+  [ -e $HOME/.keychain/$HOSTNAME-sh-gpg ] && source $HOME/.keychain/$HOSTNAME-sh-gpg;
 }
 
 keychain_wipe() {
-  rm $HOME/.keychain/$HOSTNAME*
-  keychain_init
+  rm "$HOME/.keychain/$HOSTNAME*";
+  keychain_init;
 }
 
 if [ -x $(which keychain) ]; then
@@ -29,12 +27,14 @@ if [ -x $(which keychain) ]; then
     *keychain_source*)
       ;;
     "")
-      export PROMPT_COMMAND="keychain_source"
+      export PROMPT_COMMAND="keychain_source";
     ;;
     *)
-      export PROMPT_COMMAND="${PROMPT_COMMAND};keychain_source"
+      export PROMPT_COMMAND="keychain_source;${PROMPT_COMMAND}"
     ;;
   esac
 
   keychain_init
 fi
+
+[ -e "$HOME/.keychain/$HOSTNAME-sh" ] && keychain_init;
