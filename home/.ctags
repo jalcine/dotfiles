@@ -10,7 +10,7 @@
 --extra=+qf
 --if0=no
 --totals=yes
---tag-relative=yes
+--tag-relative=no
 --excmd=mixed
 --sort=foldcase
 
@@ -33,6 +33,9 @@
 --regex-markdown=/^#[ \t]+(.*)/\1/h,Heading_L1/
 --regex-markdown=/^##[ \t]+(.*)/\1/i,Heading_L2/
 --regex-markdown=/^###[ \t]+(.*)/\1/k,Heading_L3/
+--regex-markdown=/^####[ \t]+(.*)/\1/k,Heading_L4/
+--regex-markdown=/^#####[ \t]+(.*)/\1/k,Heading_L5/
+--regex-markdown=/^######[ \t]+(.*)/\1/k,Heading_L6/
 
 --regex-css=/^[ \t]*\.([A-Za-z0-9_-]+)/#\1/c,class,classes/
 --regex-css=/^[ \t]*#([A-Za-z0-9_-]+)/.\1/i,id,ids/
