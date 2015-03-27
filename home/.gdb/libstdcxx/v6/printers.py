@@ -626,7 +626,7 @@ class StdStringPrinter:
         # Calculate the length of the string so that to_string returns
         # the string according to length, not according to first null
         # encountered.
-        ptr = self.val ['_M_dataplus']['_M_p']
+        ptr = self.val ['_M_data']['_M_p']
         realtype = type.unqualified ().strip_typedefs ()
         reptype = gdb.lookup_type (str (realtype) + '::_Rep').pointer ()
         header = ptr.cast(reptype) - 1
@@ -1109,4 +1109,4 @@ def build_libstdcxx_dictionary ():
         libstdcxx_printer.add('std::__norm::_Deque_iterator',
                               StdDequeIteratorPrinter)
 
-build_libstdcxx_dictionary ()
+build_libstdcxx_dictionary()
