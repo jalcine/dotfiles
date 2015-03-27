@@ -5,7 +5,7 @@ install: --verbose --conservative --minimal-deps -E
 update: --verbose --conservative --minimal-deps
 bulk_threshold: 1000
 verbose: true
-update_sources: false
+update_sources: true
 backtrace: true
-benchmark: false
+benchmark: true
 local: true

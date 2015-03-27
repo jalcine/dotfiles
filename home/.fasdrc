@@ -1,2 +1,2 @@
 # vim: set ft=sh :
-_FASD_BLACKLIST="evil"
+export _FASD_BLACKLIST=".rawn"

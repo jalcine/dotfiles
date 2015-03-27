@@ -13,10 +13,10 @@
 # =========================================================================== #
 
 # Load in the system's base bashrc file.
-[[ -e /etc/bash.bashrc ]] && source /etc/bash.bashrc;
+[ -e /etc/bash.bashrc ] && . /etc/bash.bashrc;
 
 # Load in the base 'plugin' for the shell.
-source $HOME/.bash/base.sh
+. "$HOME/.bash/base.sh"
 
 if [ -z "$PS1" ]; then
   _jalcine_preinit;
