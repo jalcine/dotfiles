@@ -7,18 +7,18 @@
 
 keychain_init() {
   if [ ! -e "$HOME/.keychain/$HOSTNAME-sh" ]; then
-    eval "$(keychain --quiet --eval "$KEYCHAIN_SSH_KEYS" "$KEYCHAIN_GPG_KEYS")";
+    eval "$(keychain --quiet --eval $KEYCHAIN_SSH_KEYS $KEYCHAIN_GPG_KEYS)";
     tset
   fi
 }
 
 keychain_source() {
-  [ -e $HOME/.keychain/$HOSTNAME-sh ] && source $HOME/.keychain/$HOSTNAME-sh;
-  [ -e $HOME/.keychain/$HOSTNAME-sh-gpg ] && source $HOME/.keychain/$HOSTNAME-sh-gpg;
+  [ -e $HOME/.keychain/$HOSTNAME-sh ] && . $HOME/.keychain/$HOSTNAME-sh;
+  [ -e $HOME/.keychain/$HOSTNAME-sh-gpg ] && . $HOME/.keychain/$HOSTNAME-sh-gpg;
 }
 
 keychain_wipe() {
-  rm "$HOME/.keychain/$HOSTNAME*";
+  [ -e $HOME/.keychain/$HOSTNAME-sh ] && rm $HOME/.keychain/$HOSTNAME*;
   keychain_init;
 }
 
