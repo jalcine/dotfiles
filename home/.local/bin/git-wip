@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-# Author: Jacky Alciné <yo@jacky.wtf>
-# Date: 2015-03-30 02:15:05 EDT
-# Provides a list of WIP (work-in-progress) commits.
-
-_count="${1:-5}"
-
-printf "[git-wip] Printing first %1d commits with the word 'wip'...\n" "$_count"
-git log --oneline HEAD | grep -m "$_count" --color=never -w "wip" 
