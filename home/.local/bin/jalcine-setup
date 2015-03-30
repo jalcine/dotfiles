@@ -4,19 +4,21 @@
 # Description: Shell script to handle the core installation of my optimal
 # system.
 
-git clone git://github.com/andsens/homeshick $HOME/.homesick/repos/homeshick
-source $HOME/.homesick/repos/homeshick/homeshick.sh
+JALCINE_GIT_ROOT="https://github.com/jalcine"
 
-if [[ ! -x $HOME/.homesick/repos/dotfiles ]]; then
+git clone git://github.com/andsens/homeshick "$HOME/.homesick/repos/homeshick"
+. "$HOME/.homesick/repos/homeshick/homeshick.sh"
+
+if [ ! -x "$HOME/.homesick/repos/dotfiles" ]; then
   for dotfile in 'gitrc' 'dotfiles' 'vimrc' 'tmuxrc'
   do
-    homeshick clone https://github.com/jalcine/$dotfile
+    homeshick clone $JALCINE_GIT_ROOT/$dotfile
     homeshick link $dotfile
-    if [[ $dotfile = "dotfiles" ]]; then
-      source $HOME/.bashrc
+    if [ $dotfile = "dotfiles" ]; then
+      . "$HOME/.bashrc"
     fi
   done
 fi
 
 # Install my interpreters.
-$HOME/.local/bin/jalcine-shell-init
+"$HOME/.local/bin/jalcine-shell-init"
