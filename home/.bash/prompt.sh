@@ -48,7 +48,10 @@ jalcine_user_and_host() {
 }
 
 jalcine_vcs() {
-  local _vcs="$(vcprompt -M '✳️' -A '➕' -u '?' -n -t 5)"
+  local _new='💩 '
+  local _add='+'
+  local _mod='💥'
+  local _vcs="$(vcprompt -M "$_mod" -A "$_add" -u "$_new" -n -t 3)"
 
   if [ -z "$_vcs" ]; then
     _vcs=""
@@ -61,14 +64,8 @@ jalcine_vcs() {
 
 jalcine_prompt() {
   local _prompt_symbol="${bold_gray}λ${normal} ";
-  local _first_line="$(jalcine_vcs) $(jalcine_user_and_host)"
-  local _second_line="$(jalcine_current_dir) $(jalcine_last_job_status)${_prompt_symbol}";
-  local _first_line_length=$(printf ${_first_line} | wc -c);
-  if [ $_first_line_length -ge 79 ]; then
-    export PS1="${_first_line}\n${_second_line} ";
-  else
-    export PS1="${_first_line}${_second_line}";
-  fi
+  export PS1="$(jalcine_user_and_host)$(jalcine_current_dir)$(jalcine_vcs)"
+  export PS1="$PS1$(jalcine_last_job_status) ${_prompt_symbol}";
 }
 
 case $PROMPT_COMMAND in
