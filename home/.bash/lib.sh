@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.bashrc
+# File: ~/.bash/lib.sh
 # Author: Jacky Alcine <me@jalcine.me>
-# Description: Entry point for interactive shells.
+# Description: Entry loader for library files.
 # =========================================================================== #
 
-source $HOME/.bash/lib/base16.sh
-source $HOME/.bash/lib/colors.sh
+. "$HOME/.bash/lib/colors.sh"
