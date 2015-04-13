@@ -20,7 +20,6 @@ set overload-resolution on
 
 set auto-load python-scripts on
 set auto-load safe-path ~/Development/Projects
-set auto-load safe-path /usr/share
 
 source ~/.gdb/aliases.gdb
 source ~/.gdb/c++.gdb
