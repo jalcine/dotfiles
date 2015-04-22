@@ -8,9 +8,8 @@ export VCPROMPT_FORMAT="${bold_white}%n${normal}:${bold_gray}%b${noral} ${red}%r
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
 export LSCOLORS='Gxfxcxdxdxegedabagacad'
-export HISTCONTROL='ignoredups;erasedups'
-export HISTSIZE=16384
 export EDITOR=vim
-export HISTIGNORE='&:ls:cd ~:cd ..:[bf]g:exit:h:history'
-export HISTCONTROL=erasedups:ignoreboth
-test -z $JALCINE_HOST && export JALCINE_HOST=""
+export HISTCONTROL='ignoredups:erasedups:ignoreboth'
+export HISTSIZE=100000
+export HISTIGNORE='&:ls:cd ~:cd ..:[bf]g:exit:h:history:..:z'
+test -z "$JALCINE_HOST" && export JALCINE_HOST=""

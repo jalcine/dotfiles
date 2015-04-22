@@ -5,4 +5,4 @@
 # Description: Set up completions for npm.
 # =========================================================================== #
 
-[ -x npm ] && eval "$(npm completion)";
+eval "$(npm completion)";

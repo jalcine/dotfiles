@@ -15,7 +15,7 @@ alias ll="ls -ll"
 alias la="ls -lla"
 
 # Install https://github.com/trapd00r/ls-- and be happy.
-[ -e "ls++" ] && alias ls="ls++"
+[ -x "ls++" ] && alias ls="ls++"
 
 alias ..="cd .."
 alias ...="cd ../../"
