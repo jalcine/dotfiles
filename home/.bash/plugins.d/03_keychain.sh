@@ -24,12 +24,13 @@ function keychain_wipe {
 
 if [ -x keychain ]; then
   case "$PROMPT_COMMAND" in
-    *keychain_source*) ;;
+    *keychain_source*)
+      ;;
     "")
       export PROMPT_COMMAND="keychain_source"
     ;;
     *)
-      export PROMPT_COMMAND="keychain_source;${PROMPT_COMMAND}"
+      export PROMPT_COMMAND="${PROMPT_COMMAND};keychain_source"
     ;;
   esac
 
