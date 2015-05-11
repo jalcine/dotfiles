@@ -64,9 +64,17 @@ jalcine_vcs() {
 }
 
 jalcine_prompt() {
+  unset PS1;
   local _prompt_symbol="${bold_gray}λ${normal} ";
-  export PS1="$(jalcine_user_and_host)$(jalcine_current_dir) $(jalcine_vcs)"
-  export PS1="$PS1$(jalcine_last_job_status) ${_prompt_symbol}";
+  local _first_line="$(jalcine_user_and_host)$(jalcine_current_dir) $(jalcine_vcs)";
+  local _second_line="$PS1$(jalcine_last_job_status) ${_prompt_symbol}";
+  local _first_line_width=$(echo ${_first_line} | wc -c );
+
+  if [ "${_first_line_width}" -gt 78 ]; then
+    local _first_line="${_first_line}\n";
+  fi
+
+  export PS1="${_first_line}${_second_line}";
 }
 
 case $PROMPT_COMMAND in
