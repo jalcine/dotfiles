@@ -5,25 +5,27 @@
 # Description: Set up for keychain.
 # =========================================================================== #
 
-function keychain_init {
-  if [[ ! -e $HOME/.keychain/$HOSTNAME-sh ]]; then
+keychain_init() {
+  if [ -x $HOME/.keychain/$HOSTNAME-sh ]; then
+    keychain_source;
+  else
     eval $(keychain --quiet --eval $KEYCHAIN_SSH_KEYS $KEYCHAIN_GPG_KEYS);
     tset
   fi
 }
 
-function keychain_source {
-  [ -e $HOME/.keychain/$HOSTNAME-sh ] && source $HOME/.keychain/$HOSTNAME-sh;
-  [ -e $HOME/.keychain/$HOSTNAME-sh-gpg ] && source $HOME/.keychain/$HOSTNAME-sh-gpg;
+keychain_source() {
+  source $HOME/.keychain/*-sh;
+  source $HOME/.keychain/*-sh-gpg;
 }
 
-function keychain_wipe {
+keychain_wipe() {
   rm $HOME/.keychain/$HOSTNAME*
   keychain_init
 }
 
-if [ -x keychain ]; then
-  case "$PROMPT_COMMAND" in
+if [ -x $(which keychain) ]; then
+  case $PROMPT_COMMAND in
     *keychain_source*)
       ;;
     "")

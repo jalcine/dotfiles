@@ -58,10 +58,12 @@ install_nvm() {
   # TODO Ask to nuke any existing install of nvm.
 
   # Set up nvm by cloning from Git.
-  if [[ ! -e "$HOME/.nvm/nvm.sh" ]]; then
+  if [ -e "$HOME/.nvm/nvm.sh" ]; then
+    echo -e "[jalcine] nvm installed.";
+  else
     rm -rv $HOME/.nvm
     echo -e "[jalcine] Installing Node version manager...";
-    git clone --recursive -b master git@github.com:creationix/nvm $HOME/.nvm
+    git clone --recursive -b master git://github.com/creationix/nvm $HOME/.nvm
   fi
 
   # Enable NVM off the back.
