@@ -51,8 +51,8 @@ jalcine_vcs() {
 
 function jalcine_prompt {
   local _prompt_symbol="${bold_gray}λ${normal} ";
-  export PS1="$(jalcine_vcs) $(jalcine_user_and_host)$(jalcine_current_dir)"
-  export PS1="$PS1$(jalcine_last_job_status) ${_prompt_symbol}";
+  export PS1="$(jalcine_vcs) $(jalcine_user_and_host)\n"
+  export PS1="$PS1$(jalcine_current_dir) $(jalcine_last_job_status)${_prompt_symbol}";
 }
 
 case $PROMPT_COMMAND in
