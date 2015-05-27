@@ -48,9 +48,9 @@ jalcine_user_and_host() {
 }
 
 jalcine_vcs() {
-  local _new='#'
+  local _new='💩 '
   local _add='+'
-  local _mod='*'
+  local _mod='💥'
   local _unt='?'
   local _vcs="$(vcprompt -U "$_unt" -M "$_mod" -A "$_add" -u "$_new" -n -t 3)"
 
