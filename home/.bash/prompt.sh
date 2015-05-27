@@ -8,7 +8,6 @@
 # roll my own version.
 
 jalcine_current_dir() {
-  # TODO Make this bold!
   if [[ $HOME == "$PWD" ]]; then
     printf "${bold_red}~${normal}";
   else
@@ -51,8 +50,14 @@ jalcine_vcs() {
 
 function jalcine_prompt {
   local _prompt_symbol="${bold_gray}λ${normal} ";
-  export PS1="$(jalcine_vcs) $(jalcine_user_and_host)\n"
-  export PS1="$PS1$(jalcine_current_dir) $(jalcine_last_job_status)${_prompt_symbol}";
+  local _first_line="$(jalcine_vcs) $(jalcine_user_and_host)"
+  local _second_line="$(jalcine_current_dir) $(jalcine_last_job_status)${_prompt_symbol}";
+  local _first_line_length=$(printf ${_first_line} | wc -c);
+  if [ $_first_line_length -ge 79 ]; then
+    export PS1="${_first_line}\n${_second_line} ";
+  else
+    export PS1="${_first_line}${_second_line}";
+  fi
 }
 
 case $PROMPT_COMMAND in
