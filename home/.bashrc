@@ -24,3 +24,4 @@ else
   _jalcine_fullinit;
 fi
 
+[[ -s "/home/jalcine/.gvm/scripts/gvm" ]] && source "/home/jalcine/.gvm/scripts/gvm"
