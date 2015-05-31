@@ -5,6 +5,6 @@
 # Description: Injects Heroku into the mix.
 # =========================================================================== #
 
-if [[ -x /usr/local/heroku ]]; then
+if [ -d /usr/local/heroku ]; then
   export PATH="/usr/local/heroku/bin:$PATH";
 fi
