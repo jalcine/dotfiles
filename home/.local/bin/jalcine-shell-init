@@ -85,6 +85,7 @@ install_perl() {
 
     # Install the versions of Perl I'd like to use.
     perlbrew install 5.20.1
+    perlbrew switch 5.20.1
 
     # Install CPANM.
     perlbrew install-cpanm
