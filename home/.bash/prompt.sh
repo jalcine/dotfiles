@@ -65,7 +65,7 @@ jalcine_vcs() {
 
 jalcine_prompt() {
   unset PS1;
-  local _prompt_symbol="${bold_gray}λ${normal} ";
+  local _prompt_symbol="${bold_gray}λ${normal}  ";
   local _first_line="$(jalcine_user_and_host)$(jalcine_current_dir) $(jalcine_vcs)";
   local _second_line="$PS1$(jalcine_last_job_status) ${_prompt_symbol}";
   local _first_line_width=$(echo ${_first_line} | wc -c );
