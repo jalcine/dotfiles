@@ -1,1 +1,0 @@
-/home/jalcine/.weechat/python/wee_slack.py
