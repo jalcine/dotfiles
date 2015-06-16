@@ -5,5 +5,6 @@
 # Description: Aliases for Vagrant.
 # =========================================================================== #
 
-alias vd="vagrant destroy"
-alias vagrant_rebuild="vagrant destroy; vagrant up"
+alias vd="vagrant destroy";
+alias vagrant_rebuild="vagrant destroy -f; vagrant up --provision";
+alias vssh="vagrant ssh";

@@ -5,4 +5,4 @@
 # Description: Set up logic for homeshick.
 # =========================================================================== #
 
-source $HOME/.homesick/repos/homeshick/homeshick.sh
+. $HOME/.homesick/repos/homeshick/homeshick.sh

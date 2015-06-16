@@ -46,5 +46,5 @@ I'm [Jacky Alciné][jalcine] and I chat like a firehose (at times).
 [rbenv]: https://github.com/jalcine/rbenv
 [bashit]: https://github.com/jalcine/bash-it
 [vcprompt]: http://hg.gerg.ca/vcprompt
-[jalcine]: http://jalcine.me
+[jalcine]: https://jacky.wtf/
 [lsplusplus]: http://github.com/trapd00r/ls--

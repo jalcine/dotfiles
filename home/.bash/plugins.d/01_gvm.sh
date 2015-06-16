@@ -5,4 +5,4 @@
 # Description: Set up for gvm
 # =========================================================================== #
 
-[[ -s "/home/jalcine/.gvm/scripts/gvm" ]] && source "/home/jalcine/.gvm/scripts/gvm"
+[ -s "$HOME/.gvm/scripts/gvm" ] && . "$HOME/.gvm/scripts/gvm"
