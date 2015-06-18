@@ -14,7 +14,7 @@ jalcine_current_dir() {
   if [ "$HOME" = "$_pwd" ]; then
     echo "${bold_red}~${normal}";
   else
-    echo "${bold_white}$_basename${normal}";
+    echo "${bold_blue}$_basename${normal}";
   fi
 }
 
@@ -34,7 +34,7 @@ jalcine_detect_tmux() {
 }
 
 jalcine_user_and_host() {
-  local user="${bold_white}$USER${normal}";
+  local user="${bold_green}$USER${normal}";
   local host="${bold_yellow}$(hostname)${normal}";
   local result="${user}@${host}";
 
