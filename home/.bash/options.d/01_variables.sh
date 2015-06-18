@@ -4,7 +4,7 @@
 # Description: Setting up expected variables.
 # =========================================================================== #
 
-export VCPROMPT_FORMAT="${bold_white}%n${normal}:${bold_gray}%b${noral} ${red}%r${normal} ${bold_red}%m${normal}${bold_green}%u${normal}${bold_yellow}%a${normal}"
+export VCPROMPT_FORMAT="${bold_red}%n${normal}:${bold_gray}%b${noral} ${red}%r${normal} ${bold_red}%m${normal}${bold_green}%u${normal}${bold_yellow}%a${normal}"
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
 export LSCOLORS='Gxfxcxdxdxegedabagacad'
