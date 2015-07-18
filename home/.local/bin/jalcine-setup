@@ -9,16 +9,14 @@ JALCINE_GIT_ROOT="https://github.com/jalcine"
 git clone git://github.com/andsens/homeshick "$HOME/.homesick/repos/homeshick"
 . "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
-if [ ! -x "$HOME/.homesick/repos/dotfiles" ]; then
-  for dotfile in 'gitrc' 'dotfiles' 'vimrc' 'tmuxrc'
-  do
-    homeshick clone $JALCINE_GIT_ROOT/$dotfile
-    homeshick link $dotfile
-    if [ $dotfile = "dotfiles" ]; then
-      . "$HOME/.bashrc"
-    fi
-  done
-fi
+for dotfile in 'gitrc' 'dotfiles' 'vimrc' 'tmuxrc'
+do
+  homeshick clone $JALCINE_GIT_ROOT/$dotfile
+  homeshick link $dotfile
+  if [ $dotfile = "dotfiles" ]; then
+    . "$HOME/.bashrc"
+  fi
+done
 
 # Install my interpreters.
 "$HOME/.local/bin/jalcine-shell-init"
