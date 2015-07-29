@@ -1,8 +1,8 @@
 # vim: set ft=yaml :
 ---
 gem: --document rdoc,ri --trust-policy
-install: --verbose --conservative --minimal-deps -E --document rdoc,ri
-update: --verbose --conservative --minimal-deps --document rdoc,ri
+install: -b --conservative --minimal-deps -E --document rdoc,ri
+update: -b --verbose --conservative --minimal-deps -E --document rdoc,ri
 bulk_threshold: 1000
 verbose: true
 update_sources: true
