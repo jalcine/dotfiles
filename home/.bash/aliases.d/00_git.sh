@@ -27,6 +27,9 @@ alias gsh="git show HEAD"
 alias grc="git rebase --continue"
 alias gra="git rebase --abort"
 alias grs="git rebase --skip"
+alias gri="git rebase --interactive"
 
 alias gcl="git clone"
 alias gcsl="git clone --depth=1"
+
+alias gmf="git merge --verbose --ff-only"
