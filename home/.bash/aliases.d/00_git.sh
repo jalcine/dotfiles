@@ -29,7 +29,7 @@ alias gra="git rebase --abort"
 alias grs="git rebase --skip"
 alias gri="git rebase --interactive"
 
-alias gcl="git clone"
+alias gcl="git clone --verbose"
 alias gcsl="git clone --depth=1"
 
 alias gmf="git merge --verbose --ff-only"
