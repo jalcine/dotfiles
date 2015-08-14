@@ -33,18 +33,17 @@ so your mileage *will* vary. This is designed to be installed using
 
 ## Quick Install
 
-Just for my convenience (and maybe yours), you can install my full dotfiles
-setup with the following:
-
-`curl http://raw.githubusercontent.com/jalcine/dotfiles/develop/home/.local/bin/jalcine-rc | bash -c`
+I don't recommend using a one-liner to download random scripts to your machine.
+I care about your machine's integrity. Instead, you can safely check out
+[homesick][] and then clone this repository into your system.
 
 ## Author
 
 I'm [Jacky Alciné][jalcine] and I chat like a firehose (at times).
 
-[homeshick]: https://github.com/andsens/homeshick
-[rbenv]: https://github.com/jalcine/rbenv
 [bashit]: https://github.com/jalcine/bash-it
-[vcprompt]: http://hg.gerg.ca/vcprompt
+[homesick]: https://github.com/technicalpickles/homesick
 [jalcine]: https://jacky.wtf/
 [lsplusplus]: http://github.com/trapd00r/ls--
+[rbenv]: https://github.com/jalcine/rbenv
+[vcprompt]: http://hg.gerg.ca/vcprompt
