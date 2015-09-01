@@ -7,9 +7,13 @@
 # I decided to nuke all of the extra shit that people add into a prompt and
 # roll my own version.
 
+jalcine_simple_prompt() {
+  echo "${bold_green}$USER${normal}@$(jalcine_current_dir):~ ";
+}
+
 jalcine_current_dir() {
   local _pwd="$PWD";
-  local _basename="$(basename "$_pwd")"
+  local _basename="$(basename "$_pwd")";
 
   if [ "$HOME" = "$_pwd" ]; then
     echo "${bold_red}~${normal}";
@@ -39,7 +43,7 @@ jalcine_user_and_host() {
   local result="${user}@${host}";
 
   if [ "$USER@$(hostname)" = "$JALCINE_HOST" ]; then
-    result="🏠 "
+    result="⌂ "
   else
     result="${result}:"
   fi
@@ -48,9 +52,9 @@ jalcine_user_and_host() {
 }
 
 jalcine_vcs() {
-  local _new='💩 '
+  local _new='*'
   local _add='+'
-  local _mod='💥'
+  local _mod='@'
   local _unt='?'
   local _vcs="$(vcprompt -U "$_unt" -M "$_mod" -A "$_add" -u "$_new" -n -t 3)"
 
@@ -65,16 +69,20 @@ jalcine_vcs() {
 
 jalcine_prompt() {
   unset PS1;
-  local _prompt_symbol="${bold_gray}λ${normal}  ";
-  local _first_line="$(jalcine_user_and_host)$(jalcine_current_dir) $(jalcine_vcs)";
-  local _second_line="$PS1$(jalcine_last_job_status) ${_prompt_symbol}";
-  local _first_line_width=$(echo ${_first_line} | wc -c );
+  if [ -z ${JALCINE_USE_SIMPLE_PROMPT} ]; then
+    local _prompt_symbol="${bold_gray}λ${normal}  ";
+    local _first_line="$(jalcine_user_and_host)$(jalcine_current_dir) $(jalcine_vcs)";
+    local _second_line="$PS1$(jalcine_last_job_status) ${_prompt_symbol}";
+    local _first_line_width=$(echo ${_first_line} | wc -c );
 
-  if [ "${_first_line_width}" -gt 78 ]; then
-    local _first_line="${_first_line}\n";
+    if [ "${_first_line_width}" -gt 78 ]; then
+      local _first_line="${_first_line}\n";
+    fi
+
+    export PS1="${_first_line}${_second_line}";
+  else
+    export PS1="$(jalcine_simple_prompt)";
   fi
-
-  export PS1="${_first_line}${_second_line}";
 }
 
 case $PROMPT_COMMAND in
