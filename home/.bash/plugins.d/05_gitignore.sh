@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =========================================================================== #
 # File: ~/.bash/plugins.d/05_gitignore.sh
-# Author: Jacky Alcine <me@jalcine.me>
+# Author: Jacky Alcine <yo@jacky.wtf>
 # Description: Git ignore downloader.
 # =========================================================================== #
 

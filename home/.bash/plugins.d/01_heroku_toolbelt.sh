@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =========================================================================== #
 # File: ~/.bash/plugins.d/heroku.sh
-# Author: Jacky Alcine <me@jalcine.me>
+# Author: Jacky Alcine <yo@jacky.wtf>
 # Description: Injects Heroku into the mix.
 # =========================================================================== #
 

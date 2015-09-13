@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =========================================================================== #
 # File: ~/.bash/prompt.sh
-# Author: Jacky Alcine <me@jalcine.me>
+# Author: Jacky Alcine <yo@jacky.wtf>
 # Description: My magical prompt for Bash.
 # =========================================================================== #
 # I decided to nuke all of the extra shit that people add into a prompt and

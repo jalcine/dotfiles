@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =========================================================================== #
 # File: ~/.bash/options.d/perlbrew.sh
-# Author: Jacky Alcine <me@jalcine.me>
+# Author: Jacky Alcine <yo@jacky.wtf>
 # Description: Variables for perlbrew
 # =========================================================================== #
 

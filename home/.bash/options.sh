@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =========================================================================== #
 # File: $HOME/.bash/options.sh
-# Author: Jacky Alcine <me@jalcine.me>
+# Author: Jacky Alcine <yo@jacky.wtf>
 # Description: Place where options for Bash (and readline) are set.
 # =========================================================================== #
 

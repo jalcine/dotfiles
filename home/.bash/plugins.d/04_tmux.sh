@@ -2,7 +2,7 @@
 # vim: set fdm=marker :
 # =========================================================================== #
 # File: ~/.bash/plugins.d/tmux.sh
-# Author: Jacky Alcine <me@jalcine.me>
+# Author: Jacky Alcine <yo@jacky.wtf>
 # Description: Making tmux easier to use.
 # =========================================================================== #
 

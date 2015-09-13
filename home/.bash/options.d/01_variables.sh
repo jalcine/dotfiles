@@ -1,6 +1,6 @@
 # =========================================================================== #
 # File: ~/.bash/options.d/01_variables.sh
-# Author: Jacky Alcine <me@jalcine.me>
+# Author: Jacky Alcine <yo@jacky.wtf>
 # Description: Setting up expected variables.
 # =========================================================================== #
 
