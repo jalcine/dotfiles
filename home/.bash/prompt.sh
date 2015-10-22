@@ -43,7 +43,7 @@ jalcine_user_and_host() {
   local result="${user}@${host}";
 
   if [ "$USER@$(hostname)" = "$JALCINE_HOST" ]; then
-    result="⌂ "
+    result=""
   else
     result="${result}:"
   fi
