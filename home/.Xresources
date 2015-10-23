@@ -6,7 +6,8 @@ URxvt.iso14755: False
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.letterSpace: -2
-URxvt.font: xft:monoOne:size=9
+URxvt.font: xft:monoOne:size=8.5
+XTerm*selectToClipboard: true
 
 *.foreground:   #98d1ce
 *.background:   #0a0f14
