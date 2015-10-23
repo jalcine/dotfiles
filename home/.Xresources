@@ -1,3 +1,13 @@
+URxvt.depth: 32
+URxvt.background: rgba:1111/1111/1111/dddd
+URxvt.scrollBar: false
+URxvt.perl-ext-common: default,matcher
+URxvt.iso14755: False
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+URxvt.letterSpace: -2
+URxvt.font: xft:monoOne:size=9
+
 *.foreground:   #98d1ce
 *.background:   #0a0f14
 *.cursorColor:  #98d1ce
