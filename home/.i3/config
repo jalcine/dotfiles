@@ -13,6 +13,11 @@ set $mod Mod4
 
 font pango:monoOne 8
 
+bar {
+        status_command i3status
+        font pango:monoOne 8
+}
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -20,7 +25,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # snap a picture of that snazzy workspace
-bindsym $mod+Print exec scrot -s -q 100 -b -e 'mv $f ~/Pictures/Snapshots'
+bindsym $mod+Print exec scrot -b -c -d 1 -q 60 -z -m ~/snapshots/%Y-%m-%d-%H%M%S-%Z.png
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -106,9 +111,6 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Ctrl+l exec "i3lock -n -d -i /usr/share/wallpapers/Next/contents/images/1600x1200.png -b"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -135,10 +137,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-bar {
-        status_command i3status
-        font pango:monoOne 8
-}
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
