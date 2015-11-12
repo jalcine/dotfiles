@@ -14,7 +14,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # snap a picture of that snazzy workspace
-bindsym $mod+Print exec scrot -s -b -c -d 1 -q 60 -z -m ~/snapshots/%Y-%m-%d-%H%M%S-%Z.png
+bindsym $mod+Print exec scrot -b -c -d 1 -q 60 -z -m ~/snapshots/%Y-%m-%d-%H%M%S-%Z.png
 
 # kill focused window
 bindsym $mod+Shift+q kill
