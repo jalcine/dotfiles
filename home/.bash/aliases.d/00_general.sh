@@ -10,9 +10,9 @@ alias E="_ -e"
 alias q="exit"
 
 # For `ls`:
-alias l="ls"
-alias ll="ls -ll"
-alias la="ls -lla"
+alias l="ls++"
+alias ll="ls++ -ll"
+alias la="ls++ -lla"
 
 # Install https://github.com/trapd00r/ls-- and be happy.
 [ -x "$(which ls++)" ] && alias ls="ls++"

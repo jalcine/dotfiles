@@ -70,6 +70,7 @@ install_nvm() {
   source $HOME/.nvm/nvm.sh
 }
 
+# FIXME: Install ls++ here.
 install_perl() {
   if [[ ! -d $HOME/.perlbrew ]]; then
     echo "[jalcine] Installing Perl (perlbrew, cpanm, etc)..."
