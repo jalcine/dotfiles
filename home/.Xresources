@@ -1,15 +1,36 @@
 ! vim: set foldmethod=marker
 
 ! {{{ URxvrt options 
-URxvt.depth: 32
 URxvt.background: rgba:1111/1111/1111/dddd
-URxvt.scrollBar: false
-URxvt.perl-ext-common: default,matcher
-URxvt.iso14755: False
-URxvt.url-launcher: /usr/bin/firefox
-URxvt.matcher.button: 1
-URxvt.letterSpace: -2
+URxvt.borderLess: false
+URxvt.clipboard.copycmd:  xsel -ib
+URxvt.clipboard.pastecmd: xsel -ob
+URxvt.cursorBlink: true
+URxvt.depth: 32
 URxvt.font: xft:DroidSansMono:size=9
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.letterSpace: -2
+URxvt.loginShell: true
+URxvt.matcher.button: 1
+URxvt.perl-ext-common: default,matcher,resize-font,vtwheel,clipboard
+URxvt.resize-font.bigger: C-Up
+URxvt.resize-font.smaller: C-Down
+URxvt.saveLines: 0
+URxvt.scrollBar: off
+URxvt.scrollBar_floating: false
+URxvt.scrollBar_right: false
+URxvt.scrollTtyKeypress: true
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: false
+URxvt.secondaryScreen: true
+URxvt.secondaryScroll: true
+URxvt.shading: 110
+URxvt.skipScroll: true
+URxvt.transparent: true
+URxvt.url-launcher: /usr/bin/x-www-browser
 ! }}}
 
 ! {{{ XTerm opts
@@ -54,36 +75,3 @@ XTerm*selectToClipboard: true
 *.color7:       #c5c8c6
 *.color15:      #ffffff
 ! }}}
-
-! Urxvt Options
-URxvt.scrollBar: off
-URxvt.cursorBlink: true
- 
-! clickable links
-URxvt.perl-ext-common: default,matcher,resize-font,vtwheel,clipboard
-URxvt.url-launcher: firefox
-URxvt.matcher.button: 1
-URxvt.transparent: false
-URxvt.borderLess: false
-URxvt*saveLines:  0
-
-URxvt*loginShell: true
-URxvt*scrollTtyKeypress: true
-URxvt*scrollTtyOutput: false
-URxvt*scrollWithBuffer: false
-URxvt*secondaryScreen: true
-URxvt*secondaryScroll: true
-URxvt*skipScroll: true
-URxvt*scrollBar_right: false
-URxvt*scrollBar_floating: false
-URxvt*.transparent: true
-! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
-URxvt*.shading: 110
-URxvt.resize-font.smaller: C-Down
-URxvt.resize-font.bigger: C-Up
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-URxvt.keysym.Shift-Control-C: perl:clipboard:copy
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-!URxvt.clipboard.copycmd:  xsel -ib
-!URxvt.clipboard.pastecmd: xsel -ob
