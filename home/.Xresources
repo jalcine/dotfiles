@@ -1,46 +1,9 @@
 ! vim: set foldmethod=marker
 
-! {{{ URxvrt options 
-URxvt.background: rgba:1111/1111/1111/dddd
-URxvt.borderLess: false
-URxvt.clipboard.copycmd:  xsel -ib
-URxvt.clipboard.pastecmd: xsel -ob
-URxvt.cursorBlink: true
-URxvt.depth: 32
-URxvt.font: xft:DroidSansMono:size=9
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-URxvt.keysym.Shift-Control-C: perl:clipboard:copy
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt.letterSpace: -2
-URxvt.loginShell: true
-URxvt.matcher.button: 1
-URxvt.perl-ext-common: default,matcher,resize-font,vtwheel,clipboard
-URxvt.resize-font.bigger: C-Up
-URxvt.resize-font.smaller: C-Down
-URxvt.saveLines: 0
-URxvt.scrollBar: off
-URxvt.scrollBar_floating: false
-URxvt.scrollBar_right: false
-URxvt.scrollTtyKeypress: true
-URxvt.scrollTtyOutput: false
-URxvt.scrollWithBuffer: false
-URxvt.secondaryScreen: true
-URxvt.secondaryScroll: true
-URxvt.shading: 110
-URxvt.skipScroll: true
-URxvt.transparent: true
-URxvt.url-launcher: /usr/bin/x-www-browser
-! }}}
-
-! {{{ XTerm opts
-XTerm*selectToClipboard: true
-! }}}
-
 ! {{{ Color Scheme
 ! special
-*.foreground:   #c5c8c6
-*.background:   #1d1f21
+*.background:   #c5c8c6
+*.foreground:   #1d1f21
 *.cursorColor:  #c5c8c6
 
 ! black
@@ -72,6 +35,49 @@ XTerm*selectToClipboard: true
 *.color14:      #8abeb7
 
 ! white
-*.color7:       #c5c8c6
+! *.color7:       #c5c8c6
+*.color7:       #ffffff
 *.color15:      #ffffff
+! }}}
+
+! {{{ URxvrt options
+URxvt.background: [95]#000000
+URxvt.borderLess: false
+URxvt.clipboard.copycmd:  xsel -ib
+URxvt.clipboard.pastecmd: xsel -ob
+URxvt.cursorBlink: true
+URxvt.depth: 32
+URxvt.font: xft:DroidSansMono:size=8
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.letterSpace: -2
+URxvt.loginShell: true
+URxvt.matcher.button: 1
+URxvt.perl-ext-common: default,matcher,resize-font,vtwheel,clipboard,url-select,fullscreen
+URxvt.resize-font.bigger: C-Up
+URxvt.resize-font.smaller: C-Down
+URxvt.saveLines: 0
+URxvt.scrollBar: plain
+URxvt.scrollBar_floating: true
+URxvt.scrollBar_right: true
+URxvt.scrollTtyKeypress: true
+URxvt.scrollTtyOutput: true
+URxvt.scrollWithBuffer: true
+URxvt.secondaryScreen: true
+URxvt.secondaryScroll: false
+URxvt.shading: 10
+URxvt.skipScroll: true
+URxvt.transparent: true
+URxvt.url-launcher: /usr/bin/x-www-browser
+URxvt.matcher.rend.0: Uline Bold fg5
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
+URxvt.keysym.F11: perl:fullscreen:switch
+! }}}
+
+! {{{ XTerm opts
+XTerm*selectToClipboard: true
 ! }}}
