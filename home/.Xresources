@@ -2,8 +2,8 @@
 
 ! {{{ Color Scheme
 ! special
-*.background:   #c5c8c6
-*.foreground:   #1d1f21
+*.background:   #969896
+*.foreground:   #c5c8c6
 *.cursorColor:  #c5c8c6
 
 ! black
@@ -41,7 +41,8 @@
 ! }}}
 
 ! {{{ URxvrt options
-URxvt.background: [95]#000000
+URxvt.background: [95]#969896
+URxvt.foreground: [95]#c5c8c6
 URxvt.borderLess: false
 URxvt.clipboard.copycmd:  xsel -ib
 URxvt.clipboard.pastecmd: xsel -ob
