@@ -14,21 +14,12 @@
 --excmd=mixed
 --sort=foldcase
 
---langdef=css
 --langdef=markdown
---langdef=scss
---langdef=sass
---langdef=scala
-
 --langmap=markdown:.mkd
 --langmap=markdown:.markdown
 --langmap=markdown:.md
---langmap=css:.css
---langmap=scss:.scss
 --langmap=php:.php
 --langmap=php:.phtml
---langmap=sass:.scss
---langmap=scala:.scala
 
 --regex-markdown=/^#[ \t]+(.*)\{?/\1/h,Heading_L1/
 --regex-markdown=/^##[ \t]+(.*)\{?/\1/i,Heading_L2/
@@ -37,6 +28,12 @@
 --regex-markdown=/^#####[ \t]+(.*)\{?/\1/k,Heading_L5/
 --regex-markdown=/^######[ \t]+(.*)\{?/\1/k,Heading_L6/
 
+--langmap=css:.css
+--langmap=scss:.scss
+--langmap=sass:.scss
+--langdef=css
+--langdef=scss
+--langdef=sass
 --regex-css=/^[ \t]*\.([A-Za-z0-9_-]+)/#\1/c,class,classes/
 --regex-css=/^[ \t]*#([A-Za-z0-9_-]+)/.\1/i,id,ids/
 --regex-css=/^[ \t]*(([A-Za-z0-9_-]+[ \t\n,]+)+)\{/\1/t,tag,tags/
@@ -50,6 +47,8 @@
 --regex-php=/(^|^[^\/*]+[[:blank:]])class[[:blank:]]+([[:alpha:]_][[:alnum:]_]*)/\2/c/
 --regex-php=/(^|^[^\/*]+[[:blank:]])function[[:blank:]]+&amp;?[[:blank:]]*([[:alpha:]_][[:alnum:]_]*)/\2/f/
 
+--langmap=scala:.scala
+--langdef=scala
 --regex-scala=/^[ \t]*((abstract|final|sealed|implicit|lazy)[ \t]*)*(private|protected)?[ \t]*class[ \t]+([a-zA-Z0-9_]+)/\4/c,classes/
 --regex-scala=/^[ \t]*((abstract|final|sealed|implicit|lazy)[ \t]*)*(private|protected)?[ \t]*object[ \t]+([a-zA-Z0-9_]+)/\4/c,objects/
 --regex-scala=/^[ \t]*((abstract|final|sealed|implicit|lazy)[ \t]*)*(private|protected)?[ \t]*case class[ \t]+([a-zA-Z0-9_]+)/\4/c,case classes/
