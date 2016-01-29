@@ -1,4 +1,5 @@
 xmodmap ~/.xmodmap
 xrdb -merge ~/.Xresources
-xflux -z 94612
-xbacklight -set 45
+xflux -z 94610
+xbacklight -set 25
+export $(dbus-launch)
