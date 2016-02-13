@@ -6,7 +6,7 @@
 # =========================================================================== #
 
 function vd() {
-  vagrant destroy $1
+  vagrant destroy $2
 }
 
 function vagrant_rebuild () {
