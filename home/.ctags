@@ -3,6 +3,7 @@
 --exclude=vendor
 --exclude=bundle
 --exclude=build
+--exclude=bin
 --exclude=out
 --exclude=vendor
 --c++-kinds=+p
@@ -38,14 +39,6 @@
 --regex-css=/^[ \t]*#([A-Za-z0-9_-]+)/.\1/i,id,ids/
 --regex-css=/^[ \t]*(([A-Za-z0-9_-]+[ \t\n,]+)+)\{/\1/t,tag,tags/
 --regex-css=/^[ \t]*@media\s+([A-Za-z0-9_-]+)/\1/m,media,medias/
-
---php-kinds=+cf-v
---regex-php=/abstract class ([^ ]*)/\1/c/
---regex-php=/interface ([^ ]*)/\1/c/
---regex-php=/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i
---regex-php=/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/
---regex-php=/(^|^[^\/*]+[[:blank:]])class[[:blank:]]+([[:alpha:]_][[:alnum:]_]*)/\2/c/
---regex-php=/(^|^[^\/*]+[[:blank:]])function[[:blank:]]+&amp;?[[:blank:]]*([[:alpha:]_][[:alnum:]_]*)/\2/f/
 
 --langmap=scala:.scala
 --langdef=scala
