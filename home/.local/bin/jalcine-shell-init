@@ -47,7 +47,7 @@ install_ruby() {
 }
 
 install_rust() {
-    if [[ ! -x rustc ]]; then
+  if [[ ! -x $(which rustc) ]]; then
       # Go where no man's gone before.
       cd $(mktemp -d);
 
@@ -65,12 +65,12 @@ install_rust() {
 
 install_go() {
   # Run the installer for GVM.
-  if [[ ! -x gvm ]]; then
+  if [[ ! -x $(which gvm) ]]; then
     echo -e "[jalcine] Installing Go version manager...";
     bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
   fi
 
-  if [[ ! -x go ]]; then
+  if [[ ! -x $(which go) ]]; then
     gvm install go1.4
     gvm use go1.4
     gvm install go1.6
@@ -79,7 +79,7 @@ install_go() {
 }
 
 install_hub() {
-  if [[ ! -x hub ]]; then
+  if [[ ! -x $(which hub) ]]; then
     echo -e "[jalcine] Installing hub, Github's CLI tool...";
     cd $(mktemp -d);
     git clone https://github.com/github/hub.git hub --depth=1
@@ -91,17 +91,17 @@ install_hub() {
 
 install_node() {
   # Set up nvm by cloning from Git.
-  if [ -e "$HOME/.nvm/nvm.sh" ]; then
-    echo -e "[jalcine] nvm installed.";
-  else
+  if [ ! -x $(which node) ]; then
     rm -rv $HOME/.nvm
     echo -e "[jalcine] Installing Node version manager...";
     git clone --recursive -b master git://github.com/creationix/nvm $HOME/.nvm
+    source $HOME/.nvm/nvm.sh
+    nvm install v5.10.0
+    nvm alias default v5.10.0
+  else
+    echo -e "[jalcine] nvm installed.";
   fi
 
-  source $HOME/.nvm/nvm.sh
-  nvm install v5.10.0
-  nvm alias default v5.10.0
 }
 
 # FIXME: Install ls++ here.
@@ -128,6 +128,18 @@ install_perl() {
   fi
 }
 
+install_erlang() {
+  if [[ ! -x evm ]]; then
+    cd $(mktemp -d);
+    git clone https://github.com/robisonsantos/evm evm 
+    cd evm
+    ./install
+    echo "source $HOME/.evm/scripts/evm" >> ~/.bash/plugins.d/99_evm.sh
+    chmod u+x $HOME/.bash/plugins.d/99_evm.sh
+    source $HOME/.bash/plugins.d/99_evm.sh
+  fi
+}
+
 install_fasd
 install_rust
 install_ruby
@@ -135,3 +147,4 @@ install_node
 install_perl
 install_go
 install_hub
+install_erlang
