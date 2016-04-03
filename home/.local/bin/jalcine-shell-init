@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.bashrc
+# File: ~/.local/bin/jalcine-shell-init
 # Author: Jacky Alcine <me@jalcine.me>
 # Description: Entry point for interactive shells.
 # =========================================================================== #
 
+echo_msg() {
+  echo -e "[jalcine:init] $1";
+}
+
 install_fasd() {
   if [[ ! -e $HOME/.fasd ]]; then
-    echo -e "[jalcine] Installing fasd...";
+    echo_msg "Installing fasd...";
+
     # Go where no man's gone before.
     cd $(mktemp -d);
 
@@ -16,47 +21,67 @@ install_fasd() {
 
     # Go into the folder and build that thang.
     PREFIX=$HOME/.local make -C fasd install;
+    echo_msg "Installed fasd.";
+  else
+    echo_msg "fasd is already installed.";
   fi
 }
 
-install_rbenv() {
-  # TODO Ask to nuke any existing install of rbenv.
-  local _rbenv_git_plugin_path="$HOME/.bash/plugins.d/99_rbenv_from_git.sh"
-
+install_ruby() {
   # Set up rbenv by cloning.
   if [[ ! -d "$HOME/.rbenv" ]]; then
-    echo -e "[jalcine] Installing rbenv...";
-    git clone --recursive -b master git://github.com/jalcine/rbenv $HOME/.rbenv
-  fi
+    echo_msg "Installing rbenv...";
+    git clone --recursive -b master git://github.com/sstep/rbenv $HOME/.rbenv
 
-  # Add in our custom plugin for rbenv.
-  if [[ ! -e "${_rbenv_git_plugin_path}" ]]; then
-    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ${_rbenv_git_plugin_path};
-    source ${_rbenv_git_plugin_path};
+    local _rbenv_git_plugin_path="$HOME/.bash/plugins.d/99_rbenv_from_git.sh"
+
+    # Add in our custom plugin for rbenv.
+    if [[ ! -e "${_rbenv_git_plugin_path}" ]]; then
+      echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ${_rbenv_git_plugin_path};
+      source ${_rbenv_git_plugin_path};
+    fi
+
+    # TODO: Install ruby-build.
+    # TODO: Install set global.
   fi
 }
 
-install_gvm() {
+install_rust() {
+    # Go where no man's gone before.
+    cd $(mktemp -d);
+
+    git clone --depth=1 --recursive https://github.com/brson/multirust && cd multirust
+    git submodule update --init
+    ./build.sh
+    ./install.sh --prefix="$HOME/.local"
+}
+
+install_go() {
   # Run the installer for GVM.
   if [[ ! -x gvm ]]; then
     echo -e "[jalcine] Installing Go version manager...";
     bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
   fi
+
+  if [[ ! -x go ]]; then
+    gvm install go1.4
+    gvm use go1.4
+    gvm install go1.6
+    gvm use --default go1.6
+  fi
 }
 
 install_hub() {
-  if [[ ! -e $HOME/.local/bin/hub ]]; then
+  if [[ ! -x hub ]]; then
     echo -e "[jalcine] Installing hub, Github's CLI tool...";
     cd $(mktemp -d);
     git clone https://github.com/github/hub.git hub --depth=1
-    bash hub/script/build
+    ./hub/script/build
     cp hub/hub $HOME/.local/bin/hub
   fi
 }
 
-install_nvm() {
-  # TODO Ask to nuke any existing install of nvm.
-
+install_node() {
   # Set up nvm by cloning from Git.
   if [ -e "$HOME/.nvm/nvm.sh" ]; then
     echo -e "[jalcine] nvm installed.";
@@ -66,8 +91,9 @@ install_nvm() {
     git clone --recursive -b master git://github.com/creationix/nvm $HOME/.nvm
   fi
 
-  # Enable NVM off the back.
   source $HOME/.nvm/nvm.sh
+  nvm install v5.10.0
+  nvm alias default v5.10.0
 }
 
 # FIXME: Install ls++ here.
@@ -95,8 +121,9 @@ install_perl() {
 }
 
 install_fasd
-install_rbenv
-install_nvm
-install_gvm
-install_hub
+install_rust
+install_ruby
+install_node
 install_perl
+install_go
+install_hub
