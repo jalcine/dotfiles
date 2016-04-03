@@ -47,13 +47,20 @@ install_ruby() {
 }
 
 install_rust() {
-    # Go where no man's gone before.
-    cd $(mktemp -d);
+    if [[ ! -x rustc ]]; then
+      # Go where no man's gone before.
+      cd $(mktemp -d);
 
-    git clone --depth=1 --recursive https://github.com/brson/multirust && cd multirust
-    git submodule update --init
-    ./build.sh
-    ./install.sh --prefix="$HOME/.local"
+      git clone --depth=1 --recursive https://github.com/brson/multirust && cd multirust
+      git submodule update --init
+      ./build.sh
+      ./install.sh --prefix="$HOME/.local"
+
+      multirust update
+      multirust override 1.0.0
+    else
+      echo_msg "'rust' already installed.";
+    fi
 }
 
 install_go() {
@@ -76,8 +83,9 @@ install_hub() {
     echo -e "[jalcine] Installing hub, Github's CLI tool...";
     cd $(mktemp -d);
     git clone https://github.com/github/hub.git hub --depth=1
-    ./hub/script/build
-    cp hub/hub $HOME/.local/bin/hub
+    cd hub
+    ./script/build
+    cp bin/hub $HOME/.local/bin/hub
   fi
 }
 
