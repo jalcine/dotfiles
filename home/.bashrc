@@ -23,3 +23,6 @@ if [ -z "$PS1" ]; then
 else
   _jalcine_fullinit;
 fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

@@ -125,6 +125,12 @@ install_perl() {
     # Install CPANM.
     perlbrew install-cpanm
     cpanm Term::ExtendedColor Data::Dumper
+
+    cd $(mktemp -d);
+    git clone https://github.com/trapd00r/ls--
+    cd ls--
+    make
+    make install
   fi
 }
 
@@ -137,6 +143,8 @@ install_erlang() {
     echo "source $HOME/.evm/scripts/evm" >> ~/.bash/plugins.d/99_evm.sh
     chmod u+x $HOME/.bash/plugins.d/99_evm.sh
     source $HOME/.bash/plugins.d/99_evm.sh
+    evm install OTP_18.0
+    evm default OTP_18.0
   fi
 }
 
