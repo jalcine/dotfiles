@@ -6,24 +6,33 @@
 # =========================================================================== #
 
 keychain_init() {
+  if [ ! -n "$KEYCHAIN_SSH_KEYS" ]; then
+    echo "[keychain] Please define \$KEYCHAIN_SSH_KEYS for easy SSH use.";
+  fi
+
+  if [ ! -n "$KEYCHAIN_GPG_KEYS" ]; then
+    echo "[keychain] Please define \$KEYCHAIN_GPG_KEYS for easy GPG use.";
+  fi
+
   if [ ! -e "$HOME/.keychain/$HOSTNAME-sh" ]; then
     echo "[keychain] loading keys for GPG and SSH...";
-    keychain --clear --confirm --ignore-missing --quiet $KEYCHAIN_SSH_KEYS $KEYCHAIN_GPG_KEYS
-    tset
+    keychain --clear --confirm --ignore-missing --quiet "$KEYCHAIN_SSH_KEYS $KEYCHAIN_GPG_KEYS";
+  else
+    keychain_source
   fi
 }
 
 keychain_source() {
-  [ -e $HOME/.keychain/$HOSTNAME-sh ] && . $HOME/.keychain/$HOSTNAME-sh;
-  [ -e $HOME/.keychain/$HOSTNAME-sh-gpg ] && . $HOME/.keychain/$HOSTNAME-sh-gpg;
+  [ -e "$HOME/.keychain/$HOSTNAME-sh" ] && . $HOME/.keychain/$HOSTNAME-sh;
+  [ -e "$HOME/.keychain/$HOSTNAME-sh-gpg" ] && . $HOME/.keychain/$HOSTNAME-sh-gpg;
 }
 
 keychain_wipe() {
-  [ -e $HOME/.keychain/$HOSTNAME-sh ] && rm $HOME/.keychain/$HOSTNAME*;
+  [ -e "$HOME/.keychain/$HOSTNAME-sh" ] && rm $HOME/.keychain/$HOSTNAME*;
   keychain_init;
 }
 
-if [ -x $(which keychain) ]; then
+if [ -e $(which keychain) ]; then
   case $PROMPT_COMMAND in
     *keychain_source*)
       ;;
@@ -38,4 +47,4 @@ if [ -x $(which keychain) ]; then
   keychain_init
 fi
 
-[ -e "$HOME/.keychain/$HOSTNAME-sh" ] && keychain_init;
+keychain_init;

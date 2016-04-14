@@ -6,7 +6,7 @@
 # =========================================================================== #
 
 # Load in the base 'plugin' for the shell.
-. "$HOME/.bash/base.sh"
+source "$HOME/.bash/base.sh"
 
 # Load the whole damned thing.
 if [ -z "$PS1" ]; then
