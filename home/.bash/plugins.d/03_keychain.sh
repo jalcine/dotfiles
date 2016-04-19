@@ -16,7 +16,7 @@ keychain_init() {
 
   if [ ! -e "$HOME/.keychain/$HOSTNAME-sh" ]; then
     echo "[keychain] loading keys for GPG and SSH...";
-    keychain --clear --confirm --ignore-missing --quiet "$KEYCHAIN_SSH_KEYS $KEYCHAIN_GPG_KEYS";
+    keychain --clear --confirm --ignore-missing --quiet "$KEYCHAIN_SSH_KEYS" "$KEYCHAIN_GPG_KEYS";
   else
     keychain_source
   fi
