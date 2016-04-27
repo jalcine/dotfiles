@@ -18,7 +18,7 @@ alias gr="git remote"
 alias gco="git checkout"
 alias gc="git commit --verbose"
 alias gca="git commit --all --verbose"
-alias gci="git commit --interactive"
+alias gci="git commit --interactive --verbose"
 alias gp="git push"
 alias gfa="git fetch --all"
 
