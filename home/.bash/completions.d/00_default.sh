@@ -7,9 +7,16 @@
 # I add this because I tend to wipe these out.
 # =========================================================================== #
 
-[[ ! -d /usr/local/etc/bash_completion.d ]] && exit;
+if [[ -d /usr/local/etc/bash_completion.d ]]; then
+  find /usr/local/etc/bash_completion.d -type l | while read -r file
+  do
+    source "$file"
+  done
+fi
 
-find /usr/local/etc/bash_completion.d -type l | while read -r file
-do
-  source "$file"
-done
+if [[ -d /usr/etc/bash_completion.d ]]; then
+  find /usr/etc/bash_completion.d -type l | while read -r file
+  do
+    source "$file"
+  done
+fi
