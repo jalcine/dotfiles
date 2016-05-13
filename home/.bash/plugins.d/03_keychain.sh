@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # =========================================================================== #
 # File: ~/.bash/plugins.d/rbenv.sh
 # Author: Jacky Alcine <yo@jacky.wtf>
@@ -16,7 +17,7 @@ keychain_init() {
 
   if [ ! -e "$HOME/.keychain/$HOSTNAME-sh" ]; then
     echo "[keychain] loading keys for GPG and SSH...";
-    keychain --clear --confirm --ignore-missing --quiet "$KEYCHAIN_SSH_KEYS" "$KEYCHAIN_GPG_KEYS";
+    eval $(keychain --eval --agents gpg,ssh --clear --confirm --ignore-missing --quiet "$KEYCHAIN_SSH_KEYS" "$KEYCHAIN_GPG_KEYS");
   else
     keychain_source
   fi
@@ -28,6 +29,7 @@ keychain_source() {
 }
 
 keychain_wipe() {
+  keychain --stop all --quiet;
   [ -e "$HOME/.keychain/$HOSTNAME-sh" ] && rm $HOME/.keychain/$HOSTNAME*;
   keychain_init;
 }
