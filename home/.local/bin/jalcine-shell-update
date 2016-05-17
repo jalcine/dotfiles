@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# =========================================================================== #
+# File: ~/.local/bin/jalcine-shell-update
+# Author: Jacky Alcine <yo@jacky.wtf>
+# Description: Updates my shell environment.
+# =========================================================================== #
+
+homeshick pull
+homeshick link
+nvim +PlugInstall +PlugClean +PlugUpdate +qall
