@@ -34,7 +34,7 @@ so your mileage *will* vary. This is designed to be installed using
 ## Quick Install
 
 I don't recommend using a one-liner to download random scripts to your machine.
-I care about your machine's integrity. Instead, you can safely check out
+I *care* about your machine's integrity. Instead, you can safely check out
 [homesick][] and then clone this repository into your system.
 
 ## Author

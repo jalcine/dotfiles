@@ -5,6 +5,7 @@
 # Description: Updates my shell environment.
 # =========================================================================== #
 
+alias hsh="$HOME/.homesick/repos/homeshick/bin/homeshick"
 homeshick pull
 homeshick link
-nvim +PlugInstall +PlugClean +PlugUpdate +qall
+# nvim +PlugInstall +PlugClean +PlugUpdate +qall
