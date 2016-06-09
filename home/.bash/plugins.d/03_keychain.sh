@@ -17,24 +17,24 @@ keychain_init() {
 
   if [ ! -e "$HOME/.keychain/$HOSTNAME-sh" ]; then
     echo "[keychain] loading keys for GPG and SSH...";
-    eval $(keychain --eval --agents gpg,ssh --clear --confirm --ignore-missing --quiet "$KEYCHAIN_SSH_KEYS" "$KEYCHAIN_GPG_KEYS");
+    eval "$(keychain --eval --agents gpg,ssh --quick --systemd all --attempts 3 --confirm --ignore-missing $KEYCHAIN_SSH_KEYS $KEYCHAIN_GPG_KEYS)";
   else
     keychain_source
   fi
 }
 
 keychain_source() {
-  [ -e "$HOME/.keychain/$HOSTNAME-sh" ] && . $HOME/.keychain/$HOSTNAME-sh;
-  [ -e "$HOME/.keychain/$HOSTNAME-sh-gpg" ] && . $HOME/.keychain/$HOSTNAME-sh-gpg;
+  [ -x "$HOME/.keychain/$HOSTNAME-sh" ] && . "$HOME/.keychain/$HOSTNAME-sh";
+  [ -x "$HOME/.keychain/$HOSTNAME-sh-gpg" ] && . "$HOME/.keychain/$HOSTNAME-sh-gpg";
 }
 
 keychain_wipe() {
-  keychain --stop all --quiet;
-  [ -e "$HOME/.keychain/$HOSTNAME-sh" ] && rm $HOME/.keychain/$HOSTNAME*;
+  keychain --stop all --quiet --agents gpg,ssh;
+  [ -e "$HOME/.keychain/$HOSTNAME-sh" ] && rm "$HOME/.keychain/$HOSTNAME*";
   keychain_init;
 }
 
-if [ -e $(which keychain) ]; then
+if [ -e "$(which keychain)" ]; then
   case $PROMPT_COMMAND in
     *keychain_source*)
       ;;
