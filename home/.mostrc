@@ -1,4 +1,4 @@
-color normal black lightgray
-color status white gray
+color normal white black
+color status black white
 color underline brightgreen black
 color overstrike brightred black
