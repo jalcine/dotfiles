@@ -1,0 +1,158 @@
+#!/usr/bin/env bash
+# vim: set ft=sh fdm=marker:
+# =========================================================================== #
+# jalcine-shell
+# Author: Jacky Alciné <yo@jacky.wtf>
+# Last Updated: 2016-06-24 19:30:23 PDT
+# Description: Shell initialization tool.
+# This script serves as a quick-n-easy init tool for me to run and invoke on new
+# machines or a box that I want to seed with my preferred environment.
+# =========================================================================== #
+
+# { Utilities
+echo_msg()   { echo -e "[jalcine] $1"; }
+
+clone_repo() {
+  git clone --recursive --depth=1 "$1" --verbose "${2:$(dirname $1)}";
+}
+
+goto_temp()  { 
+  local tmpdirpath=$(mktemp -d); 
+  echo_msg "Jumping to $tmpdirpath...";
+  cd "$tmpdirpath";
+}
+
+# Adds my preferred file jumping tool.
+# TODO: add 'fasd' -> git://github.com/clvv/fasd
+# TODO: add 'rbenv' -> git://github.com/sstephenson/rbenv
+
+generate_rbenv_plugin() {
+  local _rbenv_git_plugin_path="$HOME/.bash/plugins.d/99_rbenv_from_git.sh"
+
+  # Add in our custom plugin for rbenv.
+  if [[ ! -e "${_rbenv_git_plugin_path}" ]]; then
+    echo <<<JALCINE_RBENV_PLUGIN
+# =========================================================================== #
+# Generated on $(date)
+# Name: 99_rbenv_from_git.sh
+# 
+# Used to source in 'rbenv'.
+# =========================================================================== #
+PATH="$HOME/.rbenv/bin:$PATH";
+export PATH;
+JALCINE_RBENV_PLUGIN >> ${_rbenv_git_plugin_path};
+  fi
+
+  source ${_rbenv_git_plugin_path};
+}
+
+install_rust() {
+  if [[ ! -x $(which rustc) ]]; then
+      # Go where no man's gone before.
+      cd $(mktemp -d);
+
+      git clone --depth=1 --recursive https://github.com/brson/multirust && cd multirust
+      git submodule update --init
+      ./build.sh
+      ./install.sh --prefix="$HOME/.local"
+
+      multirust update
+      multirust override 1.0.0
+    else
+      echo_msg "'rust' already installed.";
+    fi
+}
+
+install_go() {
+  # Run the installer for GVM.
+  if [[ ! -x $(which gvm) ]]; then
+    echo -e "[jalcine] Installing Go version manager...";
+    bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+  fi
+
+  if [[ ! -x $(which go) ]]; then
+    gvm install go1.4
+    gvm use go1.4
+    gvm install go1.6
+    gvm use --default go1.6
+  fi
+}
+
+install_hub() {
+  if [[ ! -x $(which hub) ]]; then
+    echo -e "[jalcine] Installing hub, Github's CLI tool...";
+    cd $(mktemp -d);
+    git clone https://github.com/github/hub.git hub --depth=1
+    cd hub
+    ./script/build
+    cp bin/hub $HOME/.local/bin/hub
+  fi
+}
+
+install_node() {
+  # Set up nvm by cloning from Git.
+  if [ ! -x $(which node) ]; then
+    rm -rv $HOME/.nvm
+    echo -e "[jalcine] Installing Node version manager...";
+    git clone --recursive -b master git://github.com/creationix/nvm $HOME/.nvm
+    source $HOME/.nvm/nvm.sh
+    nvm install v5.10.0
+    nvm alias default v5.10.0
+  else
+    echo -e "[jalcine] nvm installed.";
+  fi
+
+}
+
+# FIXME: Install ls++ here.
+install_perl() {
+  if [[ ! -d $HOME/.perlbrew ]]; then
+    echo "[jalcine] Installing Perl (perlbrew, cpanm, etc)..."
+    # Build the necessary directories.
+    [[ ! -d "$HOME/.perlbrew" ]] && mkdir $HOME/.perlbrew;
+    [[ ! -d "$HOME/.perl5/perlbrew" ]] && mkdir -p $HOME/.perl5/perlbrew;
+
+    # Set the required variables.
+    curl -L http://install.perlbrew.pl | \
+      PERLBREW_ROOT="$HOME/.perl5/perlbrew" \
+      PERLBREW_HOME="$HOME/.perlbrew" \
+      TMPDIR=$(mktemp -d -t perlbrew) bash
+
+    # Install the versions of Perl I'd like to use.
+    perlbrew install 5.20.1
+    perlbrew switch 5.20.1
+
+    # Install CPANM.
+    perlbrew install-cpanm
+    cpanm Term::ExtendedColor Data::Dumper
+
+    cd $(mktemp -d);
+    git clone https://github.com/trapd00r/ls--
+    cd ls--
+    make
+    make install
+  fi
+}
+
+install_erlang() {
+  if [[ ! -x evm ]]; then
+    cd $(mktemp -d);
+    git clone https://github.com/robisonsantos/evm evm 
+    cd evm
+    ./install
+    echo "source $HOME/.evm/scripts/evm" >> ~/.bash/plugins.d/99_evm.sh
+    chmod u+x $HOME/.bash/plugins.d/99_evm.sh
+    source $HOME/.bash/plugins.d/99_evm.sh
+    evm install OTP_18.0
+    evm default OTP_18.0
+  fi
+}
+
+install_fasd
+install_rust
+install_ruby
+install_node
+install_perl
+install_go
+install_hub
+install_erlang
