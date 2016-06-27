@@ -22,6 +22,8 @@
   VERSION_ERLANG="OTP_19.0"
   VERSION_ELIXIR="1.3.0"
   VERSION_GO="1.6"
+  VERSION_PHP="7.0.8"
+  VERSION_PYTHON=""
   VERSION_RUST="stable-x86_64-unknown-linux-gnu"
 
 # Software
@@ -83,7 +85,6 @@ echo_msg()   { echo -e "[jalcine] $1"; }
 # @param name (optional) The path to clone into.
 # TODO: Add option to skip pulling if already there.
 clone_repo() {
-  echo $1
   local _basedir="$(basename $1)"
   local _destdir="${2:${_basedir}}";
 
@@ -140,7 +141,10 @@ JALCINE_GENERATED_PLUGIN
 # #}
 
 install_anyenv() {
-  clone_repo file:///home/jacky/prjs/anyenv "$HOME/.anyenv"
+  if [ ! -d "$HOME/.anyenv" ]
+  then
+    clone_repo https://github.com/jalcine/anyenv "$HOME/.anyenv"
+  fi
 }
 
 install_rbenv_addons() {
@@ -185,7 +189,7 @@ JALCINE_RBENV_DEFAULT_GEMS
 }
 
 generate_anyenv_plugin() {
-  local _body="export PATH=\"\$HOME/.anyenv/bin:\$PATH\""
+  local _body="export PATH=\"\$HOME/.anyenv/bin:\$PATH\" && eval \"\$(anyenv init -)\""
   generate_plugin "anyenv" "${_body}"
 
 }
@@ -245,6 +249,8 @@ install_evm() {
     ./install
     generate_plugin "evm" "source \$HOME/.evm/scripts/evm"
     cd ~
+  else
+    source "$HOME/.evm/scripts/evm"
   fi
 }
 
@@ -299,7 +305,7 @@ install_ls() {
   cd ls--
   perl Makefile.PL
   make
-  mv ls++ "${HOME}/.local/bin/"
+  mv blib/script/ls++ "${HOME}/.local/bin/"
   cd -
 }
 # #} 
@@ -341,6 +347,10 @@ install_node() {
   npm install yo@latest -g
 }
 
+install_php() {
+  phpenv install "${VERSION_PHP}"
+}
+
 install_erlang() {
   echo_msg "Installing erlang..."
   for command in install default use
@@ -355,6 +365,31 @@ install_elixir() {
   exenv global "${VERSION_ELIXIR}"
 }
 
+install_pyenv_addons() {
+  local _root=$(pyenv root)
+  declare -a _pyenv_addons=(\
+    "yyuu/pyenv-virtualenv" \
+    "yyuu/pyenv-virtualenvwrapper" \
+    "yyuu/pyenv-pip-rehash" \
+    "yyuu/pyenv-doctor" \
+  );
+
+  declare -a py_packages=(\
+      "httpie" \
+      "youtube-dl" \
+      "glances" \
+  );
+
+  for repo in ${_pyenv_addons[*]}
+  do
+    local _path="$_root/plugins/$(basename $repo)";
+    local _repo="https://github.com/$repo" 
+    clone_repo "${_repo}" "${_path}";
+  done
+
+  pip install ${py_packages[*]}
+}
+
 install_tools() {
   install_anyenv;
   generate_anyenv_plugin;
@@ -366,21 +401,23 @@ install_tools() {
 }
 
 install_languages() {
-  for xenv in rbenv ndenv plenv phpenv exenv goenv
+  for xenv in rbenv ndenv plenv phpenv exenv goenv pyenv
   do
     anyenv install -s ${xenv};
     eval "$(anyenv init -)";
   done
 
-  install_perl;
-  install_rust;
-  install_ruby;
-  install_rbenv_addons;
-  install_go;
-  install_node;
-  install_php;
-  install_erlang;
-  install_elixir;
+  # install_perl;
+  # install_rust;
+  # install_ruby;
+  # install_rbenv_addons;
+  # install_go;
+  # install_node;
+  # install_php;
+  # install_erlang;
+  # install_elixir;
+  install_python;
+  install_pyenv_addons;
 }
 
 install_software() {
