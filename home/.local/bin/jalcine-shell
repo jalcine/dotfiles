@@ -407,15 +407,15 @@ install_languages() {
     eval "$(anyenv init -)";
   done
 
-  # install_perl;
-  # install_rust;
-  # install_ruby;
-  # install_rbenv_addons;
-  # install_go;
-  # install_node;
-  # install_php;
-  # install_erlang;
-  # install_elixir;
+  install_perl;
+  install_rust;
+  install_ruby;
+  install_rbenv_addons;
+  install_go;
+  install_node;
+  install_php;
+  install_erlang;
+  install_elixir;
   install_python;
   install_pyenv_addons;
 }
