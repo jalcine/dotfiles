@@ -17,15 +17,15 @@ keychain_init() {
 
   if [ ! -e "$HOME/.keychain/$HOSTNAME-sh" ]; then
     echo "[keychain] loading keys for GPG and SSH...";
-    eval "$(keychain --eval --agents gpg,ssh --quick --systemd all --attempts 3 --confirm --ignore-missing $KEYCHAIN_SSH_KEYS $KEYCHAIN_GPG_KEYS)";
+    eval "$(keychain --inherit any --eval --agents gpg,ssh --ignore-missing "$KEYCHAIN_SSH_KEYS" "$KEYCHAIN_GPG_KEYS")";
   else
     keychain_source
   fi
 }
 
 keychain_source() {
-  [ -x "$HOME/.keychain/$HOSTNAME-sh" ] && . "$HOME/.keychain/$HOSTNAME-sh";
-  [ -x "$HOME/.keychain/$HOSTNAME-sh-gpg" ] && . "$HOME/.keychain/$HOSTNAME-sh-gpg";
+  [ -e "$HOME/.keychain/$HOSTNAME-sh" ] && . "$HOME/.keychain/$HOSTNAME-sh";
+  [ -e "$HOME/.keychain/$HOSTNAME-sh-gpg" ] && . "$HOME/.keychain/$HOSTNAME-sh-gpg";
 }
 
 keychain_wipe() {

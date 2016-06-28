@@ -152,7 +152,7 @@ install_rbenv_addons() {
 
   echo_msg "Installing rbenv addons..."
   declare -a _rbenv_addons=(\
-    'rbenv/rbenv-default-gems' \
+    # 'rbenv/rbenv-default-gems' \
     "rbenv/ruby-build" \
     "tpope/rbenv-ctags" \
     "jf/rbenv-gemset" \
@@ -258,14 +258,12 @@ install_evm() {
 
 # {# Rust
 install_rustup() {
-  if [ ! -x $(which rustup) ]
-  then
-    curl https://sh.rustup.rs -sSf | sh
-  fi
+  curl https://sh.rustup.rs -sSf | sh -s -- --no-modify-path -yv
 }
 
 install_rust() {
-  rustup --prefix="$HOME/.local"
+  echo_msg "TODO: Find a way to constantly install rust."
+  # rustup --prefix="$HOME/.local"
   # rustup install "${VERSION_RUST}"
 }
 
