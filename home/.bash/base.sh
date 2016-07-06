@@ -9,7 +9,6 @@
 # Function: _jalcine_preinit
 # Meant to load logic that's lightweight enough to be used in a non-interactive
 # shell.
-# TODO: Get aliases working here.
 _jalcine_preinit() {
   . $HOME/.bash/lib.sh;
   . $HOME/.bash/options.sh;
