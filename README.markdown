@@ -1,5 +1,7 @@
 # My Shell Environment
 
+![./snapshot.png](Primary screenshot)
+
 This repository holds the source code representing the core of my preferred
 shell environment. This repository is [homeshick][] enabled - it's the
 recommended means of installing and using it.
