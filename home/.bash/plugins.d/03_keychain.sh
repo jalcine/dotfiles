@@ -30,7 +30,9 @@ keychain_source() {
 
 keychain_wipe() {
   keychain --stop all --quiet --agents gpg,ssh;
-  [ -e "$HOME/.keychain/$HOSTNAME-sh" ] && rm "$HOME/.keychain/$HOSTNAME*";
+  if [ -e "$HOME/.keychain/$HOSTNAME-sh" ]; then
+    rm "$HOME/.keychain/$HOSTNAME*";
+  fi
   keychain_init;
 }
 

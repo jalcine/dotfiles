@@ -8,14 +8,14 @@
 # =========================================================================== #
 
 if [[ -d /usr/local/etc/bash_completion.d ]]; then
-  find /usr/local/etc/bash_completion.d -type l | while read -r file
+  find /usr/local/etc/bash_completion.d -type f | while read -r file
   do
     source "$file"
   done
 fi
 
 if [[ -d /usr/etc/bash_completion.d ]]; then
-  find /usr/etc/bash_completion.d -type l | while read -r file
+  find /usr/etc/bash_completion.d -type f | while read -r file
   do
     source "$file"
   done
