@@ -12,3 +12,7 @@ function mkcd {
 
   cd $1;
 }
+
+function ipinfo {
+  curl "ipinfo.io/${1}";
+}
