@@ -42,6 +42,15 @@ This repository makes use of the following:
     * `gdb`
     * `ctags`
     * `vagrant`
-
+  * `anyenv` initialization for:
+    * Ruby
+    * Perl
+    * PHP
+    * Rust
+    * Go
+    * Elixir
+    * Erlang
+    * Node
+    * Python
 
 [homeshick]: https://github.com/andsens/homeshick

@@ -148,7 +148,8 @@ install_anyenv() {
 }
 
 install_rbenv_addons() {
-  local _root=$(rbenv root);
+  local _root;
+  _root=$(rbenv root);
 
   echo_msg "Installing rbenv addons..."
   declare -a _rbenv_addons=(\

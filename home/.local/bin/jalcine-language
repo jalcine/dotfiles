@@ -1,0 +1,113 @@
+#!/usr/bin/env bash
+# vim: set nospell ft=sh fdm=marker foldmarker={#,#}:
+# jalcine-language
+# 
+# Author:        Jacky Alciné <yo@jacky.wtf>
+# Last Updated:  2016-08-20 23:42:53 PDT
+# Description:   Language installation tool.
+# This script provides a direct means to install languages I'd need for my
+# personal environment. It determines this via configuration options and allows
+# for simple cleaning up of said runtimes.
+
+# {# Constants
+# Use these values to manipulate versioning information to be used for the
+# software I download and install.
+# shellcheck disable=SC2034
+{
+
+# Language versions
+  VERSION_RUBY="2.3.1" 
+  VERSION_NODE="5.12.0"
+  VERSION_PERL="5.25.2"
+  VERSION_ERLANG="OTP_19.0"
+  VERSION_ELIXIR="1.3.0"
+  VERSION_GO="1.6"
+  VERSION_PHP="7.0.8"
+  VERSION_PYTHON="3.3"
+  VERSION_RUST="stable-x86_64-unknown-linux-gnu"
+
+# anyenv version
+  VERSION_ANYENV="HEAD"
+
+# Options
+  JALCINE_GIT_UPDATE=0
+}
+# #}
+
+#===  FUNCTION  ================================================================
+#         NAME:  usage
+#  DESCRIPTION:  Display usage information.
+#===============================================================================
+function usage ()
+{
+  echo <<USAGE_HELP
+Usage:  jalcine-language [options]
+
+Options:
+  -h|help      Display this message
+  -v|version   Display script version
+  -i|install   Install prescribed language environments
+  -c|cleanup   Cleanup unused language environments
+
+USAGE_HELP
+
+}    # ----------  end of function usage  ----------
+
+__ScriptVersion="2016-08-20 23:51:12 PDT"
+
+#-----------------------------------------------------------------------
+#  Handle command line arguments
+#-----------------------------------------------------------------------
+
+while getopts ":hvu" opt
+do
+  case $opt in
+
+  h|help      )  usage; exit 0   ;;
+
+  v|version   )  echo "$0 -- Version $__ScriptVersion"; exit 0   ;;
+
+  i|install   )  install_languages; exit 0 ;;
+
+  * )  echo -e "\n  Option does not exist : $OPTARG\n"
+      usage; exit 1   ;;
+
+  esac    # --- end of case ---
+done
+shift $(($OPTIND-1))
+# #}
+
+# {# Utilities
+echo_msg()   { echo -e "[jalcine] $1"; }
+
+# @function clone_repo
+# @param uri The repository URI to clone.
+# @param name (optional) The path to clone into.
+clone_repo() {
+  local _basedir="$(basename $1)"
+  local _destdir="${2:${_basedir}}";
+
+  if [ ! -d "${_destdir}" ]; then
+    echo_msg "Cloning $1 to ${_destdir}...";
+    git clone --quiet --recursive --depth=1 "$1" "${_destdir}";
+  else
+    (cd "${_destdir}" && git pull) || exit;
+  fi
+}
+
+# @function goto_temp
+# Creates and changes the working directory to a temporary directory.
+goto_temp()  { cd "$(mktemp -d)"; }
+
+# #}
+
+function install_anyenv () {
+  if [ ! -d "$HOME/.anyenv" ]; then
+    echo_msg "Installing anyenv..."
+    clone_repo https://github.com/jalcine/anyenv "$HOME/.anyenv"
+  fi
+}
+
+
+function install_languages ()  {
+}
