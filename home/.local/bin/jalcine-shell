@@ -23,7 +23,7 @@
   VERSION_ELIXIR="1.3.0"
   VERSION_GO="1.6"
   VERSION_PHP="7.0.8"
-  VERSION_PYTHON=""
+  VERSION_PYTHON="3.5.2"
   VERSION_RUST="stable-x86_64-unknown-linux-gnu"
 
 # Software
@@ -198,6 +198,12 @@ install_ruby() {
   echo "$VERSION_RUBY" > "$(rbenv root)/version";
   rbenv install -sk "${VERSION_RUBY}";
   echo_msg "Installed ruby $VERSION_RUBY.";
+}
+
+install_python() {
+  echo "$VERSION_PYTHON" > "$(pyenv root)/version";
+  pyenv install -sk "${VERSION_PYTHON}";
+  echo_msg "Installed python $VERSION_PYTHON.";
 }
 
 # {# Software
@@ -376,6 +382,7 @@ install_pyenv_addons() {
       "httpie" \
       "youtube-dl" \
       "glances" \
+      "neovim" \
   );
 
   for repo in ${_pyenv_addons[*]}
