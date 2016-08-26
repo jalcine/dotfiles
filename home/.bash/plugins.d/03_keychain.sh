@@ -7,17 +7,12 @@
 # =========================================================================== #
 
 keychain_init() {
-  if [ ! -n "$KEYCHAIN_SSH_KEYS" ]; then
-    echo "[keychain] Please define \$KEYCHAIN_SSH_KEYS for easy SSH use.";
-  fi
-
-  if [ ! -n "$KEYCHAIN_GPG_KEYS" ]; then
-    echo "[keychain] Please define \$KEYCHAIN_GPG_KEYS for easy GPG use.";
-  fi
-
   if [ ! -e "$HOME/.keychain/$HOSTNAME-sh" ]; then
     echo "[keychain] loading keys for GPG and SSH...";
-    eval "$(keychain --inherit any --eval --agents gpg,ssh --ignore-missing "$KEYCHAIN_SSH_KEYS" "$KEYCHAIN_GPG_KEYS")";
+    # shellcheck disable=SC2086
+    eval "$(keychain --attempts 3 --inherit any-once \
+      --eval --agents gpg,ssh --ignore-missing \
+      ${KEYCHAIN_GPG_KEYS} ${KEYCHAIN_SSH_KEYS})";
   else
     keychain_source
   fi
@@ -29,7 +24,7 @@ keychain_source() {
 }
 
 keychain_wipe() {
-  keychain --stop all --quiet --agents gpg,ssh;
+  keychain --stop all --quiet --agents gpg,ssh --systemd all;
   if [ -e "$HOME/.keychain/$HOSTNAME-sh" ]; then
     rm "$HOME/.keychain/$HOSTNAME*";
   fi

@@ -21,7 +21,7 @@
   VERSION_PERL="5.25.2"
   VERSION_ERLANG="OTP_19.0"
   VERSION_ELIXIR="1.3.0"
-  VERSION_GO="1.6"
+  VERSION_GO="1.7"
   VERSION_PHP="7.0.8"
   VERSION_PYTHON="3.5.2"
   VERSION_RUST="stable-x86_64-unknown-linux-gnu"
@@ -104,7 +104,8 @@ clone_repo() {
 
 # @function goto_temp
 goto_temp()  { 
-  local tmpdirpath=$(mktemp -d); 
+  local tmpdirpath
+  _tmpdirpath=$(mktemp -d); 
   cd "$tmpdirpath";
 }
 
@@ -148,7 +149,8 @@ install_anyenv() {
 }
 
 install_rbenv_addons() {
-  local _root=$(rbenv root);
+  local _root
+  _root=$(rbenv root);
 
   echo_msg "Installing rbenv addons..."
   declare -a _rbenv_addons=(\
@@ -158,6 +160,7 @@ install_rbenv_addons() {
     "jf/rbenv-gemset" \
     "rbenv/rbenv-each" \
     "rbenv/rbenv-vars" \
+    "rbenv/rbenv-default-gems" \
     "tpope/rbenv-communal-gems" \
     "aripollak/rbenv-bundler-ruby-version" \
   );
@@ -182,7 +185,7 @@ JALCINE_RBENV_DEFAULT_GEMS
     clone_repo "${_repo}" "${_path}";
   done
 
-  rbenv communize
+  rbenv communize --all
   rbenv ctags
 
   echo_msg "Installed rbenv addons (${_rbenv_addons[*]})..."
@@ -249,6 +252,7 @@ install_fasd() {
 
 install_evm() {
   if [ ! -d "$HOME/.evm" ]; then
+    echo_msg "Installing Erlang version manager...";
     goto_temp
     clone_repo https://github.com/robisonsantos/evm evm
     cd evm
@@ -268,9 +272,7 @@ install_rustup() {
 }
 
 install_rust() {
-  echo_msg "TODO: Find a way to constantly install rust."
-  # rustup --prefix="$HOME/.local"
-  # rustup install "${VERSION_RUST}"
+  rustup --prefix="$HOME/.local"
 }
 
 # #}
@@ -280,7 +282,7 @@ install_perl() {
   for perl_plug in tokuhirom/perl-build miyagawa/plenv-contrib
   do
     local repository="https://github.com/$perl_plug"
-    local plugin_path="$(plenv root)/plugins/$(basename perl_plug)"
+    local plugin_path="$(plenv root)/plugins/$(basename $perl_plug)"
     clone_repo $repository $plugin_path
   done
 
@@ -383,16 +385,28 @@ install_pyenv_addons() {
       "youtube-dl" \
       "glances" \
       "neovim" \
+      "docker-compose" \
+      "gitsweep" \
+      "pip" \
   );
 
   for repo in ${_pyenv_addons[*]}
   do
-    local _path="$_root/plugins/$(basename $repo)";
-    local _repo="https://github.com/$repo" 
+    local _path
+    _path="$_root/plugins/$(basename $repo)";
+    local _repo
+    _repository="https://github.com/$repo" 
     clone_repo "${_repo}" "${_path}";
   done
 
-  pip install ${py_packages[*]}
+  pip install --upgrade ${py_packages[*]}
+
+  local _root=${1}
+  local _body=<<JALCINE_PYENV_PLUGIN_PLUGIN_BODY
+eval "$(pyenv virtualenv-init -)";
+JALCINE_PYENV_PLUGIN_PLUGIN_BODY
+
+  generate_plugin "pyenv" "${_body}"
 }
 
 install_tools() {
