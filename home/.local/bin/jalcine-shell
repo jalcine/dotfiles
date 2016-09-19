@@ -388,6 +388,7 @@ install_pyenv_addons() {
       "docker-compose" \
       "gitsweep" \
       "pip" \
+      "speedtest-cli" \
   );
 
   for repo in ${_pyenv_addons[*]}

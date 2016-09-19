@@ -18,5 +18,5 @@ set mark-modified-lines off
 set mark-symlinked-directories on
 set menu-complete-display-prefix on
 set output-meta on
-set show-all-if-ambiguous off
+set show-all-if-ambiguous on
 set visible-stats on
