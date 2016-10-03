@@ -19,14 +19,15 @@ alias la="ls++ -lla"
 
 alias ..="cd .."
 alias ...="cd ../../"
-alias ~="cd $HOME"
+alias ~="cd \$HOME"
 
 alias irc="weechat"
 alias resrc="source ~/.bashrc"
 
 alias :wq="echo You\'re not in Vim\!"
 alias :q="exit"
-alias :e="vim"
+alias :e="${EDITOR}"
 
 alias mk="make"
 alias pkg-config-search="pkg-config --list-all | grep"
+alias make_ssh_key="ssh"

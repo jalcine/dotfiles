@@ -10,3 +10,7 @@
 
 shopt -s cdspell
 shopt -s histappend
+
+# Options to ensure GPG plays nice.
+GPG_TTY=$(tty)
+export GPG_TTY
