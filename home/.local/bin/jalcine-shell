@@ -85,8 +85,11 @@ echo_msg()   { echo -e "[jalcine] $1"; }
 # @param name (optional) The path to clone into.
 # TODO: Add option to skip pulling if already there.
 clone_repo() {
-  local _basedir="$(basename $1)"
-  local _destdir="${2:${_basedir}}";
+  local _basedir
+  local _destdir
+  
+  _basedir="$(basename $1)"
+  _destdir="${2:${_basedir}}";
 
   if [ ! -d "${_destdir}" ]; then
     echo_msg "Cloning $1 to ${_destdir}...";
@@ -232,6 +235,13 @@ install_git_prompt() {
   echo_msg "Installed git prompt.";
 }
 
+install_fzf() {
+  if [[ ! -e $HOME/.fzf ]]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install --all
+  fi
+}
+
 install_fasd() {
   if [[ ! -e $HOME/.fasd ]]; then
     echo_msg "Installing fasd...";
@@ -361,7 +371,7 @@ install_erlang() {
   echo_msg "Installing erlang..."
   for command in install default use
   do
-    evm $command "${VERSION_ERLANG}" -y
+    evm $command ${VERSION_ERLANG} -y
   done
   echo_msg "Erlang installed."
 }
@@ -389,6 +399,7 @@ install_pyenv_addons() {
       "gitsweep" \
       "pip" \
       "speedtest-cli" \
+      "yapf" \
   );
 
   for repo in ${_pyenv_addons[*]}
@@ -396,7 +407,7 @@ install_pyenv_addons() {
     local _path
     _path="$_root/plugins/$(basename $repo)";
     local _repo
-    _repository="https://github.com/$repo" 
+    _repo="https://github.com/$repo" 
     clone_repo "${_repo}" "${_path}";
   done
 
@@ -444,6 +455,7 @@ install_software() {
   install_fasd;
   install_ls;
   install_hub;
+  install_fzf;
 }
 
 install_tools && install_languages && install_software
