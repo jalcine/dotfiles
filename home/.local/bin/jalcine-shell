@@ -275,6 +275,10 @@ install_rust() {
   rustup --prefix="$HOME/.local"
 }
 
+install_rust_addons() {
+  cargo install ripgrep;
+}
+
 # #}
 
 # {# Perl
@@ -429,6 +433,7 @@ install_languages() {
 
   install_perl;
   install_rust;
+  install_rust_addons;
   install_ruby;
   install_rbenv_addons;
   install_go;

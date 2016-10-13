@@ -12,3 +12,5 @@
 source "$HOME/.bash/base.sh"
 
  _jalcine_fullinit;
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
