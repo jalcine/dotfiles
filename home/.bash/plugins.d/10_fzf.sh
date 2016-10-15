@@ -14,3 +14,5 @@ git-fzf-show() {
                 {}
 FZF-EOF"
 }
+
+[ -d ~/.fzf ] && . ~/.fzf.bash
