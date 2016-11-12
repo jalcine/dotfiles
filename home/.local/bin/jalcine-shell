@@ -147,7 +147,7 @@ JALCINE_GENERATED_PLUGIN
 install_anyenv() {
   if [ ! -d "$HOME/.anyenv" ]
   then
-    clone_repo https://github.com/jalcine/anyenv "$HOME/.anyenv"
+    clone_repo https://github.com/riywo/anyenv "$HOME/.anyenv"
   fi
 }
 

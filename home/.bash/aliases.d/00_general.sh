@@ -30,4 +30,4 @@ alias :e="${EDITOR}"
 
 alias mk="make"
 alias pkg-config-search="pkg-config --list-all | grep"
-alias make_ssh_key="ssh"
+alias make_ssh_key="ssh-keygen -o -a 1024 -b 16384 -t ed25519"

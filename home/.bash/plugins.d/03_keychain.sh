@@ -11,8 +11,12 @@ keychain_init() {
     echo "[keychain] loading keys for GPG and SSH...";
     # shellcheck disable=SC2086
     eval "$(keychain --attempts 3 --inherit any-once \
-      --eval --agents gpg,ssh --ignore-missing \
-      --confhost $KEYCHAIN_GPG_KEYS)";
+      --eval --agents ssh,gpg --ignore-missing \
+      $KEYCHAIN_GPG_KEYS $ssh_keys)";
+    for key in $(find ~/.ssh/keys -type f -name "*.pem" | xargs)
+    do
+      ssh-add ${key}
+    done
   else
     keychain_source
   fi
