@@ -7,23 +7,32 @@
 # =========================================================================== #
 
 keychain_init() {
-  if [ ! -f "$HOME/.keychain/$HOSTNAME-sh" ]; then
-    echo "[keychain] loading keys for GPG and SSH...";
-    # shellcheck disable=SC2086
-    eval "$(keychain --attempts 3 --inherit any-once \
+  echo "[keychain] Parsing...";
+  declare expected_keychain_path="$HOME/.keychain/${HOSTNAME}-sh"
+  if [ ! -f "${expected_keychain_path}" ]; then
+    # shellcheck disable=SC2086,SC2038,SC2154
+    eval "$(keychain --quiet --attempts 3 --inherit any-once \
       --eval --agents ssh,gpg --ignore-missing \
       $KEYCHAIN_GPG_KEYS $ssh_keys)";
     for key in $(find ~/.ssh/keys -type f -name "*.pem" | xargs)
     do
-      ssh-add ${key}
+      declare passPath=$(basename $(dirname ${key}))
+      declare passDir=$(basename -s .pem ${key})
+      echo "[keychain] Importing key '${passPath}/${passDir}'...";
+      echo "$(pass show ssh/${passPath}/${passDir})" | ssh-add ${key} \
+      	2>> ~/.keychain/startup_err.log \
+         >> ~/.keychain/startup.log
     done
+    clear
   else
     keychain_source
   fi
+  clear;
 }
 
 keychain_source() {
   . "$HOME/.keychain/$HOSTNAME-sh" 2>/dev/null
+  . "$HOME/.keychain/$HOSTNAME-sh-gpg" 2>/dev/null
 }
 
 keychain_wipe() {
@@ -31,7 +40,6 @@ keychain_wipe() {
   if [ -f "$HOME/.keychain/$HOSTNAME-sh" ]; then
     rm "$HOME/.keychain/$HOSTNAME*";
   fi
-  keychain_init;
 }
 
 if [ -e "$(which keychain)" ]; then
@@ -42,7 +50,7 @@ if [ -e "$(which keychain)" ]; then
       export PROMPT_COMMAND="keychain_source";
     ;;
     *)
-      export PROMPT_COMMAND="keychain_source;${PROMPT_COMMAND}"
+      export PROMPT_COMMAND="${PROMPT_COMMAND};keychain_source;"
     ;;
   esac
 

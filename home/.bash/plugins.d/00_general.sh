@@ -16,3 +16,7 @@ function mkcd {
 function ipinfo {
   curl "ipinfo.io/${1}";
 }
+
+function resrc {
+  source ~/.bashrc
+}

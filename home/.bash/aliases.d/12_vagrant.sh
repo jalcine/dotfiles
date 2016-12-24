@@ -6,3 +6,7 @@
 # =========================================================================== #
 
 alias vgs="vagrant global-status"
+alias vsh="vagrant ssh"
+alias vu="vagrant up"
+alias vp="SSH_AUTH_SOCK='' vagrant provision"
+alias vd="vagrant destroy"
