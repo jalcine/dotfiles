@@ -87,7 +87,7 @@ echo_msg()   { echo -e "[jalcine] $1"; }
 clone_repo() {
   local _basedir
   local _destdir
-  
+
   _basedir="$(basename $1)"
   _destdir="${2:${_basedir}}";
 
@@ -286,7 +286,7 @@ install_rust() {
 }
 
 install_rust_addons() {
-  cargo install ripgrep;
+  cargo install ripgrep --force;
 }
 
 # #}
@@ -375,7 +375,8 @@ install_erlang() {
   echo_msg "Installing erlang..."
   for command in install default use
   do
-    evm $command ${VERSION_ERLANG} -y
+    echo "evm $command ${VERSION_ERLANG} -y\n"
+    evm $command "${VERSION_ERLANG}" -y
   done
   echo_msg "Erlang installed."
 }
@@ -404,6 +405,7 @@ install_pyenv_addons() {
       "pip" \
       "speedtest-cli" \
       "yapf" \
+      "sqlite3" \
   );
 
   for repo in ${_pyenv_addons[*]}
