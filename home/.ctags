@@ -15,6 +15,7 @@
 --excmd=mixed
 --sort=foldcase
 --links=yes
+--python-kinds=-i
 
 --langdef=markdown
 --langmap=markdown:.mkd
