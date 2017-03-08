@@ -10,6 +10,8 @@
 
 shopt -s cdspell
 shopt -s histappend
+shopt -s checkwinsize
+shopt -s globstar
 
 # Options to ensure GPG plays nice.
 GPG_TTY=$(tty)

@@ -23,7 +23,7 @@ jalcine_current_dir() {
 }
 
 jalcine_last_job_status() {
-  #local _job_status="$?";
+  local _job_status="$?";
   if [ -z "$_job_status" ]; then
     echo "${bold_red}${_job_status}${normal}";
   fi
@@ -69,7 +69,7 @@ jalcine_vcs() {
 
 jalcine_prompt() {
   unset PS1;
-  if [ -z ${JALCINE_USE_SIMPLE_PROMPT} ]; then
+  if [ -z "${JALCINE_USE_SIMPLE_PROMPT}" ]; then
     local _prompt_symbol="${bold_gray}λ${normal}  ";
     local _first_line="$(jalcine_user_and_host)$(jalcine_current_dir) $(jalcine_vcs)";
     local _second_line="$PS1$(jalcine_last_job_status) ${_prompt_symbol}";

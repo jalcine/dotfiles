@@ -10,24 +10,26 @@ keychain_init() {
   echo "[keychain] Parsing...";
   declare expected_keychain_path="$HOME/.keychain/${HOSTNAME}-sh"
   if [ ! -f "${expected_keychain_path}" ]; then
-    # shellcheck disable=SC2086,SC2038,SC2154
-    eval "$(keychain --quiet --attempts 3 --inherit any-once \
-      --eval --agents ssh,gpg --ignore-missing \
-      $KEYCHAIN_GPG_KEYS $ssh_keys)";
-    for key in $(find ~/.ssh/keys -type f -name "*.pem" | xargs)
-    do
-      declare passPath=$(basename $(dirname ${key}))
-      declare passDir=$(basename -s .pem ${key})
-      echo "[keychain] Importing key '${passPath}/${passDir}'...";
-      echo "$(pass show ssh/${passPath}/${passDir})" | ssh-add ${key} \
-      	2>> ~/.keychain/startup_err.log \
-         >> ~/.keychain/startup.log
-    done
-    clear
+    keychain_load
   else
     keychain_source
   fi
-  clear;
+}
+
+keychain_load() {
+  # shellcheck disable=SC2086,SC2038,SC2154
+  eval "$(keychain --quiet --attempts 3 --inherit any-once \
+    --eval --agents ssh,gpg --ignore-missing \
+    $KEYCHAIN_GPG_KEYS $ssh_keys)";
+  for key in $(find ~/.ssh/keys -type f -name "*.pem" | xargs)
+  do
+    declare passPath=$(basename $(dirname ${key}))
+    declare passDir=$(basename -s .pem ${key})
+    echo "[keychain] Importing key '${passPath}/${passDir}'...";
+    pass show "ssh/${passPath}/${passDir}" | ssh-add "${key}" \
+      2>> ~/.keychain/startup_err.log \
+       >> ~/.keychain/startup.log
+  done
 }
 
 keychain_source() {
