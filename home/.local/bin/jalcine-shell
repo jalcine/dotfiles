@@ -286,7 +286,12 @@ install_rust() {
 }
 
 install_rust_addons() {
-  cargo install ripgrep --force;
+  cargo install ripgrep racer --force;
+  local _body=<<JALCINE_RUST_BODY
+  export PATH="$HOME/.cargo/bin:$PATH"
+JALCINE_RUST_BODY
+
+  generate_plugin "rust" "${_body}"
 }
 
 # #}
@@ -375,15 +380,14 @@ install_erlang() {
   echo_msg "Installing erlang..."
   for command in install default use
   do
-    echo "evm $command ${VERSION_ERLANG} -y\n"
-    evm $command "${VERSION_ERLANG}" -y
+    evm $command ${VERSION_ERLANG} -y
   done
   echo_msg "Erlang installed."
 }
 
 install_elixir() {
-  exenv install "${VERSION_ELIXIR}"
-  exenv global "${VERSION_ELIXIR}"
+  exenv install ${VERSION_ELIXIR}
+  exenv global ${VERSION_ELIXIR}
 }
 
 install_pyenv_addons() {
