@@ -20,13 +20,13 @@ keychain_load() {
   # shellcheck disable=SC2086,SC2038,SC2154
   eval "$(keychain --quiet --attempts 3 --inherit any-once \
     --eval --agents ssh,gpg --ignore-missing \
-    $KEYCHAIN_GPG_KEYS $ssh_keys)";
-  for key in $(find ~/.ssh/keys -type f -name "*.pem" | xargs)
+    $KEYCHAIN_GPG_KEYS)";
+  for key in $(find $HOME/.ssh/keys -type f -name "*.pem" | xargs)
   do
     declare passPath=$(basename $(dirname ${key}))
     declare passDir=$(basename -s .pem ${key})
     echo "[keychain] Importing key '${passPath}/${passDir}'...";
-    pass show "ssh/${passPath}/${passDir}" | ssh-add "${key}" \
+    pass show "ssh${KEYCHAIN_PASSWORD_PREFIX:-}/${passPath}/${passDir}" | ssh-add "${key}" \
       2>> ~/.keychain/startup_err.log \
        >> ~/.keychain/startup.log
   done
@@ -40,7 +40,7 @@ keychain_source() {
 keychain_wipe() {
   keychain --stop all --quiet --agents gpg,ssh --systemd all;
   if [ -f "$HOME/.keychain/$HOSTNAME-sh" ]; then
-    rm "$HOME/.keychain/$HOSTNAME*";
+    rm "$HOME/.keychain/$HOSTNAME*" || echo "[keychain] All clear on env.";
   fi
 }
 
