@@ -8,7 +8,9 @@
 # This script serves as a quick-n-easy init tool for me to run and invoke on new
 # machines or a box that I want to seed with my preferred environment.
 # =========================================================================== #
-
+# NOTE: This needs a lot of rewriting. It's not really cross-platform (across
+# Linux and macOS, I'm targeting BSD as well).
+# 
 # {# Constants
 # Use these values to manipulate versioning information to be used for the
 # software I download and install.
@@ -22,7 +24,7 @@
   VERSION_ERLANG="OTP_19.0"
   VERSION_ELIXIR="1.3.0"
   VERSION_GO="1.7"
-  VERSION_PHP="7.0.8"
+  VERSION_PHP="7.1.3"
   VERSION_PYTHON="3.5.2"
   VERSION_RUST="stable-x86_64-unknown-linux-gnu"
 
@@ -94,6 +96,7 @@ clone_repo() {
   if [ ! -d "${_destdir}" ]; then
     echo_msg "Cloning $1 to ${_destdir}...";
     git clone --quiet --recursive --depth=1 "$1" "${_destdir}";
+    # TODO: Check if it's already there.
   else
     if [ ${JALCINE_GIT_UPDATE} ]
     then
@@ -149,6 +152,20 @@ install_anyenv() {
   then
     clone_repo https://github.com/riywo/anyenv "$HOME/.anyenv"
   fi
+}
+
+install_anyenv_addons() {
+  declare -a _anyenv_addons=(\
+    "znz/anyenv-update" \
+    # "znz/anyenv-git" \
+  );
+
+  for repo in ${_anyenv_addons[*]}
+  do
+    local _path="$(anyenv root)/plugins/$(basename $repo)";
+    local _repo="https://github.com/$repo" 
+    clone_repo "${_repo}" "${_path}";
+  done
 }
 
 install_rbenv_addons() {
@@ -377,10 +394,10 @@ install_php() {
 }
 
 install_erlang() {
-  echo_msg "Installing erlang..."
   for command in install default use
   do
-    evm $command ${VERSION_ERLANG} -y
+    echo_msg "Running ${command} for Erlang ${VERSION_ERLANG}...";
+    evm $command "${VERSION_ERLANG}" -y
   done
   echo_msg "Erlang installed."
 }
@@ -434,32 +451,40 @@ JALCINE_PYENV_PLUGIN_PLUGIN_BODY
 install_tools() {
   install_anyenv;
   generate_anyenv_plugin;
+  install_anyenv_addons;
+  anyenv update -v;
 
   install_git_prompt;
-
-  install_evm;
-  install_rustup;
 }
 
 install_languages() {
+  echo_msg "lang: Installing support tools.."
   for xenv in rbenv ndenv plenv phpenv exenv goenv pyenv
   do
-    anyenv install -s ${xenv};
+    echo_msg "lang: Installing support tool for ${xenv}..."
+    anyenv install -fs ${xenv};
     eval "$(anyenv init -)";
+    echo_msg "lang: Support tool for ${xenv} installed."
   done
 
-  install_perl;
-  install_rust;
-  install_rust_addons;
-  install_ruby;
-  install_rbenv_addons;
-  install_go;
-  install_node;
-  install_php;
+  install_evm;
+  install_rustup;
+  echo_msg "lang: All support tools installed; installing language runtimes.."
+
   install_erlang;
-  install_elixir;
   install_python;
+  install_rust;
+  install_ruby;
+  install_node;
+  install_elixir;
+  install_perl;
+  install_php;
+  install_go;
+  echo_msg "lang: Installing language addons..."
   install_pyenv_addons;
+  install_rust_addons;
+  install_rbenv_addons;
+  echo_msg "lang: All language runtimes installed."
 }
 
 install_software() {
