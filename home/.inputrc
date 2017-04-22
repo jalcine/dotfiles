@@ -11,7 +11,7 @@ set bell-style visible
 set completion-ignore-case on
 set completion-query-items 5
 set convert-meta off
-set editing-mode vim
+set editing-mode emacs
 set input-meta on
 set mark-directories on
 set mark-modified-lines on
