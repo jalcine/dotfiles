@@ -10,3 +10,5 @@ export HISTCONTROL="ignoredups:erasedups:ignoreboth"
 export HISTSIZE=100000
 export HISTIGNORE="&:ls:cd ~:cd ..:[bf]g:exit:h:history:..:z"
 test -z "$JALCINE_HOST" && export JALCINE_HOST=""
+
+export PYTHONSTARTUP="$HOME/.pythonrc.py"

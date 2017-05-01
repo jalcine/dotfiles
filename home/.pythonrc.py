@@ -1,3 +1,5 @@
+from pprint import pprint
+
 try:
     from jedi.utils import setup_readline
     setup_readline()
