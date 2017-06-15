@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# vim: set ft=sh fdm=marker foldmarker={#,#}:
+# vim: set ft=sh fdm=syntax :
 # =========================================================================== #
 # jalcine-shell
 # Author: Jacky Alciné <yo@jacky.wtf>
@@ -10,7 +10,7 @@
 # =========================================================================== #
 # NOTE: This needs a lot of rewriting. It's not really cross-platform (across
 # Linux and macOS, I'm targeting BSD as well).
-# 
+#
 # {# Constants
 # Use these values to manipulate versioning information to be used for the
 # software I download and install.
@@ -18,10 +18,10 @@
 {
 
 # Language tools
-  VERSION_RUBY="2.3.1" 
+  VERSION_RUBY="2.3.1"
   VERSION_NODE="5.12.0"
   VERSION_PERL="5.25.2"
-  VERSION_ERLANG="OTP_19.0"
+  VERSION_ERLANG="OTP_19.3"
   VERSION_ELIXIR="1.3.0"
   VERSION_GO="1.7"
   VERSION_PHP="7.1.3"
@@ -90,7 +90,7 @@ clone_repo() {
   local _basedir
   local _destdir
 
-  _basedir="$(basename $1)"
+  _basedir="$(basename $1)";
   _destdir="${2:${_basedir}}";
 
   if [ ! -d "${_destdir}" ]; then
@@ -109,9 +109,9 @@ clone_repo() {
 }
 
 # @function goto_temp
-goto_temp()  { 
-  local tmpdirpath
-  _tmpdirpath=$(mktemp -d); 
+goto_temp()  {
+  local tmpdirpath;
+  _tmpdirpath=$(mktemp -d);
   cd "$tmpdirpath";
 }
 
@@ -163,7 +163,7 @@ install_anyenv_addons() {
   for repo in ${_anyenv_addons[*]}
   do
     local _path="$(anyenv root)/plugins/$(basename $repo)";
-    local _repo="https://github.com/$repo" 
+    local _repo="https://github.com/$repo";
     clone_repo "${_repo}" "${_path}";
   done
 }
@@ -201,7 +201,7 @@ JALCINE_RBENV_DEFAULT_GEMS
   for repo in ${_rbenv_addons[*]}
   do
     local _path="$_root/plugins/$(basename $repo)";
-    local _repo="https://github.com/$repo" 
+    local _repo="https://github.com/$repo";
     clone_repo "${_repo}" "${_path}";
   done
 
@@ -350,7 +350,7 @@ install_ls() {
   mv blib/script/ls++ "${HOME}/.local/bin/"
   cd -
 }
-# #} 
+# #}
 
 # {# Go
 install_goenv() {
@@ -363,6 +363,7 @@ install_go() {
   echo_msg "Installing go...";
   goenv install ${VERSION_GO}
   goenv global ${VERSION_GO}
+  go get -u github.com/mvdan/sh/cmd/gosh
   echo_msg "Installed go.";
 }
 
@@ -382,7 +383,7 @@ install_hub() {
 # #}
 
 install_node() {
-  ndenv install -svk "${VERSION_NODE}" 
+  ndenv install -svk "${VERSION_NODE}";
   ndenv global "${VERSION_NODE}"
 
   npm install npm@latest -g
@@ -416,13 +417,14 @@ install_pyenv_addons() {
     "yyuu/pyenv-doctor" \
   );
 
+  # TODO: Move this to a requirements.in file.
   declare -a py_packages=(\
       "httpie" \
       "youtube-dl" \
       "glances" \
       "neovim" \
       "docker-compose" \
-      "gitsweep" \
+      "git-sweep" \
       "pip" \
       "speedtest-cli" \
       "yapf" \
@@ -434,7 +436,7 @@ install_pyenv_addons() {
     local _path
     _path="$_root/plugins/$(basename $repo)";
     local _repo
-    _repo="https://github.com/$repo" 
+    _repo="https://github.com/$repo";
     clone_repo "${_repo}" "${_path}";
   done
 

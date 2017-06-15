@@ -1,44 +1,6 @@
-! vim: set foldmethod=marker
+! vim: set foldmethod=marker :
 
-! {{{ Color Scheme
-! special
-*.background:   #969896
-*.foreground:   #c5c8c6
-*.cursorColor:  #c5c8c6
-
-! black
-*.color0:       #1d1f21
-*.color8:       #969896
-
-! red
-*.color1:       #cc6666
-*.color9:       #cc6666
-
-! green
-*.color2:       #b5bd68
-*.color10:      #b5bd68
-
-! yellow
-*.color3:       #f0c674
-*.color11:      #f0c674
-
-! blue
-*.color4:       #81a2be
-*.color12:      #81a2be
-
-! magenta
-*.color5:       #b294bb
-*.color13:      #b294bb
-
-! cyan
-*.color6:       #8abeb7
-*.color14:      #8abeb7
-
-! white
-! *.color7:       #c5c8c6
-*.color7:       #ffffff
-*.color15:      #ffffff
-! }}}
+#include "./.Xresources.d/colors"
 
 ! {{{ URxvrt options
 URxvt.background: [95]#969896
@@ -59,7 +21,7 @@ URxvt.matcher.button: 1
 URxvt.perl-ext-common: default,matcher,resize-font,vtwheel,clipboard,url-select,fullscreen
 URxvt.resize-font.bigger: C-Up
 URxvt.resize-font.smaller: C-Down
-URxvt.saveLines: 0
+URxvt.saveLines: 1
 URxvt.scrollBar: plain
 URxvt.scrollBar_floating: true
 URxvt.scrollBar_right: true
