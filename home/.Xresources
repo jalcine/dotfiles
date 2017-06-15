@@ -1,6 +1,6 @@
 ! vim: set foldmethod=marker :
 
-#include "~/.Xresources.d/colors"
+#include "./.Xresources.d/colors"
 
 ! {{{ URxvrt options
 URxvt.background: [95]#969896

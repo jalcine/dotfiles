@@ -6,3 +6,6 @@
 # =========================================================================== #
 
 1;
+# Ubuntu make installation of Ubuntu Make binary symlink
+PATH=/home/tchalla/.local/share/umake/bin:$PATH
+
