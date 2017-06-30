@@ -1,5 +1,7 @@
 # My Shell Options
 
+> Last Stable Release: **2017-06-15 11:18:50 PDT**
+
 This [homes(h)ick][1]-powered repository holds the base configuration I use to
 handle my machine's setup. I use [a Bash script to set up the initial
 environment][2].
