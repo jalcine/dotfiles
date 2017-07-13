@@ -7,7 +7,7 @@ handle my machine's setup. I use [a Bash script to set up the initial
 environment][2].
 
 I don’t rely on the system to provide me with language interpreters for
-everything. I use [`anyenv`][] to manage these things. It has support for quite
+everything. I use [`anyenv`][3] to manage these things. It has support for quite
 a few languages including Go, Elixir and Python.
 
 [1]: https://github.com/andsens/homeshick
