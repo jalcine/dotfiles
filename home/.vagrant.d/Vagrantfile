@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Vagrant.configure('2') do |config|
     config.vbguest.auto_update = true
     config.vbguest.no_remote = false
