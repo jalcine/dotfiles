@@ -1,16 +1,8 @@
 # Learn about this file via `man readline`. The more you know!
-"\t": menu-complete
-"\e[2~": paste-from-clipboard
-"\e[3~": delete-char
-"\e[5~": beginning-of-history
-"\e[6~": end-of-history
-"\e[7~": beginning-of-line
-"\e[8~": end-of-line
-
 set bell-style visible
 set completion-ignore-case on
 set completion-query-items 5
-set convert-meta off
+set convert-meta on
 set editing-mode emacs
 set input-meta on
 set mark-directories on
