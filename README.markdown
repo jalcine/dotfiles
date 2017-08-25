@@ -1,14 +1,10 @@
-# My Shell Options
+# My Shell Environment
 
-> Last Stable Release: **2017-07-20 07:35:14 PDT**
-This [homes(h)ick][1]-powered repository holds the base configuration I use to
-handle my machine's setup. I use [a Bash script to set up the initial
-environment][2].
+This repository contains the foundation of the environment that represents my terminal. I've worked
+to make this something I can immediately install onto a machine for the sake of making my life a bit
+easier. With the [`jalcine-env`][1] script, one can do the following:
 
-I don’t rely on the system to provide me with language interpreters.
-I use [`anyenv`][3] to manage these things. It has support for quite a few
-languages including Go, Elixir and Python.
-
-[1]: https://github.com/andsens/homeshick
-[2]: ./home/.local/bin/jalcine-shell
-[3]: https://github.com/riywo/anyenv
+  * [ ] Install (and build) binaries desired
+  * [ ] Setup autoenv.
+  * [ ] Set up other homeshick repositories.
+  * [ ] Do post-install setups for this machine.

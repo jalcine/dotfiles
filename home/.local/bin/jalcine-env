@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+function echoExit() {
+    echoMsg $1;
+    exit
+}
+
+function echoMsg() {
+    echo "[jalcine/env] $1";
+}
+
+function install_ansible() {
+    if [ -x pip ]; then
+        pip install --user ansible || echoExit "Couldn't install Ansible.";
+    elif [ -x brew ]; then
+        brew install ansible || echoExit "Couldn't install Ansible.";
+    fi
+}
+
+# Check if we have Ansible installed.
+[ ! -x ansible ] && install_ansible;
+
+# Run ansible.
+echoMsg "Running ansible.." && \
+    ansible -i localhost "$HOME/.jalcine/playbook/site.yml"
