@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# =========================================================================== #
 # File: ~/.bash/base.sh
 # Author: Jacky Alcine <yo@jacky.wtf>
 # Description: Main point of loading for Bash.
@@ -10,7 +9,6 @@
 # Meant to load logic that's lightweight enough to be used in a non-interactive
 # shell.
 _jalcine_preinit() {
-  . $HOME/.bash/lib.sh;
   . $HOME/.bash/options.sh;
   . $HOME/.bash/plugins.sh;
   . $HOME/.bash/aliases.sh;
