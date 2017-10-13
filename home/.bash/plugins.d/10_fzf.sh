@@ -4,7 +4,7 @@
 # Description: Commands using `fzf`.
 # =========================================================================== #
 
-git-fzf-show() {
+git_fzf_show() {
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
   fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
@@ -15,4 +15,4 @@ git-fzf-show() {
 FZF-EOF"
 }
 
-[ -d ~/.fzf ] && . ~/.fzf.bash
+[ -f ~/.fzf.bash ] && . ~/.fzf.bash

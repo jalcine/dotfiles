@@ -7,7 +7,6 @@
 # =========================================================================== #
 
 keychain_init() {
-  echo "[keychain] Parsing...";
   declare expected_keychain_path="$HOME/.keychain/${HOSTNAME}-sh"
   if [ ! -f "${expected_keychain_path}" ]; then
     keychain_load
@@ -17,14 +16,17 @@ keychain_init() {
 }
 
 keychain_load() {
-  # shellcheck disable=SC2086,SC2038,SC2154
+  # shellcheck disable=SC2086,SC2038,SC2154,SC2086
   eval "$(keychain --quiet --attempts 3 --inherit any-once \
     --eval --agents ssh,gpg --ignore-missing \
     $KEYCHAIN_GPG_KEYS)";
   for key in $(find $HOME/.ssh/keys -type f -name "*.pem" | xargs)
   do
-    declare passPath=$(basename $(dirname ${key}))
-    declare passDir=$(basename -s .pem ${key})
+    declare passPath
+    declare passDir
+    
+    passPath=$(basename $(dirname ${key}))
+    passDir=$(basename -s .pem "${key}")
     echo "[keychain] Importing key '${passPath}/${passDir}'...";
     pass show "ssh${KEYCHAIN_PASSWORD_PREFIX:-}/${passPath}/${passDir}" | ssh-add "${key}" \
       2>> ~/.keychain/startup_err.log \
@@ -57,6 +59,6 @@ if [ -e "$(which keychain)" ]; then
   esac
 
   keychain_init
+else
+  echo "[keychain] Install me!"
 fi
-
-keychain_init;
