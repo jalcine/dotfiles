@@ -1,1 +1,13 @@
+---
+# vim: set ft=yaml :
+---
 extends: relaxed
+rules:
+  line-length:
+    max: 100
+    allow-non-breakable-words: true
+    allow-non-breakable-inline-mappings: true
+  document-start:
+    present: true
+  document-end:
+    present: true
