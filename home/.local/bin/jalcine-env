@@ -1,27 +1,33 @@
 #!/usr/bin/env bash
-set -euo pipefail
-IFS=$'\n\t'
+# Name: jalcine-env
+# Description: Sets up system environment.
+#   This provides a one-stop shop to set up a computer system to match
+#   the progamming exceptions that I hope to have.
 
-function echoExit() {
-    echoMsg $1;
-    exit
+function print_help {
+  echo <<HELP
+jalcine-env - environment configuration for Jacky.
+
+  --help:     You're looking at it.
+  --dry-run:  Prints out the expected commands for this environment.
+
+No flags has it run normally.
+HELP
 }
 
-function echoMsg() {
-    echo "[jalcine/env] $1";
+function log_msg {
+  echo -e "[jalcine]: $1\n";
 }
 
-function install_ansible() {
-    if [ -x pip ]; then
-        pip install --user ansible || echoExit "Couldn't install Ansible.";
-    elif [ -x brew ]; then
-        brew install ansible || echoExit "Couldn't install Ansible.";
-    fi
+function install_python {
+  # TODO: Check if Python 3 is already installed.
+  if [ -x python3 ]; then
+    log_msg "Python3 already installed.";
+  fi
 }
 
-# Check if we have Ansible installed.
-[ ! -x ansible ] && install_ansible;
+function main {
+  install_python;
+}
 
-# Run ansible.
-echoMsg "Running ansible.." && \
-    ansible -i localhost "$HOME/.jalcine/playbook/site.yml"
+main()
