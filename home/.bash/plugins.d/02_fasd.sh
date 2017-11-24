@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # =========================================================================== #
-# File: ~/.bash/plugins.d/rbenv.sh
+# File: ~/.bash/plugins.d/fasd.sh
 # Author: Jacky Alcine <yo@jacky.wtf>
-# Description: Set up for rbenv.
+# Description: Configure `fasd` for use.
 # =========================================================================== #
 
 # Eval our friend into the shell.

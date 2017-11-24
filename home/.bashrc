@@ -11,12 +11,7 @@ case $- in
       *) return;;
 esac
 
-# Load in the system's base bashrc file.
-[ -e "/etc/bash.bashrc" ] && source /etc/bash.bashrc;
-
 # Load in the base 'plugin' for the shell.
 source "$HOME/.bash/base.sh"
 
- _jalcine_fullinit;
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+_jalcine_fullinit;

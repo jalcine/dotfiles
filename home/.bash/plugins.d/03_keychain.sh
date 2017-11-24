@@ -46,7 +46,7 @@ keychain_wipe() {
   fi
 }
 
-if [ -e "$(which keychain)" ]; then
+if [ -x "$(which keychain)" ]; then
   case $PROMPT_COMMAND in
     *keychain_source*)
       ;;
