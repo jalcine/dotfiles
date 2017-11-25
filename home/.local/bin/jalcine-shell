@@ -19,14 +19,14 @@
 
 # Language tools
   VERSION_RUBY="2.3.1"
-  VERSION_NODE="5.12.0"
+  VERSION_NODE="8.4.0"
   VERSION_PERL="5.25.2"
   VERSION_ERLANG="OTP_19.3"
-  VERSION_ELIXIR="1.3.0"
+  VERSION_ELIXIR="1.5.0"
   VERSION_GO="1.7"
   VERSION_PHP="7.1.3"
-  VERSION_PYTHON="3.5.2"
-  VERSION_RUST="stable-x86_64-unknown-linux-gnu"
+  VERSION_PYTHON="3.6.2"
+  VERSION_RUST="nightly"
 
 # Software
   VERSION_HUB="2.2.3"
@@ -90,13 +90,12 @@ clone_repo() {
   local _basedir
   local _destdir
 
-  _basedir="$(basename $1)";
+  _basedir="$(basename ${1})";
   _destdir="${2:${_basedir}}";
 
   if [ ! -d "${_destdir}" ]; then
     echo_msg "Cloning $1 to ${_destdir}...";
-    git clone --quiet --recursive --depth=1 "$1" "${_destdir}";
-    # TODO: Check if it's already there.
+    git clone --quiet --recursive --depth=1 "$1" "${_destdir}" || echo "Already there.";
   else
     if [ ${JALCINE_GIT_UPDATE} ]
     then
@@ -174,7 +173,7 @@ install_rbenv_addons() {
 
   echo_msg "Installing rbenv addons..."
   declare -a _rbenv_addons=(\
-    # 'rbenv/rbenv-default-gems' \
+    "rbenv/rbenv-default-gems" \
     "rbenv/ruby-build" \
     "tpope/rbenv-ctags" \
     "jf/rbenv-gemset" \
