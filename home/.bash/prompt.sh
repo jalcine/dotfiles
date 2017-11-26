@@ -18,7 +18,7 @@ jalcine_current_dir() {
   if [ "$HOME" = "$_pwd" ]; then
     echo "${bold_red}~${normal}";
   else
-    echo "${bold_blue}$_basename${normal}";
+    echo "${bold_blue}${_basename}${normal}";
   fi
 }
 
