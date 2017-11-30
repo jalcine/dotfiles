@@ -1,1 +1,0 @@
-../../../../../../../.weechat/perl/colorize_lines.pl

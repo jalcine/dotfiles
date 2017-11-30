@@ -1,1 +1,0 @@
-../../../../../../../.weechat/python/colorize_nicks.py

@@ -1,1 +1,0 @@
-../../../../../../../.weechat/python/responsive_layout.py
