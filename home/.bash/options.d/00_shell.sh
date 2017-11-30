@@ -11,8 +11,6 @@
 shopt -s cdspell
 shopt -s histappend
 shopt -s checkwinsize
-shopt -s globstar
-shopt -u autocd
 shopt -s huponexit
 shopt -s expand_aliases
 

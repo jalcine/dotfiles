@@ -1,1 +1,0 @@
-../../../../../../../.weechat/perl/filter_ext.pl

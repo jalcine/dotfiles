@@ -1,1 +1,0 @@
-../../../../../../../.weechat/python/hl_nicks.py

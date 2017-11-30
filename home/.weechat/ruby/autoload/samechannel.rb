@@ -1,1 +1,0 @@
-../../../../../../../.weechat/ruby/samechannel.rb

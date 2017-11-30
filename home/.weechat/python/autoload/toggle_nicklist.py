@@ -1,1 +1,0 @@
-../../../../../../../.weechat/python/toggle_nicklist.py

@@ -1,1 +1,0 @@
-../../../../../../../.weechat/python/tmux_env.py
