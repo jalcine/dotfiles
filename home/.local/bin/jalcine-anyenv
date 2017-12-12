@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+function anyenv_install () {
+  declare -a _anyenv_git_uri="https://github.com/riywo/anyenv.git"
+  declare -a _anyenv_addons=(\
+    "znz/anyenv-update" \
+    "znz/anyenv-git" \
+    "aereal/anyenv-exec" \
+  );
+
+  git clone "${_anyenv_git_uri}" "${HOME}/.anyenv"
+
+  for repo in ${_anyenv_addons[*]}
+  do
+    local _path="$(anyenv root)/plugins/$(basename $repo)";
+    local _repo="https://github.com/$repo";
+    git clone "${_repo}" "${_path}";
+  done
+
+}
+
+anyenv_install;
