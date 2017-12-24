@@ -14,4 +14,3 @@ if [ -z "$PS1" ]; then
 else
   _jalcine_fullinit;
 fi
-export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"

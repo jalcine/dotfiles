@@ -1,1 +1,0 @@
-../../../../../../../.weechat/perl/buffers.pl

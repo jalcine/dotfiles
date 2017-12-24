@@ -1,4 +1,3 @@
-# vim: set ft=yaml :
 ---
 gem: --document rdoc,ri --trust-policy
 install: -b --conservative --minimal-deps -E --document rdoc,ri

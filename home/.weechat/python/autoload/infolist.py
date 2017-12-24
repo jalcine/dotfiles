@@ -1,1 +1,0 @@
-../../../../../../../.weechat/python/infolist.py

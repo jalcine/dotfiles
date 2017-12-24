@@ -1,1 +1,0 @@
-../../../../../../../.weechat/python/whois_on_query.py

@@ -1,1 +1,0 @@
-../../../../../../../.weechat/python/correction_completion.py
