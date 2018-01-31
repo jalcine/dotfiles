@@ -19,29 +19,29 @@
 #
 
 if [ -n "$SSH_ASKPASS_TMPFILE" ]; then
-  cat “$SSH_ASKPASS_TMPFILE”
+  cat "$SSH_ASKPASS_TMPFILE"
   exit 0
 elif [ $# -lt 1 ]; then
-  echo “Usage: echo password | $0 <ssh command line options>” >&2
+  echo "Usage: echo password | $0 <ssh command line options>" >&2
   exit 1
 fi
 
 sighandler() {
-  rm “$TMP_PWD”
+  rm "$TMP_PWD"
 }
 
 TMP_PWD=$(mktemp)
-chmod 600 “$TMP_PWD”
-trap ’sighandler’ SIGHUP SIGINT SIGQUIT SIGABRT SIGKILL SIGALRM SIGTERM
+chmod 600 "$TMP_PWD"
+trap 'sighandler' SIGHUP SIGINT SIGQUIT SIGABRT SIGALRM SIGTERM
 
 export SSH_ASKPASS=$0
 export SSH_ASKPASS_TMPFILE=$TMP_PWD
 
 [ "$DISPLAY" ] || export DISPLAY=dummydisplay:0
-read password
-echo $password >> “$TMP_PWD”
+read -r password
+echo "$password" >> "$TMP_PWD"
 
 # use setsid to detach from tty
-exec setsid “$@”
+exec setsid "$@"
 
-rm “$TMP_PWD”
+rm "$TMP_PWD"
