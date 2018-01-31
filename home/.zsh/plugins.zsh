@@ -2,7 +2,6 @@
 
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/debian", from:oh-my-zsh
 zplug "tcnksm/docker-alias", use:zshrc
 zplug "chrissicool/zsh-256color"
 zplug "sparsick/ansible-zsh"
@@ -17,6 +16,16 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "wbingli/zsh-wakatime"
 zplug "bobthecow/git-flow-completion"
 zplug "~/.zsh/local", from:local
+zplug "andrewferrier/fzf-z"
+zplug "chriskempson/base16-shell"
+
+if [[ $CURRENT_OS == 'OS X' ]]; then
+    zplug "plugins/brew", from:oh-my-zsh
+    zplug "plugins/brew-cask", from:oh-my-zsh
+    zplug "plugins/osx", from:oh-my-zsh
+elif [[ $DISTRO == 'Ubuntu' ]]; then
+    zplug "plugins/debian", from:oh-my-zsh
+fi
 
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
@@ -26,3 +35,5 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
+
+PATH=$HOME/.local/bin:$PATH

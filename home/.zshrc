@@ -15,3 +15,6 @@ bindkey -v
 source ~/.zsh/zplug/init.zsh
 source ~/.zsh/plugins.zsh
 source ~/.homesick/repos/homeshick/homeshick.sh
+PATH=$HOME/.anyenv/bin:$PATH
+eval "$(anyenv init -)"
+eval "$(direnv hook zsh)"
