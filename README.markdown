@@ -1,10 +1,5 @@
-# My Shell Environment
+# `jacky@$A_COMPUTER:~`
 
-This repository contains the foundation of the environment that represents my terminal. I've worked
-to make this something I can immediately install onto a machine for the sake of making my life a bit
-easier. With the [`jalcine-env`][1] script, one can do the following:
+This repository holds the sources for my [dotfiles][1].
 
-  * Install (and build) binaries desired
-  * Setup autoenv.
-  * Set up other homeshick repositories.
-  * Do post-install setups for this machine.
+[1]: https://dotfiles.github.io/
