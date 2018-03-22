@@ -1,0 +1,48 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "f871fa953f773ae2554be97577be9bf23b42f52b46a9ed04554dfb3d23d0902a"
+        },
+        "host-environment-markers": {
+            "implementation_name": "cpython",
+            "implementation_version": "3.6.4",
+            "os_name": "posix",
+            "platform_machine": "x86_64",
+            "platform_python_implementation": "CPython",
+            "platform_release": "4.13.0-37-generic",
+            "platform_system": "Linux",
+            "platform_version": "#42-Ubuntu SMP Wed Mar 7 14:13:23 UTC 2018",
+            "python_full_version": "3.6.4",
+            "python_version": "3.6",
+            "sys_platform": "linux"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.6"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.python.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "six": {
+            "hashes": [
+                "sha256:832dc0e10feb1aa2c68dcc57dbb658f1c7e65b9b61af69048abc87a2db00a0eb",
+                "sha256:70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"
+            ],
+            "version": "==1.11.0"
+        },
+        "websocket-client": {
+            "hashes": [
+                "sha256:188b68b14fdb2d8eb1a111f21b9ffd2dbf1dbc4e4c1d28cf2c37cdbf1dd1cae6",
+                "sha256:a453dc4dfa6e0db3d8fd7738a308a88effe6240c59f3226eb93e8f020c216149"
+            ],
+            "version": "==0.47.0"
+        }
+    },
+    "develop": {}
+}
