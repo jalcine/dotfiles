@@ -14,3 +14,5 @@ bindkey -v
 # Load in zplug.
 source ~/.zsh/zplug/init.zsh
 source ~/.zsh/plugins.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

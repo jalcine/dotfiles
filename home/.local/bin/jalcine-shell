@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # vim: set ft=sh fdm=syntax :
-# =========================================================================== #
+# =========================================================================== 
 # jalcine-shell
 # Author: Jacky Alciné <yo@jacky.wtf>
 # Last Updated: 2016-06-24 19:30:23 PDT
@@ -178,7 +178,7 @@ install_rbenv_addons() {
     "tpope/rbenv-ctags" \
     "jf/rbenv-gemset" \
     "rbenv/rbenv-each" \
-    "rbenv/rbenv-vars" \
+    "rbenv/rbenv-vars" \cta
     "rbenv/rbenv-default-gems" \
     "tpope/rbenv-communal-gems" \
     "aripollak/rbenv-bundler-ruby-version" \
@@ -412,20 +412,6 @@ install_pyenv_addons() {
     "yyuu/pyenv-doctor" \
   );
 
-  # TODO: Move this to a requirements.in file.
-  declare -a py_packages=(\
-      "httpie" \
-      "youtube-dl" \
-      "glances" \
-      "neovim" \
-      "docker-compose" \
-      "git-sweep" \
-      "pip" \
-      "speedtest-cli" \
-      "yapf" \
-      "sqlite3" \
-  );
-
   for repo in ${_pyenv_addons[*]}
   do
     local _path
@@ -435,7 +421,11 @@ install_pyenv_addons() {
     clone_repo "${_repo}" "${_path}";
   done
 
-  pip install --upgrade ${py_packages[*]}
+  pyenv exec pip3 install pipenv
+  pyenv exec pip2 install pipenv
+  cd $HOME/.jalcine
+  pyenv exec pipenv install
+  cd -
 
   local _root=${1}
   local _body=<<JALCINE_PYENV_PLUGIN_PLUGIN_BODY

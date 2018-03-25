@@ -1,0 +1,25 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[requires]
+
+python_version = "2.7"
+
+
+[packages]
+
+youtube-dl = "*"
+httpie = "*"
+glances = "*"
+docker-compose = "*"
+git-sweep = "*"
+yapf = "*"
+speedtest-cli = "*"
+
+
+[dev-packages]
+

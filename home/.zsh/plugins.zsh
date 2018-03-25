@@ -35,14 +35,21 @@ zplug "b4b4r07/emoji-cli"
 zplug "Seinh/git-prune"
 zplug "oldratlee/hacker-quotes"
 zplug "marzocchi/zsh-notify"
+zplug "lukechilds/zsh-better-npm-completion", defer:2
 zplug "jreese/zsh-titles"
-zplug "denysdovhan/spaceship-prompt", as:theme
+zplug "molovo/filthy", from:github, as:theme, defer:2
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "wbingli/zsh-wakatime"
+zplug "gangleri/pipenv"
+zplug "rbirnie/oh-my-zsh-keybase"
 zplug "bobthecow/git-flow-completion"
+zplug "MichaelAquilina/zsh-you-should-use"
 zplug "andrewferrier/fzf-z"
 zplug "chriskempson/base16-shell"
 zplug "k4rthik/git-cal"
+zplug "paulmelnikow/zsh-startup-timer"
+zplug "bric3/nice-exit-code"
+zplug "MikeDacre/tmux-zsh-vim-titles"
 zplug "stedolan/jq", \
     from:gh-r, \
     as:command, \
