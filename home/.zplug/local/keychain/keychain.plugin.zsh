@@ -45,11 +45,11 @@ function () {
         echo "[keychain] Stale keychain found; resetting session..."
         keychain_wipe
         keychain_load
+        return
     }
+    echo "[keychain] Found active session with $(ssh-add -l | wc -l) SSH keys and $(gpg --list-secret-keys | grep 'sec' | wc -l) GPG secret keys."
   else
-    echo "[keychain] Found active session."
+    echo "[keychain] Found active session with $(ssh-add -l | wc -l) SSH keys and $(gpg --list-secret-keys | grep 'sec' | wc -l) GPG secret keys."
     keychain_load
   fi
-
-  ssh-add -l
 }

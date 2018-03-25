@@ -1,3 +1,5 @@
+source ~/.zsh/zplug/init.zsh
+source ~/.zsh/plugins.zsh
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' max-errors 3 not-numeric
 zstyle :compinstall filename '/home/ayize/.zshrc'
@@ -10,9 +12,4 @@ ZSH_CUSTOM=~/.zsh/custom
 setopt appendhistory beep nomatch notify
 unsetopt autocd extendedglob
 bindkey -v
-
-# Load in zplug.
-source ~/.zsh/zplug/init.zsh
-source ~/.zsh/plugins.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+zstyle ':prezto:module:prompt' theme 'garrett' 

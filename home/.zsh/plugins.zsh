@@ -37,7 +37,6 @@ zplug "oldratlee/hacker-quotes"
 zplug "marzocchi/zsh-notify"
 zplug "lukechilds/zsh-better-npm-completion", defer:2
 zplug "jreese/zsh-titles"
-zplug "molovo/filthy", from:github, as:theme, defer:2
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "wbingli/zsh-wakatime"
 zplug "gangleri/pipenv"
@@ -73,6 +72,9 @@ elif [[ $OSTYPE == *linux* ]]; then
   zplug "plugins/firewalld", from:oh-my-zsh
   zplug "plugins/systemd", from:oh-my-zsh
 fi
+
+GEOMETRY_PROMPT_PLUGINS=(virtualenv docker_machine exec_time git hostname node ruby)
+zplug "geometry-zsh/geometry"
 
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
