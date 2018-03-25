@@ -3,17 +3,9 @@
 # This makes it easy for me to use to Keychain[1]
 #
 # [1]: https://www.funtoo.org/Keychain
+typeset keychain
 
-keychain_init() {
-  declare expected_keychain_path="$HOME/.keychain/${HOST}-sh"
-  if [ -e "${expected_keychain_path}" ]; then
-    keychain_source
-  else
-    keychain_load
-  fi
-}
-
-keychain_load() {
+function keychain_load() {
   # shellcheck disable=SC2086,SC2038,SC2154,SC2086
   eval "$(keychain --quiet --attempts 3 --inherit any-once \
     --eval --agents ssh,gpg --ignore-missing \
@@ -31,16 +23,33 @@ keychain_load() {
   done
 }
 
-keychain_source() {
+function keychain_source() {
   . "$HOME/.keychain/$HOST-sh" 2>/dev/null
   . "$HOME/.keychain/$HOST-sh-gpg" 2>/dev/null
 }
 
-keychain_wipe() {
+function keychain_wipe() {
   keychain --stop all --quiet --agents gpg,ssh;
   if [ -f "$HOME/.keychain/$HOST-sh" ]; then
-    rm "$HOME/.keychain/$HOST*" || echo "[keychain] All clear on env.";
+    rm -rvf "$HOME/.keychain/$HOST*" && echo "[keychain] All clear on env.";
   fi
 }
 
-keychain_init;
+function () {
+  declare expected_keychain_path="$HOME/.keychain/${HOST}-sh"
+  echo "[keychain] Searching..."
+
+  if [ -e "${expected_keychain_path}" ]; then
+    keychain_source
+    ps x | grep ssh-agent | grep -q $SSH_AGENT_PID || {
+        echo "[keychain] Stale keychain found; resetting session..."
+        keychain_wipe
+        keychain_load
+    }
+  else
+    echo "[keychain] Found active session."
+    keychain_load
+  fi
+
+  ssh-add -l
+}
