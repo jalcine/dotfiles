@@ -1,3 +1,10 @@
-POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status nvm node_version)
+HISTFILE=~/.zsh/history
+HISTSIZE=4096
+SAVEHIST=16384
+ZSH_CUSTOM=~/.zsh/custom
+
+SPACESHIP_TIME_SHOW=true
+SPACESHIP_BATTERY_THRESHOLD=30
+
+setopt appendhistory beep nomatch notify
+unsetopt autocd extendedglob

@@ -73,8 +73,7 @@ elif [[ $OSTYPE == *linux* ]]; then
   zplug "plugins/systemd", from:oh-my-zsh
 fi
 
-GEOMETRY_PROMPT_PLUGINS=(virtualenv docker_machine exec_time git hostname node ruby)
-zplug "geometry-zsh/geometry"
+zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
