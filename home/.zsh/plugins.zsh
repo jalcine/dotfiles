@@ -36,7 +36,7 @@ zplug "Seinh/git-prune"
 zplug "oldratlee/hacker-quotes"
 zplug "marzocchi/zsh-notify"
 zplug "lukechilds/zsh-better-npm-completion", defer:2
-zplug "jreese/zsh-titles"
+zplug "MikeDacre/tmux-zsh-vim-titles", use:unified-titles
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "wbingli/zsh-wakatime"
 zplug "gangleri/pipenv"
@@ -48,7 +48,6 @@ zplug "chriskempson/base16-shell"
 zplug "k4rthik/git-cal"
 zplug "paulmelnikow/zsh-startup-timer"
 zplug "bric3/nice-exit-code"
-zplug "MikeDacre/tmux-zsh-vim-titles"
 zplug "stedolan/jq", \
     from:gh-r, \
     as:command, \
