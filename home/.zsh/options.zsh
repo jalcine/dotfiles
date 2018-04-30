@@ -1,10 +1,8 @@
-HISTFILE=~/.zsh/history
-HISTSIZE=4096
-SAVEHIST=16384
-ZSH_CUSTOM=~/.zsh/custom
+HISTFILE=$HOME/.zsh/history
+HISTSIZE=50
+SAVEHIST=1024
+ZSH_CUSTOM=$HOME/.zsh/custom
+POWERLINE9K_MODE='nerdfont-complete'
 
-SPACESHIP_TIME_SHOW=true
-SPACESHIP_BATTERY_THRESHOLD=30
-
-setopt appendhistory beep nomatch notify
-unsetopt autocd extendedglob
+setopt appendhistory nobeep nomatch notify extendedglob 
+unsetopt autocd
