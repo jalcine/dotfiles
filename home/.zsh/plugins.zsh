@@ -29,7 +29,7 @@ zplug "plugins/yarn", from:oh-my-zsh
 zplug "plugins/extract", from:oh-my-zsh
 zplug "plugins/terraform", from:oh-my-zsh
 zplug "tcnksm/docker-alias", use:zshrc
-zplug "chrissicool/zsh-256color"
+zplug "chrissicool/zsh-256color", defer:3
 zplug "sparsick/ansible-zsh"
 zplug "sroze/docker-compose-zsh-plugin"
 zplug "b4b4r07/emoji-cli"
@@ -55,6 +55,9 @@ zplug "stedolan/jq", \
     rename-to:jq
 zplug "b4b4r07/emoji-cli", \
     on:"stedolan/jq"
+
+# My personal plugins.
+# TODO: Move this out into a set of shareable plugins.
 zplug "~/.zplug/local/common", from:local
 zplug "~/.zplug/local/direnv", from:local
 zplug "~/.zplug/local/keychain", from:local
@@ -73,7 +76,9 @@ elif [[ $OSTYPE == *linux* ]]; then
   zplug "plugins/systemd", from:oh-my-zsh
 fi
 
-zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+source ~/.zsh/local.zsh
+
+zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme, as:theme
 
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
