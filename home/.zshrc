@@ -8,3 +8,5 @@ zstyle ':completion:*' max-errors 3 not-numeric
 zstyle :compinstall filename '/home/ayize/.zshrc'
 autoload -Uz compinit
 compinit
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -25,6 +25,7 @@ zplug "plugins/jira", from:oh-my-zsh
 zplug "plugins/mix-fast", from:oh-my-zsh
 zplug "plugins/mosh", from:oh-my-zsh
 zplug "plugins/npm", from:oh-my-zsh
+zplug "plugins/yarn", from:oh-my-zsh
 zplug "plugins/extract", from:oh-my-zsh
 zplug "plugins/terraform", from:oh-my-zsh
 zplug "tcnksm/docker-alias", use:zshrc
