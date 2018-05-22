@@ -7,19 +7,15 @@ typeset keychain
 
 function keychain_load() {
   # shellcheck disable=SC2086,SC2038,SC2154,SC2086
-  eval "$(keychain --quiet --attempts 3 --inherit any-once \
-    --eval --agents ssh,gpg --ignore-missing \
-    $KEYCHAIN_GPG_KEYS)";
+  eval "$(keychain --quiet --attempts 3 --inherit any-once --eval --agents ssh,gpg --ignore-missing $KEYCHAIN_GPG_KEYS)";
 
   for key in $(find $HOME/.ssh/keys -type f -name "*.pem" | xargs)
   do
     declare passPath=$(basename $(dirname ${key}))
     declare passDir=$(basename -s .pem "${key}")
 
-    echo "[keychain] Importing key '${passPath}/${passDir}'...";
-    pass show "ssh${KEYCHAIN_PASSWORD_PREFIX:-}/${passPath}/${passDir}" | ssh-add "${key}" \
-      2>> ~/.keychain/startup_err.log \
-       >> ~/.keychain/startup.log
+    echo "[keychain] Importing SSH key '${passPath}/${passDir}'...";
+    pass show "ssh${KEYCHAIN_PASSWORD_PREFIX:-}/${passPath}/${passDir}" | ssh-add "${key}" 2>~/.keychain/startup_err.log >~/.keychain/startup.log
   done
 }
 
@@ -37,7 +33,7 @@ function keychain_wipe() {
 
 function () {
   declare expected_keychain_path="$HOME/.keychain/${HOST}-sh"
-  echo "[keychain] Searching..."
+  echo "[keychain] Scanning for keys..."
 
   if [ -e "${expected_keychain_path}" ]; then
     keychain_source
@@ -47,9 +43,9 @@ function () {
         keychain_load
         return
     }
-    echo "[keychain] Found active session with $(ssh-add -l | wc -l) SSH keys and $(gpg --list-secret-keys | grep 'sec' | wc -l) GPG secret keys."
   else
-    echo "[keychain] Found active session with $(ssh-add -l | wc -l) SSH keys and $(gpg --list-secret-keys | grep 'sec' | wc -l) GPG secret keys."
     keychain_load
   fi
+
+  echo "[keychain] Found active session with $(ssh-add -l | wc -l) SSH keys and $(gpg --list-secret-keys | grep 'sec' | wc -l) GPG secret keys."
 }
