@@ -5,8 +5,6 @@ bindkey -v
 
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' max-errors 3 not-numeric
-zstyle :compinstall filename '/home/ayize/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
