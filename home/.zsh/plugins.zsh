@@ -21,6 +21,8 @@ zplug "andrewferrier/fzf-z"
 zplug "chriskempson/base16-shell"
 zplug "paulmelnikow/zsh-startup-timer"
 zplug "bric3/nice-exit-code"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "MikeDacre/tmux-zsh-vim-titles"
 zplug "stedolan/jq", \
     from:gh-r, \
     as:command, \
@@ -33,6 +35,7 @@ zplug "~/.zplug/local/direnv", from:local
 zplug "~/.zplug/local/keychain", from:local
 zplug "~/.zplug/local/anyenv", from:local
 zplug "~/.zplug/local/evm", from:local
+zplug "~/.zplug/local/exenv", from:local
 zplug "~/.zplug/local/homeshick", from:local
 zplug "~/.zplug/local/travis-ci", from:local
 
@@ -48,7 +51,7 @@ fi
 
 source ~/.zsh/local.zsh
 
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme, as:theme
+zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
