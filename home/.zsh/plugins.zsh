@@ -1,26 +1,19 @@
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/git-flow", from:oh-my-zsh
-zplug "plugins/docker-compose", from:oh-my-zsh
-zplug "plugins/vagrant", from:oh-my-zsh
-zplug "plugins/pass", from:oh-my-zsh
-zplug "plugins/rake-fast", from:oh-my-zsh
 zplug "plugins/dotenv", from:oh-my-zsh
 zplug "plugins/fasd", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "plugins/common-aliases", from:oh-my-zsh
 zplug "plugins/mix-fast", from:oh-my-zsh
 zplug "plugins/extract", from:oh-my-zsh
-zplug "tcnksm/docker-alias", use:zshrc
 zplug "chrissicool/zsh-256color", defer:3
 zplug "oldratlee/hacker-quotes"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "marzocchi/zsh-notify"
-zplug "wbingli/zsh-wakatime"
 zplug "andrewferrier/fzf-z"
+zplug "wbingli/zsh-wakatime"
 zplug "chriskempson/base16-shell"
 zplug "paulmelnikow/zsh-startup-timer"
-zplug "bric3/nice-exit-code"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "MikeDacre/tmux-zsh-vim-titles"
 zplug "stedolan/jq", \
@@ -29,8 +22,7 @@ zplug "stedolan/jq", \
     rename-to:jq
 
 # My personal plugins.
-# TODO: Move this out into a set of shareable plugins.
-zplug "~/.zplug/local/common", from:local
+# TODO: Move this out into a set of shareable plugins. zplug "~/.zplug/local/common", from:local
 zplug "~/.zplug/local/direnv", from:local
 zplug "~/.zplug/local/keychain", from:local
 zplug "~/.zplug/local/anyenv", from:local
