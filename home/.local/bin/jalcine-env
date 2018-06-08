@@ -379,6 +379,10 @@ function install_rust ()
 
 function install_python ()
 {
+  cd $(pyenv root)/envs/python-build || exit 128;
+  git pull;
+  cd - || exit 128;
+
   pyenv install -sk "${VERSION_PYTHON2}";
   echo_msg "[python] Installed ${VERSION_PYTHON2}.";
 
