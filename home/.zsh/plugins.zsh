@@ -22,8 +22,9 @@ zplug "stedolan/jq", \
     rename-to:jq
 
 # My personal plugins.
-# TODO: Move this out into a set of shareable plugins. zplug "~/.zplug/local/common", from:local
 zplug "~/.zplug/local/direnv", from:local
+zplug "~/.zplug/local/common", from:local
+zplug "~/.zplug/local/fzf", from:local
 zplug "~/.zplug/local/keychain", from:local
 zplug "~/.zplug/local/anyenv", from:local
 zplug "~/.zplug/local/evm", from:local
@@ -31,7 +32,6 @@ zplug "~/.zplug/local/exenv", from:local
 zplug "~/.zplug/local/homeshick", from:local
 zplug "~/.zplug/local/travis-ci", from:local
 zplug "~/.zplug/local/twitter", from:local
-zplug "~/.zplug/local/fzf", from:local
 
 if [[ $OSTYPE == *darwin* ]]; then
   zplug "plugins/brew", from:oh-my-zsh
@@ -45,7 +45,7 @@ fi
 
 source ~/.zsh/local.zsh
 
-zplug "geometry-zsh/geometry"
+zplug "eendroroy/alien"
 
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
