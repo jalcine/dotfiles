@@ -30,6 +30,8 @@ zplug "~/.zplug/local/evm", from:local
 zplug "~/.zplug/local/exenv", from:local
 zplug "~/.zplug/local/homeshick", from:local
 zplug "~/.zplug/local/travis-ci", from:local
+zplug "~/.zplug/local/twitter", from:local
+zplug "~/.zplug/local/fzf", from:local
 
 if [[ $OSTYPE == *darwin* ]]; then
   zplug "plugins/brew", from:oh-my-zsh
@@ -43,7 +45,7 @@ fi
 
 source ~/.zsh/local.zsh
 
-zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "geometry-zsh/geometry"
 
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "

@@ -1,7 +1,7 @@
 # From https://gist.github.com/brianloveswords/7534169715b5750a892cddcf54c2aa0e
 # Thanks.
 
-video-url-from-tweet() {
+function video-url-from-tweet() {
     if [ "$1" ]; then
         url=$1
     else
@@ -23,7 +23,8 @@ video-url-from-tweet() {
         sed 's/.jpg/.mp4/g' |\
         sed 's/pbs.twimg.com\/tweet_video_thumb/video.twimg.com\/tweet_video/g'
 }
-video-from-tweet() {
+
+function video-from-tweet() {
     if [ "$1" ]; then
         url=$1
     else
@@ -32,7 +33,8 @@ video-from-tweet() {
     fi
     curl $(video-url-from-tweet $url)
 }
-video-to-gif() {
+
+function video-to-gif() {
     # derived from https://engineering.giphy.com/how-to-make-gifs-with-ffmpeg/
     if [ "$2" ]; then
         input=$1
@@ -47,7 +49,8 @@ video-to-gif() {
            -f gif \
            $output
 }
-gif-from-tweet() {
+
+function gif-from-tweet() {
     if [ "$2" ]; then
         url=$1
         output=$2
