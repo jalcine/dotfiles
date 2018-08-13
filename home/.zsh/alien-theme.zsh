@@ -1,11 +1,4 @@
-export EDITOR=nvim
-export HISTFILE=$HOME/.zsh/history
-export ALIEN_DATE_TIME_FORMAT="%H:%M:%S"
-export ALIEN_CUSTOM_THEME_PATH="$HOME/.zsh/alien-theme.zsh"
-export HISTSIZE=16384
-export SAVEHIST=262144
-export USE_NERD_FONT=1
-export ZSH_CUSTOM=$HOME/.zsh/custom
+#!/usr/bin/env zsh
 
 alien_theme(){
   color0=018    # time bg
@@ -25,6 +18,3 @@ alien_theme(){
   color13=016   # dirty copy fg
   color14=245   # venv color
 }
-
-setopt appendhistory beep notify extendedglob
-unsetopt autocd
