@@ -16,7 +16,6 @@ zplug "chriskempson/base16-shell"
 zplug "mafredri/zsh-async", use: "async.zsh" 
 zplug "paulmelnikow/zsh-startup-timer"
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug "MikeDacre/tmux-zsh-vim-titles"
 zplug "plugins/git-flow", from:oh-my-zsh
 zplug "tcnksm/docker-alias", use:zshrc
 zplug "stedolan/jq", \
