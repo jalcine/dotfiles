@@ -1,3 +1,9 @@
+if [ ! -f ~/.zsh/zplug/init.zsh ]; then
+  git clone https://github.com/zplug/zplug $ZPLUG_HOME
+fi
+
+source ~/.zsh/zplug/init.zsh
+
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/dotenv", from:oh-my-zsh
