@@ -19,9 +19,9 @@ set print address off
 set overload-resolution on
 
 set auto-load python-scripts on
-set auto-load safe-path ~/prjs/
+set auto-load safe-path ~/src
 
 source ~/.gdb/aliases.gdb
 source ~/.gdb/c++.gdb
 
-add-auto-load-safe-path /usr/share/gdb/auto-load/usr/
+add-auto-load-safe-path /usr/share/gdb/auto-load
