@@ -1,5 +1,6 @@
-export ALIEN_CUSTOM_THEME_PATH="$HOME/.zsh/alien-theme.zsh"
-export ALIEN_DATE_TIME_FORMAT="%H:%M:%S"
+# export ALIEN_CUSTOM_THEME_PATH="$HOME/.zsh/alien-theme.zsh"
+export PROMPT_GEOMETRY_COLORIZE_SYMBOL=true
+export PROMPT_GEOMETRY_COLORIZE_ROOT=true
 export EDITOR=nvim
 export HISTFILE=$HOME/.zsh/history
 export HISTSIZE=16384

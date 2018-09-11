@@ -1,11 +1,12 @@
-if [ ! -f ~/.zsh/zplug/init.zsh ]; then
+if [ ! -d $ZPLUG_HOME ]; then
   git clone https://github.com/zplug/zplug $ZPLUG_HOME
 fi
 
-source ~/.zsh/zplug/init.zsh
+source ~/.zplug/init.zsh
 
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/battery", from:oh-my-zsh
 zplug "plugins/dotenv", from:oh-my-zsh
 zplug "plugins/fasd", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
@@ -38,7 +39,6 @@ zplug "~/.zplug/local/anyenv", from:local
 zplug "~/.zplug/local/evm", from:local
 zplug "~/.zplug/local/exenv", from:local
 zplug "~/.zplug/local/homeshick", from:local
-zplug "~/.zplug/local/travis-ci", from:local
 zplug "~/.zplug/local/twitter", from:local
 
 if [[ $OSTYPE == *darwin* ]]; then
@@ -51,12 +51,13 @@ elif [[ $OSTYPE == *linux* ]]; then
   zplug "plugins/systemd", from:oh-my-zsh
 fi
 
+zplug "geometry-zsh/geometry"
+zplug "desyncr/geometry-dir-info-prompt"
+
 source ~/.zsh/local.zsh
 
-zplug "eendroroy/alien"
-
 if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
+  printf "[zplug] Install plugins? [y/N]: "
   if read -q; then
     echo; zplug install
   fi
