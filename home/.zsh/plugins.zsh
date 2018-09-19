@@ -2,27 +2,27 @@ if [ ! -d $ZPLUG_HOME ]; then
   git clone https://github.com/zplug/zplug $ZPLUG_HOME
 fi
 
-source ~/.zplug/init.zsh
+source $ZPLUG_HOME/init.zsh
 
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/battery", from:oh-my-zsh
 zplug "plugins/dotenv", from:oh-my-zsh
 zplug "plugins/fasd", from:oh-my-zsh
-zplug "plugins/vi-mode", from:oh-my-zsh
+# zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "plugins/common-aliases", from:oh-my-zsh
 zplug "plugins/mix-fast", from:oh-my-zsh
 zplug "plugins/extract", from:oh-my-zsh
 zplug "chrissicool/zsh-256color", defer:3
-zplug "oldratlee/hacker-quotes"
+# zplug "oldratlee/hacker-quotes"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "marzocchi/zsh-notify"
 zplug "andrewferrier/fzf-z"
-zplug "wbingli/zsh-wakatime"
+# zplug "wbingli/zsh-wakatime"
 zplug "chriskempson/base16-shell"
 zplug "mafredri/zsh-async", use: "async.zsh" 
 zplug "paulmelnikow/zsh-startup-timer"
-zplug "zsh-users/zsh-syntax-highlighting"
+# zplug "zsh-users/zsh-syntax-highlighting"
 zplug "plugins/git-flow", from:oh-my-zsh
 zplug "tcnksm/docker-alias", use:zshrc
 zplug "stedolan/jq", \
