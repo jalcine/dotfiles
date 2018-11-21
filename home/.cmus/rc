@@ -1,0 +1,18 @@
+# start bundler
+
+shell /home/ayize/.anyenv/envs/ndenv/shims/cmus-bundler start debug
+
+# install colorscheme
+shell /home/ayize/.anyenv/envs/ndenv/shims/cmus-bundler theme alextercete/cmus-theme-screenshot
+colorscheme themes/cmus-theme-screenshot/screenshot
+
+# control cmus via gloabl media keys
+shell /home/ayize/.anyenv/envs/ndenv/shims/cmus-bundler plugin nogizhopaboroda/cmus-mediakeys cmd "npm install"
+shell /home/ayize/.anyenv/envs/ndenv/shims/cmus-bundler plugin Arkq/cmusfm cmd "autoreconf --install && mkdir build && cd build && ../configure --enable-libnotify && make && make install"
+shell /home/ayize/.anyenv/envs/ndenv/shims/cmus-bundler call cmus-mediakeys/mediakeys
+shell /home/ayize/.anyenv/envs/ndenv/shims/cmus-bundler plugin hakerdefo/cmus-lyrics
+
+# set cmus-bundler as status program
+set status_display_program=/home/ayize/.anyenv/envs/ndenv/shims/cmus-bundler
+
+shell /home/ayize/.anyenv/envs/ndenv/shims/cmus-bundler install

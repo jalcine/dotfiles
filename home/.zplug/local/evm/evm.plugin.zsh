@@ -1,1 +1,0 @@
-source ~/.evm/scripts/evm
