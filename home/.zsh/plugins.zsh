@@ -74,6 +74,8 @@ fi
 
 source ~/.zsh/local.zsh
 
+zplug "themes/nanotech", as:theme, from:oh-my-zsh
+
 if ! zplug check --verbose; then
   printf "[zplug] Install plugins? [y/N]: "
   if read -q; then
