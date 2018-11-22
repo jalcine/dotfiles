@@ -7,6 +7,8 @@ fi
 
 source $ZPLUG_HOME/init.zsh
 
+zplug "zplug/zplug", hook-build:"zplug --self-manage"
+
 # My personal plugins.
 local ZPLUG_LOCAL="$HOME/.zsh/local"
 zplug "$ZPLUG_LOCAL/keychain", from:local
@@ -19,7 +21,6 @@ zplug "$ZPLUG_LOCAL/exenv", from:local
 zplug "$ZPLUG_LOCAL/homeshick", from:local
 zplug "$ZPLUG_LOCAL/twitter", from:local
 
-zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "chrissicool/zsh-256color"
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/battery", from:oh-my-zsh
@@ -33,6 +34,12 @@ zplug "plugins/extract", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
 zplug "plugins/kubectl", from:oh-my-zsh
 zplug "plugins/kube-ps1", from:oh-my-zsh
+zplug "plugins/git-flow", from:oh-my-zsh
+zplug "plugins/vagrant-prompt", from:oh-my-zsh
+zplug "plugins/bgnotify", from:oh-my-zsh
+zplug "plugins/adb", from:oh-my-zsh
+zplug "plugins/web-search", from:oh-my-zsh
+zplug "plugins/themes", from:oh-my-zsh
 zplug "chriskempson/base16-shell"
 zplug "oldratlee/hacker-quotes"
 zplug "zsh-users/zsh-autosuggestions"
@@ -43,7 +50,7 @@ zplug "wbingli/zsh-wakatime"
 zplug "mafredri/zsh-async", use: "async.zsh" 
 zplug "paulmelnikow/zsh-startup-timer"
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug "plugins/git-flow", from:oh-my-zsh
+zplug "zsh-users/zsh-history-substring-search"
 zplug "tcnksm/docker-alias", use:zshrc
 zplug "stedolan/jq", \
     from:gh-r, \
@@ -64,8 +71,6 @@ elif [[ $OSTYPE == *linux* ]]; then
   zplug "plugins/firewalld", from:oh-my-zsh
   zplug "plugins/systemd", from:oh-my-zsh
 fi
-
-zplug "eendroroy/alien"
 
 source ~/.zsh/local.zsh
 
