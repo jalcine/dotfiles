@@ -5,5 +5,8 @@ function exenv_prompt_info()
 
 function prompt_exenv()
 {
-  echo $(exenv_prompot_info)
+  echo $(exenv_prompt_info)
 }
+
+
+export PATH="$HOME/.mix/escripts:$PATH"

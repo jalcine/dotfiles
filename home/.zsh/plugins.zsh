@@ -22,36 +22,41 @@ zplug "$ZPLUG_LOCAL/homeshick", from:local
 zplug "$ZPLUG_LOCAL/twitter", from:local
 
 zplug "chrissicool/zsh-256color"
-zplug "plugins/git", from:oh-my-zsh
+
+zplug "plugins/adb", from:oh-my-zsh
 zplug "plugins/battery", from:oh-my-zsh
-zplug "plugins/dotenv", from:oh-my-zsh
-zplug "plugins/fasd", from:oh-my-zsh
-zplug "plugins/vi-mode", from:oh-my-zsh
-zplug "plugins/terraform", from:oh-my-zsh
+zplug "plugins/bgnotify", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
 zplug "plugins/common-aliases", from:oh-my-zsh
-zplug "plugins/extract", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
-zplug "plugins/kubectl", from:oh-my-zsh
-zplug "plugins/kube-ps1", from:oh-my-zsh
+zplug "plugins/dotenv", from:oh-my-zsh
+zplug "plugins/extract", from:oh-my-zsh
+zplug "plugins/fasd", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/git-flow", from:oh-my-zsh
-zplug "plugins/vagrant-prompt", from:oh-my-zsh
-zplug "plugins/bgnotify", from:oh-my-zsh
-zplug "plugins/adb", from:oh-my-zsh
-zplug "plugins/web-search", from:oh-my-zsh
+zplug "plugins/git-hubflow", from:oh-my-zsh
+zplug "plugins/github", from:oh-my-zsh
+zplug "plugins/helm", from:oh-my-zsh
+zplug "plugins/kube-ps1", from:oh-my-zsh
+zplug "plugins/kubectl", from:oh-my-zsh
+zplug "plugins/terraform", from:oh-my-zsh
 zplug "plugins/themes", from:oh-my-zsh
-zplug "chriskempson/base16-shell"
-zplug "oldratlee/hacker-quotes"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "marzocchi/zsh-notify"
+zplug "plugins/vagrant-prompt", from:oh-my-zsh
+zplug "plugins/vi-mode", from:oh-my-zsh
+zplug "plugins/web-search", from:oh-my-zsh
+
 zplug "andrewferrier/fzf-z"
+zplug "chriskempson/base16-shell"
 zplug "jamesob/desk", hook-build:"make oh-my-zsh"
-zplug "wbingli/zsh-wakatime"
 zplug "mafredri/zsh-async", use: "async.zsh" 
+zplug "marzocchi/zsh-notify"
+zplug "oldratlee/hacker-quotes"
 zplug "paulmelnikow/zsh-startup-timer"
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
 zplug "tcnksm/docker-alias", use:zshrc
+zplug "wbingli/zsh-wakatime"
+zplug "zdharma/fast-syntax-highlighting"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-history-substring-search"
 zplug "stedolan/jq", \
     from:gh-r, \
     as:command, \
@@ -74,13 +79,13 @@ fi
 
 source ~/.zsh/local.zsh
 
-zplug "themes/sporty_256", as:theme, from:oh-my-zsh
+zplug "geometry-zsh/geometry", as:theme
+zplug load
 
 if ! zplug check --verbose; then
-  printf "[zplug] Install plugins? [y/N]: "
+  printf "[zplug] Install missing plugins? [y/N]: "
   if read -q; then
     echo; zplug install
   fi
 fi
 
-zplug load
