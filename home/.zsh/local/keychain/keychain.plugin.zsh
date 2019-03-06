@@ -7,7 +7,7 @@
 typeset keychain
 
 function keychain_load() {
-  eval "$(keychain --systemd --quick --noask --attempts 3 --inherit any --eval --agents ssh,gpg --ignore-missing $KEYCHAIN_GPG_KEYS $KEYCHAIN_SSH_KEYS)";
+  eval "$(keychain --attempts 5 --inherit any --eval --agents gpg,ssh)";
 
   for key in $(find $HOME/.ssh/keys -type f -name "*.pem" | xargs)
   do
@@ -18,10 +18,11 @@ function keychain_load() {
 function keychain-pass-add () {
   declare keyPath="$HOME/.ssh/keys/${1}.pem"
   declare passPath=$(basename $(dirname ${keyPath}))
-  declare passDir=$(basename -s .pem "${keyPath}")
+  declare passDir=$(basename -s .pem ${keyPath})
+  declare passName="${passPath}/${passDir%".pem"}"
 
-  echo "[keychain] Importing SSH key '${passPath}/${passDir}'...";
-  declare pw="$(pass show ssh${KEYCHAIN_PASSWORD_PREFIX:-}/${passPath}/${passDir})"
+  echo "[keychain] Importing SSH key '${passName}'...";
+  declare pw="$(pass show ssh${KEYCHAIN_PASSWORD_PREFIX:-}/${passName})"
   echo "${pw}" | ssh-add "${keyPath}" 2>~/.keychain/startup_err.log >~/.keychain/startup.log
 }
 
@@ -31,11 +32,10 @@ function keychain_source() {
 }
 
 function keychain_wipe() {
-  ssh-add -D
   keychain -k --stop all --agents gpg,ssh;
 
   if [ -f "$HOME/.keychain/$HOST-sh" ]; then
-    rm -rvf "$HOME/.keychain/$HOST*" && echo "[keychain] Cleared out agents.";
+    rm -rv "$HOME/.keychain/$HOST*" && echo "[keychain] Cleared out agents.";
   else
     echo "[keychain] Nothing to wipe for '${HOST}'."
   fi
@@ -51,7 +51,7 @@ function () {
     ps x | grep ssh-agent | grep -q $SSH_AGENT_PID || {
         echo "[keychain] Stale keychain found; resetting session..."
         keychain_wipe
-        return
+        keychain_load
     }
   else
     echo "[keychain] No session in place. Beginning key load..."

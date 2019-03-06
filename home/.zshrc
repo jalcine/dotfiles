@@ -9,3 +9,9 @@ zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+###-tns-completion-start-###
+if [ -f /home/ayize/.tnsrc ]; then 
+    source /home/ayize/.tnsrc 
+fi
+###-tns-completion-end-###
