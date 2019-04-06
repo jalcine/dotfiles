@@ -10,6 +10,7 @@ export SPACESHIP_BATTERY_THRESHOLD=80
 export SPACESHIP_VI_MODE_COLOR="gray"
 export SPACESHIP_VI_MODE_INSERT="i"
 export SPACESHIP_VI_MODE_NORMAL="n"
+export GIT_EDITOR="nvr -cc split --remote-wait"
 
 setopt appendhistory beep notify extendedglob prompt_subst
 unsetopt autocd
