@@ -1,9 +1,11 @@
 #!/usr/bin/env zsh
 
+# In the off-chance that this script is about to be run and zplug is not
+# installed, install it on the machine.
 ZPLUG_HOME=${ZPLUG_HOME:-$HOME/.zsh/zplug}
 if [ ! -d $ZPLUG_HOME ]; then
-  echo "[zplug] Installing plugin manager..."
-  git clone https://github.com/zplug/zplug $ZPLUG_HOME --quiet --depth=1 --branch master
+  echo "[jalcine] Installing 'zplug'..."
+  git clone https://github.com/zplug/zplug $ZPLUG_HOME --depth=1 --branch master
   chown -R ${USER}:${GROUP} ${ZPLUG_HOME}
   chmod -R o+x,g+x ${ZPLUG_HOME}
 fi
@@ -18,6 +20,8 @@ zplug "$ZPLUG_LOCAL/keychain", from:local
 zplug "$ZPLUG_LOCAL/direnv", from:local
 zplug "$ZPLUG_LOCAL/common", from:local
 zplug "$ZPLUG_LOCAL/homeshick", from:local
+
+zplug "chrissicool/zsh-256color"
 
 zplug "plugins/adb", from:oh-my-zsh
 zplug "plugins/asdf", from:oh-my-zsh
@@ -57,8 +61,7 @@ elif [[ $OSTYPE == *linux* ]]; then
   zplug "plugins/systemd", from:oh-my-zsh
 fi
 
-zplug "chrissicool/zsh-256color"
-zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "eendroroy/alien"
 
 source ~/.zsh/local.zsh
 
