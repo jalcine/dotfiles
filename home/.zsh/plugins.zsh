@@ -61,7 +61,7 @@ elif [[ $OSTYPE == *linux* ]]; then
   zplug "plugins/systemd", from:oh-my-zsh
 fi
 
-zplug "eendroroy/alien"
+zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 
 source ~/.zsh/local.zsh
 

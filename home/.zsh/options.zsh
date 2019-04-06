@@ -14,10 +14,13 @@ export ALIEN_SECTIONS_LEFT=(
   newline
   ssh
   venv
+  vcs_status:async
   prompt
 )
 
 export ALIEN_SECTIONS_RIGHT=(
+  vcs_dirty:async
+  vcs_branch:async
   time
 )
 export ALIEN_GIT_STASH_SYM=@
