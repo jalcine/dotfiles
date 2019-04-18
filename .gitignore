@@ -1,4 +1,3 @@
-home/.bash/*.d/99_*.sh
 # Created by https://www.gitignore.io/api/vim
 
 ### Vim ###
@@ -8,5 +7,3 @@ home/.bash/*.d/99_*.sh
 Session.vim
 .netrwhist
 *~
-
-home/.bashrc

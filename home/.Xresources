@@ -1,6 +1,6 @@
 ! vim: set foldmethod=marker :
 
-#include "./.Xresources.d/colors"
+#include "~/.Xresources.d/colors"
 
 ! {{{ URxvrt options
 URxvt.background: [95]#969896
@@ -42,5 +42,15 @@ URxvt.keysym.F11: perl:fullscreen:switch
 ! }}}
 
 ! {{{ XTerm opts
-XTerm*selectToClipboard: true
+!XTerm*selectToClipboard: true
+! }}}
+!
+! {{{ HiDPi
+!Xft.dpi: 192
+!Xft.autohint: 1
+!Xft.lcdfilter:  lcddefault
+!Xft.hintstyle:  hintfull
+!Xft.hinting: 1
+!Xft.antialias: 1
+!Xft.rgba: rgb
 ! }}}
