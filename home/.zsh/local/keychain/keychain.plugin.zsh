@@ -12,12 +12,12 @@ function keychain_init() {
 }
 
 function keychain_source() {
-  source $HOME/.keychain/${HOSTNAME}-sh
-  source $HOME/.keychain/${HOSTNAME}-sh-gpg
+  source $HOME/.keychain/${HOST}-sh
+  source $HOME/.keychain/${HOST}-sh-gpg
 }
 
 function keychain_wipe() {
-  rm $HOME/.keychain/${HOSTNAME}-sh* -rf
+  rm $HOME/.keychain/${HOST}-sh* -rf
 }
 
 

@@ -39,3 +39,7 @@ export ALIEN_CUSTOM_THEME_PATH="$HOME/.zsh/theme.zsh"
 
 setopt appendhistory beep notify extendedglob prompt_subst
 unsetopt autocd
+
+if [[ $TERM =~ konsole.* ]]; then
+    export FZF_DEFAULT_OPTS='--color fg+:5,hl+:6'
+fi

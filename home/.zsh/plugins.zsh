@@ -21,7 +21,7 @@ zplug "$ZPLUG_LOCAL/direnv", from:local
 zplug "$ZPLUG_LOCAL/common", from:local
 zplug "$ZPLUG_LOCAL/homeshick", from:local
 
-zplug "chrissicool/zsh-256color"
+# zplug "chrissicool/zsh-256color"
 
 zplug "plugins/adb", from:oh-my-zsh
 zplug "plugins/asdf", from:oh-my-zsh
@@ -61,7 +61,7 @@ elif [[ $OSTYPE == *linux* ]]; then
   zplug "plugins/systemd", from:oh-my-zsh
 fi
 
-zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
+zplug "eendroroy/alien"
 
 source ~/.zsh/local.zsh
 
